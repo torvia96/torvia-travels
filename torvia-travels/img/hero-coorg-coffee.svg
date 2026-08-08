@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-label="Sunrise over a Coorg coffee estate with misty hills and ripe coffee cherries">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F9DFAC"/>
+      <stop offset="0.40" stop-color="#F1E7CC"/>
+      <stop offset="1" stop-color="#DCE6D2"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FBD07C" stop-opacity="0.95"/>
+      <stop offset="0.5" stop-color="#F8C97F" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#F8C97F" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ridge1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#BFCFB9"/><stop offset="1" stop-color="#A6BCA4"/></linearGradient>
+    <linearGradient id="ridge2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#93AC8E"/><stop offset="1" stop-color="#74947A"/></linearGradient>
+    <linearGradient id="ridge3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#628467"/><stop offset="1" stop-color="#46644C"/></linearGradient>
+    <linearGradient id="ridge4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3A5B41"/><stop offset="1" stop-color="#27412F"/></linearGradient>
+    <linearGradient id="fore" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#20372800"/><stop offset="0.35" stop-color="#1E3426"/><stop offset="1" stop-color="#13201700"/></linearGradient>
+    <filter id="soft" x="-20%" y="-300%" width="140%" height="700%"><feGaussianBlur stdDeviation="18"/></filter>
+    <filter id="softer" x="-20%" y="-400%" width="140%" height="900%"><feGaussianBlur stdDeviation="30"/></filter>
+    <g id="oak">
+      <path d="M0 0 L0 -70" stroke="#2B4430" stroke-width="4"/>
+      <ellipse cx="0" cy="-78" rx="12" ry="8" fill="#2B4430"/>
+      <ellipse cx="-11" cy="-64" rx="10" ry="6" fill="#2B4430"/>
+      <ellipse cx="11" cy="-58" rx="9" ry="6" fill="#2B4430"/>
+      <ellipse cx="-2" cy="-48" rx="8" ry="5" fill="#2B4430"/>
+    </g>
+    <g id="bush">
+      <ellipse cx="0" cy="-4" rx="34" ry="26" fill="#1C2F21"/>
+      <ellipse cx="-13" cy="-16" rx="22" ry="17" fill="#28422E"/>
+      <ellipse cx="15" cy="-14" rx="20" ry="16" fill="#233A28"/>
+      <ellipse cx="1" cy="-26" rx="16" ry="12" fill="#2E4C34"/>
+      <ellipse cx="-8" cy="-30" rx="9" ry="7" fill="#375A3C" opacity="0.8"/>
+    </g>
+    <g id="leaf">
+      <path d="M0 0 C24 -18 58 -16 76 4 C54 24 20 22 0 0 Z" fill="#2F5637"/>
+      <path d="M0 0 C24 -13 54 -11 76 4" stroke="#437147" stroke-width="2.5" fill="none"/>
+    </g>
+    <g id="cherries">
+      <circle cx="0" cy="0" r="12" fill="#AF2A21"/><circle cx="-3.5" cy="-3.5" r="3.6" fill="#DB5C4C" opacity="0.85"/>
+      <circle cx="21" cy="8" r="11" fill="#8F211B"/><circle cx="17" cy="4" r="3.2" fill="#CB4E40" opacity="0.8"/>
+      <circle cx="8" cy="20" r="10" fill="#BE322A"/><circle cx="4.5" cy="16" r="3" fill="#E06A5A" opacity="0.8"/>
+    </g>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <circle cx="1200" cy="286" r="320" fill="url(#glow)"/>
+  <circle cx="1200" cy="286" r="62" fill="#FCE3B0" opacity="0.92"/>
+
+  <path d="M0 452 C180 372 320 402 470 356 C620 310 760 396 940 366 C1120 336 1240 292 1420 340 C1500 362 1560 372 1600 366 L1600 900 L0 900 Z" fill="url(#ridge1)"/>
+  <ellipse cx="820" cy="446" rx="900" ry="14" fill="#FFFFFF" opacity="0.6" filter="url(#softer)"/>
+
+  <path d="M0 540 C160 496 300 528 460 486 C640 438 780 520 960 500 C1140 480 1300 428 1470 470 C1540 488 1580 496 1600 494 L1600 900 L0 900 Z" fill="url(#ridge2)"/>
+  <use href="#oak" x="462" y="490" opacity="0.55"/><use href="#oak" x="1140" y="484" opacity="0.55"/>
+  <ellipse cx="520" cy="540" rx="720" ry="13" fill="#FFFFFF" opacity="0.55" filter="url(#soft)"/>
+  <ellipse cx="1340" cy="510" rx="380" ry="11" fill="#FFFFFF" opacity="0.5" filter="url(#soft)"/>
+
+  <path d="M0 640 C140 606 260 630 420 588 C580 546 700 618 880 606 C1060 594 1220 542 1400 578 C1500 598 1560 606 1600 602 L1600 900 L0 900 Z" fill="url(#ridge3)"/>
+  <use href="#oak" x="180" y="622"/><use href="#oak" x="420" y="592"/><use href="#oak" x="700" y="620"/>
+  <use href="#oak" x="1000" y="600"/><use href="#oak" x="1290" y="566"/><use href="#oak" x="1520" y="606"/>
+  <ellipse cx="900" cy="648" rx="860" ry="12" fill="#FFFFFF" opacity="0.4" filter="url(#soft)"/>
+
+  <path d="M0 730 C180 700 340 726 520 690 C700 654 860 716 1060 704 C1240 694 1420 656 1600 690 L1600 900 L0 900 Z" fill="url(#ridge4)"/>
+
+  <!-- red-earth estate road winding up through the coffee rows -->
+  <path d="M600 910 C660 830 640 786 706 748 C772 710 856 706 934 718 C862 702 780 700 726 736 C666 776 700 828 760 910 Z" fill="#8A5A38" opacity="0.92"/>
+  <path d="M636 910 C688 834 668 794 726 760 C782 728 856 722 926 730 C860 720 792 720 744 750 C692 782 716 830 742 910 Z" fill="#AC7A50" opacity="0.6"/>
+
+  <g>
+    <use href="#bush" x="60" y="770" transform="scale(0.72) translate(24 300)"/>
+    <use href="#bush" x="120" y="756" opacity="0.95"/><use href="#bush" x="250" y="744"/><use href="#bush" x="380" y="756"/>
+    <use href="#bush" x="510" y="736"/><use href="#bush" x="950" y="726"/><use href="#bush" x="1040" y="744"/><use href="#bush" x="1150" y="736"/>
+    <use href="#bush" x="1290" y="726"/><use href="#bush" x="1430" y="720"/><use href="#bush" x="1560" y="730"/>
+    <g transform="translate(0 46) scale(1.12)">
+      <use href="#bush" x="40" y="700"/><use href="#bush" x="170" y="712"/><use href="#bush" x="300" y="700"/>
+      <use href="#bush" x="430" y="712"/><use href="#bush" x="900" y="706"/><use href="#bush" x="1030" y="714"/>
+      <use href="#bush" x="1160" y="702"/><use href="#bush" x="1290" y="712"/><use href="#bush" x="1410" y="700"/>
+    </g>
+    <g transform="translate(0 120) scale(1.3)">
+      <use href="#bush" x="20" y="640"/><use href="#bush" x="150" y="652"/><use href="#bush" x="280" y="640"/>
+      <use href="#bush" x="700" y="646"/><use href="#bush" x="830" y="654"/><use href="#bush" x="960" y="642"/>
+      <use href="#bush" x="1090" y="652"/><use href="#bush" x="1210" y="640"/>
+    </g>
+  </g>
+  <rect y="770" width="1600" height="130" fill="url(#fore)" opacity="0.55"/>
+
+  <!-- foreground coffee branch, right of the headline -->
+  <g transform="translate(1130 900)">
+    <path d="M440 10 C320 -50 236 -156 162 -252 C120 -306 76 -338 22 -360" stroke="#3B5B37" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <g transform="translate(162 -252) rotate(-28)"><use href="#leaf"/></g>
+    <g transform="translate(162 -252) rotate(152) scale(0.92)"><use href="#leaf"/></g>
+    <g transform="translate(262 -166) rotate(-14)"><use href="#leaf"/></g>
+    <g transform="translate(262 -166) rotate(166) scale(0.86)"><use href="#leaf"/></g>
+    <g transform="translate(352 -84) rotate(-6)"><use href="#leaf"/></g>
+    <g transform="translate(352 -84) rotate(174) scale(0.8)"><use href="#leaf"/></g>
+    <g transform="translate(66 -344) rotate(-46) scale(0.82)"><use href="#leaf"/></g>
+    <g transform="translate(206 -234)"><use href="#cherries"/></g>
+    <g transform="translate(304 -152) scale(0.95)"><use href="#cherries"/></g>
+    <g transform="translate(392 -70) scale(0.9)"><use href="#cherries"/></g>
+    <g transform="translate(104 -326) scale(0.78)"><use href="#cherries"/></g>
+  </g>
+
+  <g transform="translate(-40 900)">
+    <path d="M20 20 C90 -60 140 -116 226 -164" stroke="#33512F" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <g transform="translate(140 -116) rotate(-26) scale(0.78)"><use href="#leaf"/></g>
+    <g transform="translate(226 -164) rotate(-42) scale(0.68)"><use href="#leaf"/></g>
+    <g transform="translate(178 -146) scale(0.7)"><use href="#cherries"/></g>
+  </g>
+</svg>

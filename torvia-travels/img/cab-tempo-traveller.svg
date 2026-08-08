@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" width="800" height="460" role="img" aria-label="Twelve seater Tempo Traveller, side view">
+  <ellipse cx="400" cy="424" rx="300" ry="20" fill="#294635" opacity="0.13"/>
+
+  <path d="M72 356 C66 312 72 286 96 278 L124 272 C132 214 152 176 186 168 C268 150 592 150 664 168 C696 176 708 206 710 262 L710 344 C710 366 702 372 686 372 L88 372 C76 372 72 368 72 356 Z" fill="#F4F5F1"/>
+  <path d="M72 350 C140 360 380 366 710 344 L710 350 C710 366 702 372 686 372 L88 372 C76 372 71 366 72 350 Z" fill="#DCE1D9"/>
+  <path d="M136 268 C146 214 164 186 192 180 C208 176 232 175 252 176 L252 268 Z" fill="#2C4A38"/>
+  <path d="M280 178 L376 178 L376 258 L280 258 Z" fill="#2C4A38"/>
+  <path d="M396 178 L492 178 L492 258 L396 258 Z" fill="#2C4A38"/>
+  <path d="M512 178 L608 178 L608 258 L512 258 Z" fill="#2C4A38"/>
+  <path d="M628 178 L668 180 C692 186 700 214 702 258 L628 258 Z" fill="#2C4A38"/>
+  <path d="M148 262 C158 216 172 192 196 186 L196 262 Z" fill="#4A6A54" opacity="0.5"/>
+  <path d="M264 172 L264 276" stroke="#F4F5F1" stroke-width="10"/>
+  <path d="M262 276 L262 372" stroke="#C3CBC1" stroke-width="3"/>
+  <path d="M132 276 L132 300" stroke="#C3CBC1" stroke-width="3"/>
+  <path d="M129 282 L116 278 C108 276 106 286 115 289 Z" fill="#DCE1D9"/>
+  <path d="M76 308 L112 304 C124 303 126 324 114 325 L76 326 Z" fill="#F6CE86"/>
+  <path d="M704 306 L676 304 L676 328 L704 328 Z" fill="#B8402F"/>
+  <path d="M300 300 L660 300" stroke="#C3CBC1" stroke-width="3"/>
+  <path d="M190 158 L660 158" stroke="#DCE1D9" stroke-width="8" stroke-linecap="round"/>
+
+  <circle cx="196" cy="356" r="50" fill="#1F2C25"/>
+  <circle cx="196" cy="356" r="29" fill="#E9EBE4"/>
+  <circle cx="196" cy="356" r="11" fill="#B17D43"/>
+
+  <circle cx="600" cy="356" r="50" fill="#1F2C25"/>
+  <circle cx="600" cy="356" r="29" fill="#E9EBE4"/>
+  <circle cx="600" cy="356" r="11" fill="#B17D43"/>
+
+</svg>

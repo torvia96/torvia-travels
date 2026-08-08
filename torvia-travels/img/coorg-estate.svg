@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" width="900" height="900" role="img" aria-label="Coffee plants ripening under silver oak trees on a Coorg estate">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E9E9D6"/><stop offset="0.6" stop-color="#D7E2D2"/><stop offset="1" stop-color="#C3D6C6"/>
+    </linearGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2C4934"/><stop offset="1" stop-color="#16261C"/>
+    </linearGradient>
+    <filter id="blur" x="-30%" y="-400%" width="160%" height="900%"><feGaussianBlur stdDeviation="16"/></filter>
+    <g id="leaf">
+      <path d="M0 0 C26 -20 62 -18 82 4 C58 26 22 24 0 0 Z" fill="#2F5637"/>
+      <path d="M0 0 C26 -14 58 -12 82 4" stroke="#437147" stroke-width="3" fill="none"/>
+    </g>
+    <g id="cherry3">
+      <circle cx="0" cy="0" r="13" fill="#AF2A21"/><circle cx="-4" cy="-4" r="4" fill="#DB5C4C" opacity="0.85"/>
+      <circle cx="23" cy="9" r="12" fill="#8F211B"/><circle cx="19" cy="5" r="3.4" fill="#CB4E40" opacity="0.8"/>
+      <circle cx="9" cy="22" r="11" fill="#BE322A"/><circle cx="5" cy="18" r="3.2" fill="#E06A5A" opacity="0.8"/>
+    </g>
+    <g id="bush">
+      <ellipse cx="0" cy="-6" rx="52" ry="38" fill="#1E3324"/>
+      <ellipse cx="-20" cy="-24" rx="32" ry="24" fill="#28422E"/>
+      <ellipse cx="22" cy="-22" rx="30" ry="23" fill="#233A28"/>
+      <ellipse cx="0" cy="-38" rx="24" ry="18" fill="#2E4C34"/>
+      <circle cx="-16" cy="-10" r="5" fill="#B02A21"/><circle cx="14" cy="-4" r="5" fill="#93211B"/>
+      <circle cx="4" cy="-30" r="4.5" fill="#C0322A"/>
+    </g>
+  </defs>
+
+  <rect width="900" height="900" fill="url(#sky)"/>
+  <path d="M0 250 C140 196 260 232 420 190 C580 148 700 216 900 176 L900 460 L0 460 Z" fill="#A9BEAC"/>
+  <ellipse cx="450" cy="256" rx="520" ry="18" fill="#FFFFFF" opacity="0.7" filter="url(#blur)"/>
+  <path d="M0 340 C160 300 300 336 470 292 C640 250 760 314 900 280 L900 520 L0 520 Z" fill="#7B9A81"/>
+  <ellipse cx="300" cy="352" rx="420" ry="16" fill="#FFFFFF" opacity="0.6" filter="url(#blur)"/>
+  <path d="M0 440 C180 404 340 442 520 400 C700 358 800 420 900 396 L900 640 L0 640 Z" fill="#4E7059"/>
+  <path d="M0 540 C200 512 380 548 580 508 C740 476 840 512 900 500 L900 900 L0 900 Z" fill="url(#floor)"/>
+
+  <!-- red earth path through the rows -->
+  <path d="M290 900 C322 792 396 704 516 654 C566 634 606 626 640 624 C596 632 542 650 496 680 C424 726 386 806 372 900 Z" fill="#8A5A38" opacity="0.92"/>
+  <path d="M318 900 C348 800 410 722 516 676 C556 658 592 648 622 644 C580 656 536 672 500 698 C440 742 408 812 398 900 Z" fill="#A87049" opacity="0.55"/>
+
+  <!-- coffee rows -->
+  <g>
+    <use href="#bush" x="90" y="600" transform="scale(0.7)"/>
+    <use href="#bush" x="240" y="596" transform="scale(0.7)"/>
+    <use href="#bush" x="1090" y="600" transform="scale(0.7)"/>
+    <use href="#bush" x="1230" y="592" transform="scale(0.7)"/>
+    <use href="#bush" x="60" y="700" transform="scale(0.88)"/>
+    <use href="#bush" x="200" y="712" transform="scale(0.88)"/>
+    <use href="#bush" x="820" y="706" transform="scale(0.88)"/>
+    <use href="#bush" x="960" y="696" transform="scale(0.88)"/>
+    <use href="#bush" x="60" y="760"/><use href="#bush" x="200" y="774"/>
+    <use href="#bush" x="700" y="768"/><use href="#bush" x="840" y="778"/>
+  </g>
+
+  <!-- silver oak trunks with pepper vines, the shade trees of every Coorg estate -->
+  <g>
+    <path d="M120 900 C112 700 128 560 118 150 L156 150 C150 560 166 700 168 900 Z" fill="#3A5240"/>
+    <path d="M126 880 C140 780 118 700 132 610 C142 548 128 480 136 420" stroke="#5B7A5E" stroke-width="7" fill="none" opacity="0.8"/>
+    <ellipse cx="112" cy="640" rx="16" ry="10" fill="#2F5637"/><ellipse cx="176" cy="700" rx="16" ry="10" fill="#2F5637"/>
+    <ellipse cx="106" cy="530" rx="14" ry="9" fill="#2F5637"/><ellipse cx="182" cy="560" rx="14" ry="9" fill="#2F5637"/>
+    <path d="M760 900 C752 720 770 580 762 150 L806 150 C798 580 816 720 818 900 Z" fill="#33493A"/>
+    <path d="M770 870 C782 770 762 690 776 606 C786 546 772 486 780 436" stroke="#547252" stroke-width="7" fill="none" opacity="0.75"/>
+    <ellipse cx="752" cy="660" rx="16" ry="10" fill="#2A4E31"/><ellipse cx="828" cy="720" rx="16" ry="10" fill="#2A4E31"/>
+  </g>
+
+  <!-- shade canopy overhead -->
+  <g fill="#24402B">
+    <rect x="-20" y="-80" width="940" height="110"/>
+    <ellipse cx="60" cy="60" rx="150" ry="86"/><ellipse cx="210" cy="30" rx="130" ry="72"/>
+    <ellipse cx="360" cy="-6" rx="140" ry="64"/><ellipse cx="700" cy="26" rx="160" ry="80"/>
+    <ellipse cx="850" cy="70" rx="140" ry="90"/><ellipse cx="540" cy="-20" rx="130" ry="56"/>
+  </g>
+  <g fill="#2E4C34" opacity="0.9">
+    <ellipse cx="140" cy="120" rx="70" ry="34"/><ellipse cx="790" cy="130" rx="76" ry="36"/>
+    <ellipse cx="300" cy="86" rx="56" ry="26"/><ellipse cx="640" cy="96" rx="60" ry="28"/>
+  </g>
+
+  <!-- foreground branch with ripe cherries -->
+  <g transform="translate(430 900)">
+    <path d="M-40 20 C40 -40 110 -120 180 -230 C220 -292 280 -330 350 -348" stroke="#3B5B37" stroke-width="14" fill="none" stroke-linecap="round"/>
+    <g transform="translate(110 -120) rotate(-28)"><use href="#leaf"/></g>
+    <g transform="translate(110 -120) rotate(152) scale(0.9)"><use href="#leaf"/></g>
+    <g transform="translate(180 -230) rotate(-18)"><use href="#leaf"/></g>
+    <g transform="translate(180 -230) rotate(160) scale(0.85)"><use href="#leaf"/></g>
+    <g transform="translate(270 -318) rotate(-8)"><use href="#leaf"/></g>
+    <g transform="translate(270 -318) rotate(172) scale(0.8)"><use href="#leaf"/></g>
+    <g transform="translate(146 -178)"><use href="#cherry3"/></g>
+    <g transform="translate(222 -272) scale(0.95)"><use href="#cherry3"/></g>
+    <g transform="translate(324 -338) scale(0.85)"><use href="#cherry3"/></g>
+    <g transform="translate(40 -70) scale(0.9)"><use href="#cherry3"/></g>
+  </g>
+  <ellipse cx="450" cy="898" rx="520" ry="30" fill="#0F1A13" opacity="0.35" filter="url(#blur)"/>
+</svg>

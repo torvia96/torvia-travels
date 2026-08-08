@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" width="800" height="560" role="img" aria-label="Talacauvery temple on the misty Brahmagiri slopes">
+  <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DFE7DA"/><stop offset="0.6" stop-color="#CBDBCB"/><stop offset="1" stop-color="#B7CDBB"/></linearGradient><filter id="blur" x="-30%" y="-400%" width="160%" height="900%"><feGaussianBlur stdDeviation="14"/></filter></defs>
+  <rect width="800" height="560" fill="url(#sky)"/>
+  <path d="M0 210 C30.0 201.7 113.3 160.7 180.0 160.0 C246.7 159.3 326.7 206.7 400.0 206.0 C473.3 205.3 553.3 157.7 620.0 156.0 C686.7 154.3 770.0 189.3 800.0 196.0 L800 560 L0 560 Z" fill="#A5BAA6" opacity="1"/>
+  <ellipse cx="400" cy="224" rx="470" ry="18" fill="#FFFFFF" opacity="0.7" filter="url(#blur)"/>
+  <path d="M0 292 C36.7 284.3 143.3 246.0 220.0 246.0 C296.7 246.0 380.0 292.3 460.0 292.0 C540.0 291.7 643.3 247.0 700.0 244.0 C756.7 241.0 783.3 269.0 800.0 274.0 L800 560 L0 560 Z" fill="#7C9A82" opacity="1"/>
+  <ellipse cx="240" cy="306" rx="380" ry="16" fill="#FFFFFF" opacity="0.65" filter="url(#blur)"/>
+  <ellipse cx="660" cy="296" rx="300" ry="14" fill="#FFFFFF" opacity="0.6" filter="url(#blur)"/>
+  <path d="M0 372 C40.0 366.0 153.3 334.7 240.0 336.0 C326.7 337.3 426.7 379.3 520.0 380.0 C613.3 380.7 753.3 346.7 800.0 340.0 L800 560 L0 560 Z" fill="#557A5F" opacity="1"/>
+  <path d="M0 440 C180 410 420 418 800 396 L800 560 L0 560 Z" fill="#3E5F49"/>
+  <g transform="translate(430 434)"><rect x="-150" y="-16" width="300" height="16" fill="#CFC3A4"/><rect x="-120" y="-86" width="240" height="70" fill="#EFE7D4"/><path d="M-140 -86 L140 -86 L120 -108 L-120 -108 Z" fill="#9A4E3C"/><rect x="-44" y="-170" width="88" height="64" fill="#EFE7D4"/><path d="M-56 -170 L56 -170 L44 -196 L-44 -196 Z" fill="#9A4E3C"/><path d="M-30 -196 C-30 -226 30 -226 30 -196 Z" fill="#B17D43"/><path d="M0 -226 L0 -246" stroke="#B17D43" stroke-width="5"/><circle cx="0" cy="-252" r="8" fill="#D6A45E"/><rect x="-22" y="-70" width="44" height="54" fill="#7C3E33"/><rect x="-96" y="-70" width="26" height="40" fill="#33503C"/><rect x="70" y="-70" width="26" height="40" fill="#33503C"/></g>
+  <path d="M300 452 L560 446 L580 560 L280 560 Z" fill="#D6CBAC"/>
+  <path d="M296 480 L566 474" stroke="#BEB292" stroke-width="5"/>
+  <path d="M290 508 L572 502" stroke="#BEB292" stroke-width="5"/>
+  <path d="M284 536 L578 530" stroke="#BEB292" stroke-width="5"/>
+  <rect x="352" y="486" width="150" height="48" rx="6" fill="#9FC3C4"/>
+  <rect x="352" y="486" width="150" height="12" rx="6" fill="#C6DEDA" opacity="0.8"/>
+  <ellipse cx="400" cy="430" rx="520" ry="20" fill="#FFFFFF" opacity="0.5" filter="url(#blur)"/>
+  <g transform="translate(96 452) scale(0.9)"><path d="M0 0 L0 -52" stroke="#2C4834" stroke-width="4"/><ellipse cx="0" cy="-58" rx="11" ry="8" fill="#2C4834"/><ellipse cx="-10" cy="-46" rx="9" ry="6" fill="#2C4834"/><ellipse cx="10" cy="-42" rx="8" ry="6" fill="#2C4834"/></g>
+  <g transform="translate(700 440) scale(0.85)"><path d="M0 0 L0 -52" stroke="#2C4834" stroke-width="4"/><ellipse cx="0" cy="-58" rx="11" ry="8" fill="#2C4834"/><ellipse cx="-10" cy="-46" rx="9" ry="6" fill="#2C4834"/><ellipse cx="10" cy="-42" rx="8" ry="6" fill="#2C4834"/></g>
+  <g transform="translate(180 462) scale(0.7)"><path d="M0 0 L0 -52" stroke="#2C4834" stroke-width="4"/><ellipse cx="0" cy="-58" rx="11" ry="8" fill="#2C4834"/><ellipse cx="-10" cy="-46" rx="9" ry="6" fill="#2C4834"/><ellipse cx="10" cy="-42" rx="8" ry="6" fill="#2C4834"/></g>
+</svg>

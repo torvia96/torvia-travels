@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" width="800" height="460" role="img" aria-label="Seven seater Innova style MPV, side view">
+  <ellipse cx="400" cy="424" rx="300" ry="20" fill="#294635" opacity="0.13"/>
+
+  <path d="M96 366 C90 326 96 300 122 294 L156 288 C176 244 200 214 236 206 C300 194 468 194 540 208 C566 213 580 232 586 262 L664 282 C692 290 702 312 700 356 C699 374 692 380 676 380 L112 380 C100 380 96 376 96 366 Z" fill="#F4F5F1"/>
+  <path d="M96 360 C150 368 340 374 700 356 C701 372 692 380 676 380 L112 380 C100 380 95 374 96 360 Z" fill="#DCE1D9"/>
+  <path d="M176 284 C192 244 214 222 244 216 C264 212 292 211 314 212 L314 284 Z" fill="#2C4A38"/>
+  <path d="M330 212 L444 214 L444 284 L330 284 Z" fill="#2C4A38"/>
+  <path d="M460 215 L536 220 C556 224 566 240 572 262 L460 262 Z" fill="#2C4A38"/>
+  <path d="M188 278 C202 246 218 228 242 222 L242 278 Z" fill="#4A6A54" opacity="0.5"/>
+  <path d="M322 210 L322 288" stroke="#F4F5F1" stroke-width="9"/>
+  <path d="M452 212 L452 288" stroke="#F4F5F1" stroke-width="9"/>
+  <path d="M320 288 L320 380" stroke="#C3CBC1" stroke-width="3"/>
+  <path d="M450 288 L450 380" stroke="#C3CBC1" stroke-width="3"/>
+  <path d="M172 288 L172 310" stroke="#C3CBC1" stroke-width="3"/>
+  <path d="M169 294 L156 290 C148 288 146 298 155 301 Z" fill="#DCE1D9"/>
+  <path d="M242 200 L470 200" stroke="#DCE1D9" stroke-width="8" stroke-linecap="round"/>
+  <path d="M100 318 L134 314 C146 313 148 332 136 333 L100 334 Z" fill="#F6CE86"/>
+  <path d="M694 318 L668 316 L668 338 L694 338 Z" fill="#B8402F"/>
+  <path d="M260 344 L560 344" stroke="#C3CBC1" stroke-width="3"/>
+
+  <circle cx="200" cy="366" r="48" fill="#1F2C25"/>
+  <circle cx="200" cy="366" r="28" fill="#E9EBE4"/>
+  <circle cx="200" cy="366" r="11" fill="#B17D43"/>
+
+  <circle cx="586" cy="366" r="48" fill="#1F2C25"/>
+  <circle cx="586" cy="366" r="28" fill="#E9EBE4"/>
+  <circle cx="586" cy="366" r="11" fill="#B17D43"/>
+
+</svg>

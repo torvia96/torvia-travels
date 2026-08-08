@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" width="800" height="460" role="img" aria-label="Four seater hatchback cab, side view">
+  <ellipse cx="400" cy="424" rx="300" ry="20" fill="#294635" opacity="0.13"/>
+
+  <path d="M168 372 C162 336 168 314 194 308 L246 300 C264 262 288 238 322 230 C364 220 424 220 462 230 C492 238 518 264 542 296 L570 302 C594 308 604 322 604 348 L604 366 C604 378 598 384 584 384 L182 384 C172 384 168 380 168 372 Z" fill="#F4F5F1"/>
+  <path d="M168 366 C200 372 340 376 604 366 C604 378 598 384 584 384 L182 384 C172 384 167 380 168 366 Z" fill="#DCE1D9"/>
+  <path d="M266 298 C282 266 302 246 328 240 C348 236 376 235 396 236 L396 298 Z" fill="#2C4A38"/>
+  <path d="M412 236 C436 238 456 244 470 252 C490 264 508 278 522 296 L412 296 Z" fill="#2C4A38"/>
+  <path d="M278 292 C292 268 308 252 328 247 L328 292 Z" fill="#4A6A54" opacity="0.5"/>
+  <path d="M404 234 L404 300" stroke="#F4F5F1" stroke-width="9"/>
+  <path d="M402 300 L402 384" stroke="#C3CBC1" stroke-width="3"/>
+  <path d="M262 300 L262 320" stroke="#C3CBC1" stroke-width="3"/>
+  <path d="M259 306 L248 302 C240 300 238 310 246 313 Z" fill="#DCE1D9"/>
+  <path d="M172 330 L204 326 C214 325 216 342 206 343 L172 344 Z" fill="#F6CE86"/>
+  <path d="M598 326 L574 324 L574 346 L598 346 Z" fill="#B8402F"/>
+  <path d="M330 350 L520 350" stroke="#C3CBC1" stroke-width="3"/>
+
+  <circle cx="262" cy="372" r="46" fill="#1F2C25"/>
+  <circle cx="262" cy="372" r="27" fill="#E9EBE4"/>
+  <circle cx="262" cy="372" r="10" fill="#B17D43"/>
+
+  <circle cx="526" cy="372" r="46" fill="#1F2C25"/>
+  <circle cx="526" cy="372" r="27" fill="#E9EBE4"/>
+  <circle cx="526" cy="372" r="10" fill="#B17D43"/>
+
+</svg>

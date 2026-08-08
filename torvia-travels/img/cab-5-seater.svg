@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" width="800" height="460" role="img" aria-label="Five seater sedan cab, side view">
+  <ellipse cx="400" cy="424" rx="300" ry="20" fill="#294635" opacity="0.13"/>
+
+  <path d="M104 372 C98 336 104 314 130 308 L188 300 C206 264 232 240 268 232 C316 222 388 222 430 232 C462 240 492 266 516 298 L664 312 C692 318 700 338 698 366 C697 378 690 384 676 384 L118 384 C108 384 104 380 104 372 Z" fill="#F4F5F1"/>
+  <path d="M104 366 C140 372 320 376 698 366 C699 378 690 384 676 384 L118 384 C108 384 103 380 104 366 Z" fill="#DCE1D9"/>
+  <path d="M208 298 C224 266 246 246 274 240 C296 236 328 236 350 237 L350 298 Z" fill="#2C4A38"/>
+  <path d="M366 238 C392 240 414 244 430 252 C452 264 474 280 490 298 L366 298 Z" fill="#2C4A38"/>
+  <path d="M220 292 C234 268 250 252 272 247 L272 292 Z" fill="#4A6A54" opacity="0.5"/>
+  <path d="M358 236 L358 300" stroke="#F4F5F1" stroke-width="9"/>
+  <path d="M356 300 L356 384" stroke="#C3CBC1" stroke-width="3"/>
+  <path d="M204 300 L204 320" stroke="#C3CBC1" stroke-width="3"/>
+  <path d="M201 306 L190 302 C182 300 180 310 188 313 Z" fill="#DCE1D9"/>
+  <path d="M108 330 L140 326 C150 325 152 342 142 343 L108 344 Z" fill="#F6CE86"/>
+  <path d="M692 328 L668 326 L668 346 L692 346 Z" fill="#B8402F"/>
+  <path d="M280 350 L520 350" stroke="#C3CBC1" stroke-width="3"/>
+  <path d="M520 306 L648 314" stroke="#C3CBC1" stroke-width="3"/>
+
+  <circle cx="208" cy="372" r="46" fill="#1F2C25"/>
+  <circle cx="208" cy="372" r="27" fill="#E9EBE4"/>
+  <circle cx="208" cy="372" r="10" fill="#B17D43"/>
+
+  <circle cx="580" cy="372" r="46" fill="#1F2C25"/>
+  <circle cx="580" cy="372" r="27" fill="#E9EBE4"/>
+  <circle cx="580" cy="372" r="10" fill="#B17D43"/>
+
+</svg>
