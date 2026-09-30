@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Torvia Travels - Coorg cab service. Airport transfers, Coorg sightseeing, local cab hire and outstation trips in hatchback, sedan, Innova and Tempo Traveller vehicles.">
+  <meta name="theme-color" content="#294635">
+  <title>Torvia Travels | Coorg Cab &amp; Travel Services</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+/* ------------------------------------------------------------------
+   Torvia Travels - Coorg cab service
+   Palette: estate green, cream, brass, coffee cherry red
+------------------------------------------------------------------- */
+:root {
+  --green-900: #15251c;
+  --green-800: #1e3025;
+  --green-700: #294635;
+  --green-600: #3a5b45;
+  --cream: #f7f4ec;
+  --cream-card: #fffdf8;
+  --cream-nav: #f8f6ef;
+  --sand: #e9e2d3;
+  --line: #e6e1d5;
+  --brass: #b17d43;
+  --brass-dark: #8b5e31;
+  --cherry: #b0322a;
+  --ink: #233127;
+  --ink-soft: #697269;
+  --wa: #1fa855;
+  --wa-dark: #17853f;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--cream);
+  font-family: "DM Sans", sans-serif;
+  line-height: 1.6;
+}
+
+img { max-width: 100%; display: block; }
+
+:focus-visible {
+  outline: 3px solid var(--brass);
+  outline-offset: 3px;
+}
+
+/* ---------------------------------------------------------- navbar */
+.navbar {
+  height: 76px;
+  background: var(--cream-nav);
+  display: flex;
+  align-items: center;
+  padding: 0 6%;
+  gap: 28px;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid var(--line);
+}
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #203126; margin-right: auto; }
+.brand-mark {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--green-700); color: var(--cream-nav);
+  display: grid; place-items: center;
+  font-family: "Playfair Display", serif; font-size: 22px;
+}
+.brand strong { display: block; font-family: "Playfair Display", serif; font-size: 21px; line-height: 1; }
+.brand small { display: block; font-size: 8px; letter-spacing: 2.6px; margin-top: 4px; color: #5c6a5f; }
+.navbar nav { display: flex; gap: 25px; }
+.navbar nav a { color: #36463b; text-decoration: none; font-size: 14px; font-weight: 600; }
+.navbar nav a:hover { color: var(--brass-dark); }
+.nav-whatsapp {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--green-700); color: #fff; text-decoration: none;
+  padding: 9px 16px; border-radius: 30px; font-size: 13px; font-weight: 700;
+}
+.nav-whatsapp:hover { background: var(--green-600); }
+.menu-toggle { display: none; background: none; border: 0; font-size: 25px; cursor: pointer; color: #294635; }
+
+/* WhatsApp logo sits on a white disc so the brand mark stays legible */
+.wa-ico { background: #fff; border-radius: 50%; padding: 1px; flex: none; }
+
+/* ------------------------------------------------------------ hero */
+.hero {
+  min-height: 660px;
+  position: relative;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjAwIDkwMCIgd2lkdGg9IjE2MDAiIGhlaWdodD0iOTAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IlN1bnJpc2Ugb3ZlciBhIENvb3JnIGNvZmZlZSBlc3RhdGUgd2l0aCBtaXN0eSBoaWxscyBhbmQgcmlwZSBjb2ZmZWUgY2hlcnJpZXMiPgogIDxkZWZzPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJza3kiIHgxPSIwIiB5MT0iMCIgeDI9IjAiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjRjlERkFDIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC40MCIgc3RvcC1jb2xvcj0iI0YxRTdDQyIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNEQ0U2RDIiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8cmFkaWFsR3JhZGllbnQgaWQ9Imdsb3ciIGN4PSIwLjUiIGN5PSIwLjUiIHI9IjAuNSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI0ZCRDA3QyIgc3RvcC1vcGFjaXR5PSIwLjk1Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC41IiBzdG9wLWNvbG9yPSIjRjhDOTdGIiBzdG9wLW9wYWNpdHk9IjAuMzIiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjRjhDOTdGIiBzdG9wLW9wYWNpdHk9IjAiLz4KICAgIDwvcmFkaWFsR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9InJpZGdlMSIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI0JGQ0ZCOSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI0E2QkNBNCIvPjwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9InJpZGdlMiIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzkzQUM4RSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzc0OTQ3QSIvPjwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9InJpZGdlMyIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzYyODQ2NyIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzQ2NjQ0QyIvPjwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9InJpZGdlNCIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzNBNUI0MSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzI3NDEyRiIvPjwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImZvcmUiIHgxPSIwIiB5MT0iMCIgeDI9IjAiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMyMDM3MjgwMCIvPjxzdG9wIG9mZnNldD0iMC4zNSIgc3RvcC1jb2xvcj0iIzFFMzQyNiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzEzMjAxNzAwIi8+PC9saW5lYXJHcmFkaWVudD4KICAgIDxmaWx0ZXIgaWQ9InNvZnQiIHg9Ii0yMCUiIHk9Ii0zMDAlIiB3aWR0aD0iMTQwJSIgaGVpZ2h0PSI3MDAlIj48ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIxOCIvPjwvZmlsdGVyPgogICAgPGZpbHRlciBpZD0ic29mdGVyIiB4PSItMjAlIiB5PSItNDAwJSIgd2lkdGg9IjE0MCUiIGhlaWdodD0iOTAwJSI+PGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMzAiLz48L2ZpbHRlcj4KICAgIDxnIGlkPSJvYWsiPgogICAgICA8cGF0aCBkPSJNMCAwIEwwIC03MCIgc3Ryb2tlPSIjMkI0NDMwIiBzdHJva2Utd2lkdGg9IjQiLz4KICAgICAgPGVsbGlwc2UgY3g9IjAiIGN5PSItNzgiIHJ4PSIxMiIgcnk9IjgiIGZpbGw9IiMyQjQ0MzAiLz4KICAgICAgPGVsbGlwc2UgY3g9Ii0xMSIgY3k9Ii02NCIgcng9IjEwIiByeT0iNiIgZmlsbD0iIzJCNDQzMCIvPgogICAgICA8ZWxsaXBzZSBjeD0iMTEiIGN5PSItNTgiIHJ4PSI5IiByeT0iNiIgZmlsbD0iIzJCNDQzMCIvPgogICAgICA8ZWxsaXBzZSBjeD0iLTIiIGN5PSItNDgiIHJ4PSI4IiByeT0iNSIgZmlsbD0iIzJCNDQzMCIvPgogICAgPC9nPgogICAgPGcgaWQ9ImJ1c2giPgogICAgICA8ZWxsaXBzZSBjeD0iMCIgY3k9Ii00IiByeD0iMzQiIHJ5PSIyNiIgZmlsbD0iIzFDMkYyMSIvPgogICAgICA8ZWxsaXBzZSBjeD0iLTEzIiBjeT0iLTE2IiByeD0iMjIiIHJ5PSIxNyIgZmlsbD0iIzI4NDIyRSIvPgogICAgICA8ZWxsaXBzZSBjeD0iMTUiIGN5PSItMTQiIHJ4PSIyMCIgcnk9IjE2IiBmaWxsPSIjMjMzQTI4Ii8+CiAgICAgIDxlbGxpcHNlIGN4PSIxIiBjeT0iLTI2IiByeD0iMTYiIHJ5PSIxMiIgZmlsbD0iIzJFNEMzNCIvPgogICAgICA8ZWxsaXBzZSBjeD0iLTgiIGN5PSItMzAiIHJ4PSI5IiByeT0iNyIgZmlsbD0iIzM3NUEzQyIgb3BhY2l0eT0iMC44Ii8+CiAgICA8L2c+CiAgICA8ZyBpZD0ibGVhZiI+CiAgICAgIDxwYXRoIGQ9Ik0wIDAgQzI0IC0xOCA1OCAtMTYgNzYgNCBDNTQgMjQgMjAgMjIgMCAwIFoiIGZpbGw9IiMyRjU2MzciLz4KICAgICAgPHBhdGggZD0iTTAgMCBDMjQgLTEzIDU0IC0xMSA3NiA0IiBzdHJva2U9IiM0MzcxNDciIHN0cm9rZS13aWR0aD0iMi41IiBmaWxsPSJub25lIi8+CiAgICA8L2c+CiAgICA8ZyBpZD0iY2hlcnJpZXMiPgogICAgICA8Y2lyY2xlIGN4PSIwIiBjeT0iMCIgcj0iMTIiIGZpbGw9IiNBRjJBMjEiLz48Y2lyY2xlIGN4PSItMy41IiBjeT0iLTMuNSIgcj0iMy42IiBmaWxsPSIjREI1QzRDIiBvcGFjaXR5PSIwLjg1Ii8+CiAgICAgIDxjaXJjbGUgY3g9IjIxIiBjeT0iOCIgcj0iMTEiIGZpbGw9IiM4RjIxMUIiLz48Y2lyY2xlIGN4PSIxNyIgY3k9IjQiIHI9IjMuMiIgZmlsbD0iI0NCNEU0MCIgb3BhY2l0eT0iMC44Ii8+CiAgICAgIDxjaXJjbGUgY3g9IjgiIGN5PSIyMCIgcj0iMTAiIGZpbGw9IiNCRTMyMkEiLz48Y2lyY2xlIGN4PSI0LjUiIGN5PSIxNiIgcj0iMyIgZmlsbD0iI0UwNkE1QSIgb3BhY2l0eT0iMC44Ii8+CiAgICA8L2c+CiAgPC9kZWZzPgoKICA8cmVjdCB3aWR0aD0iMTYwMCIgaGVpZ2h0PSI5MDAiIGZpbGw9InVybCgjc2t5KSIvPgogIDxjaXJjbGUgY3g9IjEyMDAiIGN5PSIyODYiIHI9IjMyMCIgZmlsbD0idXJsKCNnbG93KSIvPgogIDxjaXJjbGUgY3g9IjEyMDAiIGN5PSIyODYiIHI9IjYyIiBmaWxsPSIjRkNFM0IwIiBvcGFjaXR5PSIwLjkyIi8+CgogIDxwYXRoIGQ9Ik0wIDQ1MiBDMTgwIDM3MiAzMjAgNDAyIDQ3MCAzNTYgQzYyMCAzMTAgNzYwIDM5NiA5NDAgMzY2IEMxMTIwIDMzNiAxMjQwIDI5MiAxNDIwIDM0MCBDMTUwMCAzNjIgMTU2MCAzNzIgMTYwMCAzNjYgTDE2MDAgOTAwIEwwIDkwMCBaIiBmaWxsPSJ1cmwoI3JpZGdlMSkiLz4KICA8ZWxsaXBzZSBjeD0iODIwIiBjeT0iNDQ2IiByeD0iOTAwIiByeT0iMTQiIGZpbGw9IiNGRkZGRkYiIG9wYWNpdHk9IjAuNiIgZmlsdGVyPSJ1cmwoI3NvZnRlcikiLz4KCiAgPHBhdGggZD0iTTAgNTQwIEMxNjAgNDk2IDMwMCA1MjggNDYwIDQ4NiBDNjQwIDQzOCA3ODAgNTIwIDk2MCA1MDAgQzExNDAgNDgwIDEzMDAgNDI4IDE0NzAgNDcwIEMxNTQwIDQ4OCAxNTgwIDQ5NiAxNjAwIDQ5NCBMMTYwMCA5MDAgTDAgOTAwIFoiIGZpbGw9InVybCgjcmlkZ2UyKSIvPgogIDx1c2UgaHJlZj0iI29hayIgeD0iNDYyIiB5PSI0OTAiIG9wYWNpdHk9IjAuNTUiLz48dXNlIGhyZWY9IiNvYWsiIHg9IjExNDAiIHk9IjQ4NCIgb3BhY2l0eT0iMC41NSIvPgogIDxlbGxpcHNlIGN4PSI1MjAiIGN5PSI1NDAiIHJ4PSI3MjAiIHJ5PSIxMyIgZmlsbD0iI0ZGRkZGRiIgb3BhY2l0eT0iMC41NSIgZmlsdGVyPSJ1cmwoI3NvZnQpIi8+CiAgPGVsbGlwc2UgY3g9IjEzNDAiIGN5PSI1MTAiIHJ4PSIzODAiIHJ5PSIxMSIgZmlsbD0iI0ZGRkZGRiIgb3BhY2l0eT0iMC41IiBmaWx0ZXI9InVybCgjc29mdCkiLz4KCiAgPHBhdGggZD0iTTAgNjQwIEMxNDAgNjA2IDI2MCA2MzAgNDIwIDU4OCBDNTgwIDU0NiA3MDAgNjE4IDg4MCA2MDYgQzEwNjAgNTk0IDEyMjAgNTQyIDE0MDAgNTc4IEMxNTAwIDU5OCAxNTYwIDYwNiAxNjAwIDYwMiBMMTYwMCA5MDAgTDAgOTAwIFoiIGZpbGw9InVybCgjcmlkZ2UzKSIvPgogIDx1c2UgaHJlZj0iI29hayIgeD0iMTgwIiB5PSI2MjIiLz48dXNlIGhyZWY9IiNvYWsiIHg9IjQyMCIgeT0iNTkyIi8+PHVzZSBocmVmPSIjb2FrIiB4PSI3MDAiIHk9IjYyMCIvPgogIDx1c2UgaHJlZj0iI29hayIgeD0iMTAwMCIgeT0iNjAwIi8+PHVzZSBocmVmPSIjb2FrIiB4PSIxMjkwIiB5PSI1NjYiLz48dXNlIGhyZWY9IiNvYWsiIHg9IjE1MjAiIHk9IjYwNiIvPgogIDxlbGxpcHNlIGN4PSI5MDAiIGN5PSI2NDgiIHJ4PSI4NjAiIHJ5PSIxMiIgZmlsbD0iI0ZGRkZGRiIgb3BhY2l0eT0iMC40IiBmaWx0ZXI9InVybCgjc29mdCkiLz4KCiAgPHBhdGggZD0iTTAgNzMwIEMxODAgNzAwIDM0MCA3MjYgNTIwIDY5MCBDNzAwIDY1NCA4NjAgNzE2IDEwNjAgNzA0IEMxMjQwIDY5NCAxNDIwIDY1NiAxNjAwIDY5MCBMMTYwMCA5MDAgTDAgOTAwIFoiIGZpbGw9InVybCgjcmlkZ2U0KSIvPgoKICA8IS0tIHJlZC1lYXJ0aCBlc3RhdGUgcm9hZCB3aW5kaW5nIHVwIHRocm91Z2ggdGhlIGNvZmZlZSByb3dzIC0tPgogIDxwYXRoIGQ9Ik02MDAgOTEwIEM2NjAgODMwIDY0MCA3ODYgNzA2IDc0OCBDNzcyIDcxMCA4NTYgNzA2IDkzNCA3MTggQzg2MiA3MDIgNzgwIDcwMCA3MjYgNzM2IEM2NjYgNzc2IDcwMCA4MjggNzYwIDkxMCBaIiBmaWxsPSIjOEE1QTM4IiBvcGFjaXR5PSIwLjkyIi8+CiAgPHBhdGggZD0iTTYzNiA5MTAgQzY4OCA4MzQgNjY4IDc5NCA3MjYgNzYwIEM3ODIgNzI4IDg1NiA3MjIgOTI2IDczMCBDODYwIDcyMCA3OTIgNzIwIDc0NCA3NTAgQzY5MiA3ODIgNzE2IDgzMCA3NDIgOTEwIFoiIGZpbGw9IiNBQzdBNTAiIG9wYWNpdHk9IjAuNiIvPgoKICA8Zz4KICAgIDx1c2UgaHJlZj0iI2J1c2giIHg9IjYwIiB5PSI3NzAiIHRyYW5zZm9ybT0ic2NhbGUoMC43MikgdHJhbnNsYXRlKDI0IDMwMCkiLz4KICAgIDx1c2UgaHJlZj0iI2J1c2giIHg9IjEyMCIgeT0iNzU2IiBvcGFjaXR5PSIwLjk1Ii8+PHVzZSBocmVmPSIjYnVzaCIgeD0iMjUwIiB5PSI3NDQiLz48dXNlIGhyZWY9IiNidXNoIiB4PSIzODAiIHk9Ijc1NiIvPgogICAgPHVzZSBocmVmPSIjYnVzaCIgeD0iNTEwIiB5PSI3MzYiLz48dXNlIGhyZWY9IiNidXNoIiB4PSI5NTAiIHk9IjcyNiIvPjx1c2UgaHJlZj0iI2J1c2giIHg9IjEwNDAiIHk9Ijc0NCIvPjx1c2UgaHJlZj0iI2J1c2giIHg9IjExNTAiIHk9IjczNiIvPgogICAgPHVzZSBocmVmPSIjYnVzaCIgeD0iMTI5MCIgeT0iNzI2Ii8+PHVzZSBocmVmPSIjYnVzaCIgeD0iMTQzMCIgeT0iNzIwIi8+PHVzZSBocmVmPSIjYnVzaCIgeD0iMTU2MCIgeT0iNzMwIi8+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDQ2KSBzY2FsZSgxLjEyKSI+CiAgICAgIDx1c2UgaHJlZj0iI2J1c2giIHg9IjQwIiB5PSI3MDAiLz48dXNlIGhyZWY9IiNidXNoIiB4PSIxNzAiIHk9IjcxMiIvPjx1c2UgaHJlZj0iI2J1c2giIHg9IjMwMCIgeT0iNzAwIi8+CiAgICAgIDx1c2UgaHJlZj0iI2J1c2giIHg9IjQzMCIgeT0iNzEyIi8+PHVzZSBocmVmPSIjYnVzaCIgeD0iOTAwIiB5PSI3MDYiLz48dXNlIGhyZWY9IiNidXNoIiB4PSIxMDMwIiB5PSI3MTQiLz4KICAgICAgPHVzZSBocmVmPSIjYnVzaCIgeD0iMTE2MCIgeT0iNzAyIi8+PHVzZSBocmVmPSIjYnVzaCIgeD0iMTI5MCIgeT0iNzEyIi8+PHVzZSBocmVmPSIjYnVzaCIgeD0iMTQxMCIgeT0iNzAwIi8+CiAgICA8L2c+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDEyMCkgc2NhbGUoMS4zKSI+CiAgICAgIDx1c2UgaHJlZj0iI2J1c2giIHg9IjIwIiB5PSI2NDAiLz48dXNlIGhyZWY9IiNidXNoIiB4PSIxNTAiIHk9IjY1MiIvPjx1c2UgaHJlZj0iI2J1c2giIHg9IjI4MCIgeT0iNjQwIi8+CiAgICAgIDx1c2UgaHJlZj0iI2J1c2giIHg9IjcwMCIgeT0iNjQ2Ii8+PHVzZSBocmVmPSIjYnVzaCIgeD0iODMwIiB5PSI2NTQiLz48dXNlIGhyZWY9IiNidXNoIiB4PSI5NjAiIHk9IjY0MiIvPgogICAgICA8dXNlIGhyZWY9IiNidXNoIiB4PSIxMDkwIiB5PSI2NTIiLz48dXNlIGhyZWY9IiNidXNoIiB4PSIxMjEwIiB5PSI2NDAiLz4KICAgIDwvZz4KICA8L2c+CiAgPHJlY3QgeT0iNzcwIiB3aWR0aD0iMTYwMCIgaGVpZ2h0PSIxMzAiIGZpbGw9InVybCgjZm9yZSkiIG9wYWNpdHk9IjAuNTUiLz4KCiAgPCEtLSBmb3JlZ3JvdW5kIGNvZmZlZSBicmFuY2gsIHJpZ2h0IG9mIHRoZSBoZWFkbGluZSAtLT4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMTMwIDkwMCkiPgogICAgPHBhdGggZD0iTTQ0MCAxMCBDMzIwIC01MCAyMzYgLTE1NiAxNjIgLTI1MiBDMTIwIC0zMDYgNzYgLTMzOCAyMiAtMzYwIiBzdHJva2U9IiMzQjVCMzciIHN0cm9rZS13aWR0aD0iMTIiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTYyIC0yNTIpIHJvdGF0ZSgtMjgpIj48dXNlIGhyZWY9IiNsZWFmIi8+PC9nPgogICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTYyIC0yNTIpIHJvdGF0ZSgxNTIpIHNjYWxlKDAuOTIpIj48dXNlIGhyZWY9IiNsZWFmIi8+PC9nPgogICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjYyIC0xNjYpIHJvdGF0ZSgtMTQpIj48dXNlIGhyZWY9IiNsZWFmIi8+PC9nPgogICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjYyIC0xNjYpIHJvdGF0ZSgxNjYpIHNjYWxlKDAuODYpIj48dXNlIGhyZWY9IiNsZWFmIi8+PC9nPgogICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzUyIC04NCkgcm90YXRlKC02KSI+PHVzZSBocmVmPSIjbGVhZiIvPjwvZz4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDM1MiAtODQpIHJvdGF0ZSgxNzQpIHNjYWxlKDAuOCkiPjx1c2UgaHJlZj0iI2xlYWYiLz48L2c+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2NiAtMzQ0KSByb3RhdGUoLTQ2KSBzY2FsZSgwLjgyKSI+PHVzZSBocmVmPSIjbGVhZiIvPjwvZz4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDIwNiAtMjM0KSI+PHVzZSBocmVmPSIjY2hlcnJpZXMiLz48L2c+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzMDQgLTE1Mikgc2NhbGUoMC45NSkiPjx1c2UgaHJlZj0iI2NoZXJyaWVzIi8+PC9nPgogICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzkyIC03MCkgc2NhbGUoMC45KSI+PHVzZSBocmVmPSIjY2hlcnJpZXMiLz48L2c+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMDQgLTMyNikgc2NhbGUoMC43OCkiPjx1c2UgaHJlZj0iI2NoZXJyaWVzIi8+PC9nPgogIDwvZz4KCiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTQwIDkwMCkiPgogICAgPHBhdGggZD0iTTIwIDIwIEM5MCAtNjAgMTQwIC0xMTYgMjI2IC0xNjQiIHN0cm9rZT0iIzMzNTEyRiIgc3Ryb2tlLXdpZHRoPSIxMCIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNDAgLTExNikgcm90YXRlKC0yNikgc2NhbGUoMC43OCkiPjx1c2UgaHJlZj0iI2xlYWYiLz48L2c+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMjYgLTE2NCkgcm90YXRlKC00Mikgc2NhbGUoMC42OCkiPjx1c2UgaHJlZj0iI2xlYWYiLz48L2c+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNzggLTE0Nikgc2NhbGUoMC43KSI+PHVzZSBocmVmPSIjY2hlcnJpZXMiLz48L2c+CiAgPC9nPgo8L3N2Zz4K");
+  background-size: cover;
+  background-position: center bottom;
+  display: flex;
+  align-items: center;
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(15,27,19,.93), rgba(15,27,19,.66) 46%, rgba(15,27,19,.14));
+}
+.hero-content { position: relative; color: #fff; width: min(700px, 100%); margin-left: 8%; padding: 70px 20px 70px 0; }
+.eyebrow { font-size: 11px; font-weight: 800; letter-spacing: 2.4px; color: var(--brass); margin: 0 0 14px; }
+.hero .eyebrow { color: #e6b878; }
+.hero h1, h2 { font-family: "Playfair Display", serif; }
+.hero h1 { font-size: clamp(46px, 7vw, 78px); line-height: 1.02; margin: 0 0 22px; }
+.hero h1 em { color: #d6a66a; font-style: normal; }
+.hero-copy { font-size: 18px; max-width: 600px; color: #edf0eb; }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+.trust-row { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 32px; font-size: 12px; color: #e7eee8; }
+.trust-row span { position: relative; padding-left: 14px; }
+.trust-row span::before {
+  content: ""; position: absolute; left: 0; top: 7px;
+  width: 7px; height: 7px; border-radius: 50%; background: var(--cherry);
+}
+
+/* --------------------------------------------------------- buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+  padding: 14px 22px; border-radius: 4px; text-decoration: none;
+  border: 1px solid transparent; font-weight: 800; cursor: pointer; font: inherit;
+  font-weight: 700;
+}
+.btn-primary { background: var(--brass); color: #fff; }
+.btn-primary:hover { background: #966533; }
+.btn-light { background: var(--cream-nav); color: var(--green-700); }
+.btn-light:hover { background: #fff; }
+.btn-dark { background: var(--green-700); color: #fff; }
+.btn-dark:hover { background: var(--green-600); }
+.btn-wa { background: var(--wa); color: #fff; }
+.btn-wa:hover { background: var(--wa-dark); }
+.full { width: 100%; border: 0; }
+
+/* ------------------------------------------------- quick book strip */
+.quick-book {
+  width: min(1080px, 88%);
+  margin: -45px auto 0;
+  position: relative; z-index: 2;
+  background: var(--cream-card);
+  padding: 22px 28px;
+  box-shadow: 0 15px 35px #24332618;
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+  border: 1px solid #ebe5d8;
+  border-left: 4px solid var(--cherry);
+}
+.quick-book > div { display: flex; align-items: center; gap: 14px; }
+.quick-book small { display: block; color: var(--ink-soft); }
+.mini-icon { font-size: 26px; }
+
+/* ------------------------------------------------------ facts strip */
+.facts-strip {
+  width: min(1080px, 88%);
+  margin: 26px auto 0;
+  display: flex; flex-wrap: wrap; gap: 10px 30px;
+  justify-content: center;
+  font-size: 12px; color: var(--ink-soft);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 14px 0;
+}
+.facts-strip strong { color: var(--green-700); font-family: "Playfair Display", serif; font-size: 14px; }
+
+/* --------------------------------------------------------- sections */
+.section { padding: 90px 7%; }
+.section-heading { max-width: 700px; margin: 0 auto 45px; }
+.section-heading.centered { text-align: center; }
+.section-heading h2, .tour-content h2, .booking-copy h2, .contact-section h2 {
+  font-size: 45px; line-height: 1.1; margin: 0 0 15px;
+}
+.section-heading > p:last-child, .booking-copy > p { color: var(--ink-soft); }
+
+.cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.card { background: var(--cream-card); padding: 28px; border: 1px solid #e9e3d7; }
+.card-icon { font-size: 30px; margin-bottom: 18px; }
+.card h3 { font-family: "Playfair Display", serif; font-size: 23px; margin: 0 0 9px; }
+.card p { font-size: 14px; color: #687169; min-height: 88px; }
+.card a, .text-link { color: var(--brass-dark); text-decoration: none; font-weight: 800; font-size: 13px; }
+.card a:hover, .text-link:hover { text-decoration: underline; }
+
+/* ------------------------------------------------ fleet / cab cards */
+.fleet-section { background: #f2efe4; }
+.fleet-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+
+.cab-card {
+  position: relative;
+  display: flex; flex-direction: column;
+  background: var(--cream-card);
+  border: 1px solid #e4ddce;
+  border-radius: 6px;
+  padding: 14px 14px 0;
+  margin: 0;
+  cursor: pointer;
+  transition: box-shadow .18s ease, border-color .18s ease, transform .18s ease;
+  font-size: inherit; font-weight: 400; color: inherit;
+}
+.cab-card:hover { box-shadow: 0 14px 30px #2433261a; transform: translateY(-3px); }
+.cab-card input { position: absolute; opacity: 0; pointer-events: none; }
+.cab-card img { background: #f6f7f2; border-radius: 4px; }
+.cab-body { padding: 14px 4px 6px; flex: 1; }
+.cab-body h3 { font-family: "Playfair Display", serif; font-size: 22px; margin: 0 0 4px; }
+.cab-meta { font-size: 12px; font-weight: 700; letter-spacing: .4px; color: var(--brass-dark); margin: 0 0 10px; }
+.cab-body p { font-size: 14px; color: #687169; margin: 0; }
+.cab-pick {
+  display: flex; align-items: center; gap: 8px; justify-content: center;
+  margin: 0 -14px; padding: 13px;
+  border-top: 1px solid #ece5d6;
+  font-size: 13px; font-weight: 800; color: var(--green-700);
+}
+.tick {
+  width: 18px; height: 18px; border-radius: 50%;
+  border: 1.5px solid #c3bda9; color: transparent;
+  display: grid; place-items: center; font-size: 11px; flex: none;
+}
+.cab-card.is-selected,
+.cab-card:has(input:checked) { border-color: var(--brass); box-shadow: 0 0 0 2px var(--brass) inset, 0 14px 30px #2433261a; }
+.cab-card.is-selected .cab-pick,
+.cab-card:has(input:checked) .cab-pick { background: var(--green-700); color: #fff; border-radius: 0 0 5px 5px; }
+.cab-card.is-selected .tick,
+.cab-card:has(input:checked) .tick { background: var(--cherry); border-color: var(--cherry); color: #fff; }
+.cab-card:has(input:focus-visible) { outline: 3px solid var(--brass); outline-offset: 3px; }
+.fleet-note {
+  margin: 26px 0 0; text-align: center; font-size: 13px; color: var(--ink-soft);
+}
+.fleet-note.chosen { color: var(--green-700); font-weight: 700; }
+
+/* ----------------------------------------------- estate tour section */
+.tour-section { display: grid; grid-template-columns: 1fr 1fr; background: var(--green-700); color: #fff; }
+.tour-image {
+  min-height: 540px;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgOTAwIiB3aWR0aD0iOTAwIiBoZWlnaHQ9IjkwMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJDb2ZmZWUgcGxhbnRzIHJpcGVuaW5nIHVuZGVyIHNpbHZlciBvYWsgdHJlZXMgb24gYSBDb29yZyBlc3RhdGUiPgogIDxkZWZzPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJza3kiIHgxPSIwIiB5MT0iMCIgeDI9IjAiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjRTlFOUQ2Ii8+PHN0b3Agb2Zmc2V0PSIwLjYiIHN0b3AtY29sb3I9IiNEN0UyRDIiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNDM0Q2QzYiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImZsb29yIiB4MT0iMCIgeTE9IjAiIHgyPSIwIiB5Mj0iMSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzJDNDkzNCIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzE2MjYxQyIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxmaWx0ZXIgaWQ9ImJsdXIiIHg9Ii0zMCUiIHk9Ii00MDAlIiB3aWR0aD0iMTYwJSIgaGVpZ2h0PSI5MDAlIj48ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIxNiIvPjwvZmlsdGVyPgogICAgPGcgaWQ9ImxlYWYiPgogICAgICA8cGF0aCBkPSJNMCAwIEMyNiAtMjAgNjIgLTE4IDgyIDQgQzU4IDI2IDIyIDI0IDAgMCBaIiBmaWxsPSIjMkY1NjM3Ii8+CiAgICAgIDxwYXRoIGQ9Ik0wIDAgQzI2IC0xNCA1OCAtMTIgODIgNCIgc3Ryb2tlPSIjNDM3MTQ3IiBzdHJva2Utd2lkdGg9IjMiIGZpbGw9Im5vbmUiLz4KICAgIDwvZz4KICAgIDxnIGlkPSJjaGVycnkzIj4KICAgICAgPGNpcmNsZSBjeD0iMCIgY3k9IjAiIHI9IjEzIiBmaWxsPSIjQUYyQTIxIi8+PGNpcmNsZSBjeD0iLTQiIGN5PSItNCIgcj0iNCIgZmlsbD0iI0RCNUM0QyIgb3BhY2l0eT0iMC44NSIvPgogICAgICA8Y2lyY2xlIGN4PSIyMyIgY3k9IjkiIHI9IjEyIiBmaWxsPSIjOEYyMTFCIi8+PGNpcmNsZSBjeD0iMTkiIGN5PSI1IiByPSIzLjQiIGZpbGw9IiNDQjRFNDAiIG9wYWNpdHk9IjAuOCIvPgogICAgICA8Y2lyY2xlIGN4PSI5IiBjeT0iMjIiIHI9IjExIiBmaWxsPSIjQkUzMjJBIi8+PGNpcmNsZSBjeD0iNSIgY3k9IjE4IiByPSIzLjIiIGZpbGw9IiNFMDZBNUEiIG9wYWNpdHk9IjAuOCIvPgogICAgPC9nPgogICAgPGcgaWQ9ImJ1c2giPgogICAgICA8ZWxsaXBzZSBjeD0iMCIgY3k9Ii02IiByeD0iNTIiIHJ5PSIzOCIgZmlsbD0iIzFFMzMyNCIvPgogICAgICA8ZWxsaXBzZSBjeD0iLTIwIiBjeT0iLTI0IiByeD0iMzIiIHJ5PSIyNCIgZmlsbD0iIzI4NDIyRSIvPgogICAgICA8ZWxsaXBzZSBjeD0iMjIiIGN5PSItMjIiIHJ4PSIzMCIgcnk9IjIzIiBmaWxsPSIjMjMzQTI4Ii8+CiAgICAgIDxlbGxpcHNlIGN4PSIwIiBjeT0iLTM4IiByeD0iMjQiIHJ5PSIxOCIgZmlsbD0iIzJFNEMzNCIvPgogICAgICA8Y2lyY2xlIGN4PSItMTYiIGN5PSItMTAiIHI9IjUiIGZpbGw9IiNCMDJBMjEiLz48Y2lyY2xlIGN4PSIxNCIgY3k9Ii00IiByPSI1IiBmaWxsPSIjOTMyMTFCIi8+CiAgICAgIDxjaXJjbGUgY3g9IjQiIGN5PSItMzAiIHI9IjQuNSIgZmlsbD0iI0MwMzIyQSIvPgogICAgPC9nPgogIDwvZGVmcz4KCiAgPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI5MDAiIGZpbGw9InVybCgjc2t5KSIvPgogIDxwYXRoIGQ9Ik0wIDI1MCBDMTQwIDE5NiAyNjAgMjMyIDQyMCAxOTAgQzU4MCAxNDggNzAwIDIxNiA5MDAgMTc2IEw5MDAgNDYwIEwwIDQ2MCBaIiBmaWxsPSIjQTlCRUFDIi8+CiAgPGVsbGlwc2UgY3g9IjQ1MCIgY3k9IjI1NiIgcng9IjUyMCIgcnk9IjE4IiBmaWxsPSIjRkZGRkZGIiBvcGFjaXR5PSIwLjciIGZpbHRlcj0idXJsKCNibHVyKSIvPgogIDxwYXRoIGQ9Ik0wIDM0MCBDMTYwIDMwMCAzMDAgMzM2IDQ3MCAyOTIgQzY0MCAyNTAgNzYwIDMxNCA5MDAgMjgwIEw5MDAgNTIwIEwwIDUyMCBaIiBmaWxsPSIjN0I5QTgxIi8+CiAgPGVsbGlwc2UgY3g9IjMwMCIgY3k9IjM1MiIgcng9IjQyMCIgcnk9IjE2IiBmaWxsPSIjRkZGRkZGIiBvcGFjaXR5PSIwLjYiIGZpbHRlcj0idXJsKCNibHVyKSIvPgogIDxwYXRoIGQ9Ik0wIDQ0MCBDMTgwIDQwNCAzNDAgNDQyIDUyMCA0MDAgQzcwMCAzNTggODAwIDQyMCA5MDAgMzk2IEw5MDAgNjQwIEwwIDY0MCBaIiBmaWxsPSIjNEU3MDU5Ii8+CiAgPHBhdGggZD0iTTAgNTQwIEMyMDAgNTEyIDM4MCA1NDggNTgwIDUwOCBDNzQwIDQ3NiA4NDAgNTEyIDkwMCA1MDAgTDkwMCA5MDAgTDAgOTAwIFoiIGZpbGw9InVybCgjZmxvb3IpIi8+CgogIDwhLS0gcmVkIGVhcnRoIHBhdGggdGhyb3VnaCB0aGUgcm93cyAtLT4KICA8cGF0aCBkPSJNMjkwIDkwMCBDMzIyIDc5MiAzOTYgNzA0IDUxNiA2NTQgQzU2NiA2MzQgNjA2IDYyNiA2NDAgNjI0IEM1OTYgNjMyIDU0MiA2NTAgNDk2IDY4MCBDNDI0IDcyNiAzODYgODA2IDM3MiA5MDAgWiIgZmlsbD0iIzhBNUEzOCIgb3BhY2l0eT0iMC45MiIvPgogIDxwYXRoIGQ9Ik0zMTggOTAwIEMzNDggODAwIDQxMCA3MjIgNTE2IDY3NiBDNTU2IDY1OCA1OTIgNjQ4IDYyMiA2NDQgQzU4MCA2NTYgNTM2IDY3MiA1MDAgNjk4IEM0NDAgNzQyIDQwOCA4MTIgMzk4IDkwMCBaIiBmaWxsPSIjQTg3MDQ5IiBvcGFjaXR5PSIwLjU1Ii8+CgogIDwhLS0gY29mZmVlIHJvd3MgLS0+CiAgPGc+CiAgICA8dXNlIGhyZWY9IiNidXNoIiB4PSI5MCIgeT0iNjAwIiB0cmFuc2Zvcm09InNjYWxlKDAuNykiLz4KICAgIDx1c2UgaHJlZj0iI2J1c2giIHg9IjI0MCIgeT0iNTk2IiB0cmFuc2Zvcm09InNjYWxlKDAuNykiLz4KICAgIDx1c2UgaHJlZj0iI2J1c2giIHg9IjEwOTAiIHk9IjYwMCIgdHJhbnNmb3JtPSJzY2FsZSgwLjcpIi8+CiAgICA8dXNlIGhyZWY9IiNidXNoIiB4PSIxMjMwIiB5PSI1OTIiIHRyYW5zZm9ybT0ic2NhbGUoMC43KSIvPgogICAgPHVzZSBocmVmPSIjYnVzaCIgeD0iNjAiIHk9IjcwMCIgdHJhbnNmb3JtPSJzY2FsZSgwLjg4KSIvPgogICAgPHVzZSBocmVmPSIjYnVzaCIgeD0iMjAwIiB5PSI3MTIiIHRyYW5zZm9ybT0ic2NhbGUoMC44OCkiLz4KICAgIDx1c2UgaHJlZj0iI2J1c2giIHg9IjgyMCIgeT0iNzA2IiB0cmFuc2Zvcm09InNjYWxlKDAuODgpIi8+CiAgICA8dXNlIGhyZWY9IiNidXNoIiB4PSI5NjAiIHk9IjY5NiIgdHJhbnNmb3JtPSJzY2FsZSgwLjg4KSIvPgogICAgPHVzZSBocmVmPSIjYnVzaCIgeD0iNjAiIHk9Ijc2MCIvPjx1c2UgaHJlZj0iI2J1c2giIHg9IjIwMCIgeT0iNzc0Ii8+CiAgICA8dXNlIGhyZWY9IiNidXNoIiB4PSI3MDAiIHk9Ijc2OCIvPjx1c2UgaHJlZj0iI2J1c2giIHg9Ijg0MCIgeT0iNzc4Ii8+CiAgPC9nPgoKICA8IS0tIHNpbHZlciBvYWsgdHJ1bmtzIHdpdGggcGVwcGVyIHZpbmVzLCB0aGUgc2hhZGUgdHJlZXMgb2YgZXZlcnkgQ29vcmcgZXN0YXRlIC0tPgogIDxnPgogICAgPHBhdGggZD0iTTEyMCA5MDAgQzExMiA3MDAgMTI4IDU2MCAxMTggMTUwIEwxNTYgMTUwIEMxNTAgNTYwIDE2NiA3MDAgMTY4IDkwMCBaIiBmaWxsPSIjM0E1MjQwIi8+CiAgICA8cGF0aCBkPSJNMTI2IDg4MCBDMTQwIDc4MCAxMTggNzAwIDEzMiA2MTAgQzE0MiA1NDggMTI4IDQ4MCAxMzYgNDIwIiBzdHJva2U9IiM1QjdBNUUiIHN0cm9rZS13aWR0aD0iNyIgZmlsbD0ibm9uZSIgb3BhY2l0eT0iMC44Ii8+CiAgICA8ZWxsaXBzZSBjeD0iMTEyIiBjeT0iNjQwIiByeD0iMTYiIHJ5PSIxMCIgZmlsbD0iIzJGNTYzNyIvPjxlbGxpcHNlIGN4PSIxNzYiIGN5PSI3MDAiIHJ4PSIxNiIgcnk9IjEwIiBmaWxsPSIjMkY1NjM3Ii8+CiAgICA8ZWxsaXBzZSBjeD0iMTA2IiBjeT0iNTMwIiByeD0iMTQiIHJ5PSI5IiBmaWxsPSIjMkY1NjM3Ii8+PGVsbGlwc2UgY3g9IjE4MiIgY3k9IjU2MCIgcng9IjE0IiByeT0iOSIgZmlsbD0iIzJGNTYzNyIvPgogICAgPHBhdGggZD0iTTc2MCA5MDAgQzc1MiA3MjAgNzcwIDU4MCA3NjIgMTUwIEw4MDYgMTUwIEM3OTggNTgwIDgxNiA3MjAgODE4IDkwMCBaIiBmaWxsPSIjMzM0OTNBIi8+CiAgICA8cGF0aCBkPSJNNzcwIDg3MCBDNzgyIDc3MCA3NjIgNjkwIDc3NiA2MDYgQzc4NiA1NDYgNzcyIDQ4NiA3ODAgNDM2IiBzdHJva2U9IiM1NDcyNTIiIHN0cm9rZS13aWR0aD0iNyIgZmlsbD0ibm9uZSIgb3BhY2l0eT0iMC43NSIvPgogICAgPGVsbGlwc2UgY3g9Ijc1MiIgY3k9IjY2MCIgcng9IjE2IiByeT0iMTAiIGZpbGw9IiMyQTRFMzEiLz48ZWxsaXBzZSBjeD0iODI4IiBjeT0iNzIwIiByeD0iMTYiIHJ5PSIxMCIgZmlsbD0iIzJBNEUzMSIvPgogIDwvZz4KCiAgPCEtLSBzaGFkZSBjYW5vcHkgb3ZlcmhlYWQgLS0+CiAgPGcgZmlsbD0iIzI0NDAyQiI+CiAgICA8cmVjdCB4PSItMjAiIHk9Ii04MCIgd2lkdGg9Ijk0MCIgaGVpZ2h0PSIxMTAiLz4KICAgIDxlbGxpcHNlIGN4PSI2MCIgY3k9IjYwIiByeD0iMTUwIiByeT0iODYiLz48ZWxsaXBzZSBjeD0iMjEwIiBjeT0iMzAiIHJ4PSIxMzAiIHJ5PSI3MiIvPgogICAgPGVsbGlwc2UgY3g9IjM2MCIgY3k9Ii02IiByeD0iMTQwIiByeT0iNjQiLz48ZWxsaXBzZSBjeD0iNzAwIiBjeT0iMjYiIHJ4PSIxNjAiIHJ5PSI4MCIvPgogICAgPGVsbGlwc2UgY3g9Ijg1MCIgY3k9IjcwIiByeD0iMTQwIiByeT0iOTAiLz48ZWxsaXBzZSBjeD0iNTQwIiBjeT0iLTIwIiByeD0iMTMwIiByeT0iNTYiLz4KICA8L2c+CiAgPGcgZmlsbD0iIzJFNEMzNCIgb3BhY2l0eT0iMC45Ij4KICAgIDxlbGxpcHNlIGN4PSIxNDAiIGN5PSIxMjAiIHJ4PSI3MCIgcnk9IjM0Ii8+PGVsbGlwc2UgY3g9Ijc5MCIgY3k9IjEzMCIgcng9Ijc2IiByeT0iMzYiLz4KICAgIDxlbGxpcHNlIGN4PSIzMDAiIGN5PSI4NiIgcng9IjU2IiByeT0iMjYiLz48ZWxsaXBzZSBjeD0iNjQwIiBjeT0iOTYiIHJ4PSI2MCIgcnk9IjI4Ii8+CiAgPC9nPgoKICA8IS0tIGZvcmVncm91bmQgYnJhbmNoIHdpdGggcmlwZSBjaGVycmllcyAtLT4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0MzAgOTAwKSI+CiAgICA8cGF0aCBkPSJNLTQwIDIwIEM0MCAtNDAgMTEwIC0xMjAgMTgwIC0yMzAgQzIyMCAtMjkyIDI4MCAtMzMwIDM1MCAtMzQ4IiBzdHJva2U9IiMzQjVCMzciIHN0cm9rZS13aWR0aD0iMTQiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTEwIC0xMjApIHJvdGF0ZSgtMjgpIj48dXNlIGhyZWY9IiNsZWFmIi8+PC9nPgogICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTEwIC0xMjApIHJvdGF0ZSgxNTIpIHNjYWxlKDAuOSkiPjx1c2UgaHJlZj0iI2xlYWYiLz48L2c+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxODAgLTIzMCkgcm90YXRlKC0xOCkiPjx1c2UgaHJlZj0iI2xlYWYiLz48L2c+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxODAgLTIzMCkgcm90YXRlKDE2MCkgc2NhbGUoMC44NSkiPjx1c2UgaHJlZj0iI2xlYWYiLz48L2c+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyNzAgLTMxOCkgcm90YXRlKC04KSI+PHVzZSBocmVmPSIjbGVhZiIvPjwvZz4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI3MCAtMzE4KSByb3RhdGUoMTcyKSBzY2FsZSgwLjgpIj48dXNlIGhyZWY9IiNsZWFmIi8+PC9nPgogICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTQ2IC0xNzgpIj48dXNlIGhyZWY9IiNjaGVycnkzIi8+PC9nPgogICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjIyIC0yNzIpIHNjYWxlKDAuOTUpIj48dXNlIGhyZWY9IiNjaGVycnkzIi8+PC9nPgogICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzI0IC0zMzgpIHNjYWxlKDAuODUpIj48dXNlIGhyZWY9IiNjaGVycnkzIi8+PC9nPgogICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDAgLTcwKSBzY2FsZSgwLjkpIj48dXNlIGhyZWY9IiNjaGVycnkzIi8+PC9nPgogIDwvZz4KICA8ZWxsaXBzZSBjeD0iNDUwIiBjeT0iODk4IiByeD0iNTIwIiByeT0iMzAiIGZpbGw9IiMwRjFBMTMiIG9wYWNpdHk9IjAuMzUiIGZpbHRlcj0idXJsKCNibHVyKSIvPgo8L3N2Zz4K");
+  background-size: cover;
+  background-position: center;
+}
+.tour-content { padding: 75px 9%; align-self: center; }
+.tour-content .eyebrow { color: #d9ad78; }
+.tour-content h2 { font-size: 48px; }
+.tour-content > p { color: #d9e0d9; }
+.destination-list { display: flex; flex-wrap: wrap; gap: 9px; margin: 26px 0; }
+.destination-list span { border: 1px solid #ffffff3b; border-radius: 30px; padding: 7px 13px; font-size: 12px; }
+.tour-content .text-link { color: #e0b47c; }
+
+/* ------------------------------------------------------ place cards */
+.places-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.place-card {
+  position: relative; display: flex; flex-direction: column; text-align: left;
+  background: var(--cream-card); border: 1px solid #e4ddce; border-radius: 6px;
+  padding: 0; overflow: hidden; cursor: pointer; font: inherit; color: inherit;
+  transition: box-shadow .18s ease, transform .18s ease, border-color .18s ease;
+}
+.place-card:hover { box-shadow: 0 14px 30px #2433261a; transform: translateY(-3px); }
+.place-card img { width: 100%; height: 190px; object-fit: cover; }
+.place-tag {
+  position: absolute; top: 12px; left: 12px;
+  background: #fffdf8ee; color: var(--green-700);
+  font-size: 11px; font-weight: 800; letter-spacing: .3px;
+  padding: 5px 10px; border-radius: 20px;
+}
+.place-body { display: block; padding: 16px 18px 8px; flex: 1; }
+.place-body strong { display: block; font-family: "Playfair Display", serif; font-size: 21px; font-weight: 600; }
+.place-body small { display: block; margin-top: 6px; font-size: 13.5px; color: #687169; line-height: 1.5; }
+.place-add {
+  display: flex; align-items: center; gap: 8px;
+  padding: 13px 18px; border-top: 1px solid #ece5d6;
+  font-size: 13px; font-weight: 800; color: var(--green-700);
+}
+.place-card[aria-pressed="true"] { border-color: var(--brass); box-shadow: 0 0 0 2px var(--brass) inset; }
+.place-card[aria-pressed="true"] .place-add { background: var(--green-700); color: #fff; }
+.place-card[aria-pressed="true"] .tick { background: var(--cherry); border-color: var(--cherry); color: #fff; }
+.places-extra { margin-top: 26px; text-align: center; }
+.places-extra p { font-size: 13.5px; color: var(--ink-soft); max-width: 780px; margin: 0 auto; }
+
+/* --------------------------------------------------------- why grid */
+.why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; max-width: 1050px; margin: auto; }
+.why-grid div { border-top: 2px solid #c99a63; padding-top: 20px; }
+.why-label { font-size: 11px; font-weight: 800; letter-spacing: 2px; color: var(--brass-dark); text-transform: uppercase; }
+.why-grid h3 { font-family: "Playfair Display", serif; font-size: 25px; margin: 8px 0; }
+.why-grid p { color: var(--ink-soft); font-size: 14px; }
+
+/* ---------------------------------------------------- booking form */
+.booking-section {
+  background: var(--sand);
+  padding: 90px 8%;
+  display: grid; grid-template-columns: .85fr 1.15fr; gap: 60px;
+}
+.booking-copy { align-self: center; }
+.booking-copy h2 { font-size: 50px; }
+.booking-note {
+  margin-top: 25px; padding: 15px; background: var(--cream-nav);
+  border-left: 3px solid var(--brass); font-size: 14px;
+}
+.booking-form { background: var(--cream-card); padding: 32px; box-shadow: 0 12px 35px #24332612; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+label { display: block; font-size: 12px; font-weight: 800; color: #445148; margin-bottom: 15px; }
+input, select, textarea {
+  width: 100%; margin-top: 7px; padding: 12px 13px;
+  border: 1px solid #dcd6c9; background: #fff; font: inherit; font-size: 14px;
+  outline: none; border-radius: 3px;
+}
+input:focus, select:focus, textarea:focus { border-color: var(--brass); }
+.form-status { font-size: 12px; color: #6a746d; min-height: 18px; }
+
+.stops-field { margin-bottom: 15px; }
+.stops-head {
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: 12px; font-weight: 800; color: #445148;
+}
+.link-btn {
+  background: none; border: 0; padding: 0; cursor: pointer;
+  font: inherit; font-size: 11px; font-weight: 800;
+  color: var(--brass-dark); text-decoration: underline;
+}
+.stops-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 9px; }
+.stops-list .chip {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: #f1efe4; border: 1px solid #e0d9c8; border-radius: 30px;
+  padding: 6px 8px 6px 12px; font-size: 12px; font-weight: 700; color: var(--green-700);
+}
+.stops-list .chip button {
+  background: none; border: 0; cursor: pointer; font: inherit;
+  color: var(--cherry); font-size: 14px; line-height: 1; padding: 0 2px;
+}
+.stops-empty { font-size: 12px; font-weight: 500; color: #7c847d; }
+
+/* ------------------------------------------------------ contact bar */
+.contact-section {
+  padding: 75px 8%; background: var(--green-800); color: #fff;
+  display: flex; justify-content: space-between; align-items: center; gap: 40px;
+}
+.contact-section h2 { font-size: 46px; }
+.contact-section p:not(.eyebrow) { color: #d6ded7; max-width: 600px; }
+.contact-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+footer {
+  background: var(--green-900); color: #dce3dd; padding: 30px 7%;
+  display: flex; justify-content: space-between; align-items: center; font-size: 12px;
+}
+.footer-brand { display: flex; align-items: center; gap: 10px; }
+.footer-brand strong { display: block; font-family: "Playfair Display", serif; font-size: 16px; }
+.footer-brand small { color: #aab6ad; }
+
+/* --------------------------------------------- floating WhatsApp CTA */
+.floating-wa {
+  position: fixed; right: 20px; bottom: 20px;
+  width: 60px; height: 60px; border-radius: 50%;
+  display: grid; place-items: center; z-index: 30;
+  background: #fff;
+  box-shadow: 0 8px 24px #0000002e;
+  transition: transform .18s ease;
+}
+.floating-wa img { width: 60px; height: 60px; }
+.floating-wa:hover { transform: translateY(-3px); }
+.floating-wa::after {
+  content: ""; position: absolute; inset: -6px; border-radius: 50%;
+  border: 2px solid var(--wa); opacity: .55;
+  animation: ring 2.4s ease-out infinite;
+}
+@keyframes ring {
+  0% { transform: scale(.86); opacity: .6; }
+  70% { transform: scale(1.18); opacity: 0; }
+  100% { transform: scale(1.18); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .floating-wa::after { animation: none; }
+  .cab-card, .place-card, .floating-wa { transition: none; }
+}
+
+/* -------------------------------------------------------- responsive */
+@media (max-width: 1080px) {
+  .fleet-grid { grid-template-columns: repeat(2, 1fr); }
+  .places-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 900px) {
+  .navbar { padding: 0 5%; }
+  .navbar nav {
+    display: none; position: absolute; top: 76px; left: 0; right: 0;
+    background: var(--cream-nav); padding: 20px 5%;
+    flex-direction: column; gap: 15px; border-bottom: 1px solid #ddd;
+  }
+  .navbar nav.open { display: flex; }
+  .menu-toggle { display: block; }
+  .nav-whatsapp { display: none; }
+  .hero-content { margin-left: 6%; }
+  .cards { grid-template-columns: 1fr 1fr; }
+  .tour-section, .booking-section { grid-template-columns: 1fr; }
+  .tour-image { min-height: 340px; }
+  .booking-copy { max-width: 650px; }
+  .why-grid { grid-template-columns: 1fr; }
+  .contact-section { display: block; }
+  .contact-actions { margin-top: 25px; }
+}
+
+@media (max-width: 600px) {
+  .hero { min-height: 620px; background-position: 62% bottom; }
+  .hero-content { margin-left: 5%; padding-right: 5%; }
+  .hero h1 { font-size: 44px; }
+  .hero-copy { font-size: 16px; }
+  .hero-overlay { background: linear-gradient(180deg, rgba(15,27,19,.92), rgba(15,27,19,.72) 60%, rgba(15,27,19,.5)); }
+  .quick-book { display: block; width: 90%; margin-top: -25px; }
+  .quick-book .btn { margin-top: 18px; width: 100%; }
+  .facts-strip { gap: 8px 18px; }
+  .cards, .fleet-grid, .places-grid { grid-template-columns: 1fr; }
+  .section { padding: 68px 6%; }
+  .section-heading h2, .tour-content h2, .booking-copy h2, .contact-section h2 { font-size: 36px; }
+  .card p { min-height: 0; }
+  .tour-content { padding: 60px 7%; }
+  .booking-section { padding: 60px 6%; gap: 32px; }
+  .booking-form { padding: 22px; }
+  .form-row { grid-template-columns: 1fr; }
+  footer { display: block; text-align: center; }
+  .footer-brand { justify-content: center; margin-bottom: 15px; }
+  .trust-row { gap: 10px; flex-direction: column; }
+  .hero-actions .btn { width: 100%; }
+  .place-card img { height: 170px; }
+  .floating-wa { right: 16px; bottom: 16px; }
+}
+
+</style>
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="#home" aria-label="Torvia Travels home">
+      <span class="brand-mark">T</span>
+      <span><strong>Torvia</strong><small>TRAVELS &middot; KODAGU</small></span>
+    </a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">&#9776;</button>
+    <nav id="nav">
+      <a href="#services">Services</a>
+      <a href="#fleet">Our Cabs</a>
+      <a href="#places">Coorg Places</a>
+      <a href="#why-us">Why Us</a>
+      <a href="#booking">Book a Cab</a>
+    </nav>
+    <a class="nav-whatsapp" data-whatsapp href="#">
+      <img class="wa-ico" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IS0tIFVwbG9hZGVkIHRvOiBTVkcgUmVwbywgd3d3LnN2Z3JlcG8uY29tLCBHZW5lcmF0b3I6IFNWRyBSZXBvIE1peGVyIFRvb2xzIC0tPgo8c3ZnIHdpZHRoPSI4MDBweCIgaGVpZ2h0PSI4MDBweCIgdmlld0JveD0iMCAwIDMyIDMyIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNiAzMUMyMy43MzIgMzEgMzAgMjQuNzMyIDMwIDE3QzMwIDkuMjY4MDEgMjMuNzMyIDMgMTYgM0M4LjI2ODAxIDMgMiA5LjI2ODAxIDIgMTdDMiAxOS41MTA5IDIuNjYxIDIxLjg2NzQgMy44MTg0NyAyMy45MDVMMiAzMUw5LjMxNDg2IDI5LjMwMzhDMTEuMzAxNCAzMC4zODU0IDEzLjU3ODkgMzEgMTYgMzFaTTE2IDI4Ljg0NjJDMjIuNTQyNSAyOC44NDYyIDI3Ljg0NjIgMjMuNTQyNSAyNy44NDYyIDE3QzI3Ljg0NjIgMTAuNDU3NiAyMi41NDI1IDUuMTUzODUgMTYgNS4xNTM4NUM5LjQ1NzU1IDUuMTUzODUgNC4xNTM4NSAxMC40NTc2IDQuMTUzODUgMTdDNC4xNTM4NSAxOS41MjYxIDQuOTQ0NSAyMS44Njc1IDYuMjkxODQgMjMuNzkwMkw1LjIzMDc3IDI3Ljc2OTJMOS4yNzk5MyAyNi43NTY5QzExLjE4OTQgMjguMDc0NiAxMy41MDQ2IDI4Ljg0NjIgMTYgMjguODQ2MloiIGZpbGw9IiNCRkM4RDAiLz4NCjxwYXRoIGQ9Ik0yOCAxNkMyOCAyMi42Mjc0IDIyLjYyNzQgMjggMTYgMjhDMTMuNDcyMiAyOCAxMS4xMjY5IDI3LjIxODQgOS4xOTI2NiAyNS44ODM3TDUuMDkwOTEgMjYuOTA5MUw2LjE2NTc2IDIyLjg3ODRDNC44MDA5MiAyMC45MzA3IDQgMTguNTU4OSA0IDE2QzQgOS4zNzI1OCA5LjM3MjU4IDQgMTYgNEMyMi42Mjc0IDQgMjggOS4zNzI1OCAyOCAxNloiIGZpbGw9InVybCgjcGFpbnQwX2xpbmVhcl84N183MjY0KSIvPg0KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNiAzMEMyMy43MzIgMzAgMzAgMjMuNzMyIDMwIDE2QzMwIDguMjY4MDEgMjMuNzMyIDIgMTYgMkM4LjI2ODAxIDIgMiA4LjI2ODAxIDIgMTZDMiAxOC41MTA5IDIuNjYxIDIwLjg2NzQgMy44MTg0NyAyMi45MDVMMiAzMEw5LjMxNDg2IDI4LjMwMzhDMTEuMzAxNCAyOS4zODU0IDEzLjU3ODkgMzAgMTYgMzBaTTE2IDI3Ljg0NjJDMjIuNTQyNSAyNy44NDYyIDI3Ljg0NjIgMjIuNTQyNSAyNy44NDYyIDE2QzI3Ljg0NjIgOS40NTc1NSAyMi41NDI1IDQuMTUzODUgMTYgNC4xNTM4NUM5LjQ1NzU1IDQuMTUzODUgNC4xNTM4NSA5LjQ1NzU1IDQuMTUzODUgMTZDNC4xNTM4NSAxOC41MjYxIDQuOTQ0NSAyMC44Njc1IDYuMjkxODQgMjIuNzkwMkw1LjIzMDc3IDI2Ljc2OTJMOS4yNzk5MyAyNS43NTY5QzExLjE4OTQgMjcuMDc0NiAxMy41MDQ2IDI3Ljg0NjIgMTYgMjcuODQ2MloiIGZpbGw9IndoaXRlIi8+DQo8cGF0aCBkPSJNMTIuNSA5LjQ5OTg5QzEyLjE2NzIgOC44MzEzMSAxMS42NTY1IDguODkwNSAxMS4xNDA3IDguODkwNUMxMC4yMTg4IDguODkwNSA4Ljc4MTI1IDkuOTk0NzggOC43ODEyNSAxMi4wNUM4Ljc4MTI1IDEzLjczNDMgOS41MjM0NSAxNS41NzggMTIuMDI0NCAxOC4zMzYxQzE0LjQzOCAyMC45OTc5IDE3LjYwOTQgMjIuMzc0OCAyMC4yNDIyIDIyLjMyNzlDMjIuODc1IDIyLjI4MTEgMjMuNDE2NyAyMC4wMTU0IDIzLjQxNjcgMTkuMjUwM0MyMy40MTY3IDE4LjkxMTIgMjMuMjA2MiAxOC43NDIgMjMuMDYxMyAxOC42OTZDMjIuMTY0MSAxOC4yNjU0IDIwLjUwOTMgMTcuNDYzMSAyMC4xMzI4IDE3LjMxMjRDMTkuNzU2MyAxNy4xNjE3IDE5LjU1OTcgMTcuMzY1NiAxOS40Mzc1IDE3LjQ3NjVDMTkuMDk2MSAxNy44MDE4IDE4LjQxOTMgMTguNzYwOCAxOC4xODc1IDE4Ljk3NjVDMTcuOTU1OCAxOS4xOTIyIDE3LjYxMDMgMTkuMDgzIDE3LjQ2NjUgMTkuMDAxNUMxNi45Mzc0IDE4Ljc4OTIgMTUuNTAyOSAxOC4xNTExIDE0LjM1OTUgMTcuMDQyNkMxMi45NDUzIDE1LjY3MTggMTIuODYyMyAxNS4yMDAxIDEyLjU5NTkgMTQuNzgwM0MxMi4zODI4IDE0LjQ0NDQgMTIuNTM5MiAxNC4yMzg0IDEyLjYxNzIgMTQuMTQ4M0MxMi45MjE5IDEzLjc5NjggMTMuMzQyNiAxMy4yNTQgMTMuNTMxMyAxMi45ODQzQzEzLjcxOTkgMTIuNzE0NSAxMy41NzAyIDEyLjMwNSAxMy40ODAzIDEyLjA1QzEzLjA5MzggMTAuOTUzIDEyLjc2NjMgMTAuMDM0NyAxMi41IDkuNDk5ODlaIiBmaWxsPSJ3aGl0ZSIvPg0KPGRlZnM+DQo8bGluZWFyR3JhZGllbnQgaWQ9InBhaW50MF9saW5lYXJfODdfNzI2NCIgeDE9IjI2LjUiIHkxPSI3IiB4Mj0iNCIgeTI9IjI4IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+DQo8c3RvcCBzdG9wLWNvbG9yPSIjNUJEMDY2Ii8+DQo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMyN0I0M0UiLz4NCjwvbGluZWFyR3JhZGllbnQ+DQo8L2RlZnM+DQo8L3N2Zz4=" alt="" width="20" height="20">WhatsApp
+    </a>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="eyebrow">MADIKERI BASED &middot; COFFEE COUNTRY ROUTES &middot; EASY BOOKING</p>
+        <h1>Your Journey<br><em>Through Coorg</em><br>Starts Here.</h1>
+        <p class="hero-copy">Cabs for airport transfers, estate and waterfall sightseeing, hotel pickups and outstation journeys across Kodagu.</p>
+        <div class="hero-actions">
+          <a class="btn btn-wa" data-whatsapp href="#">
+            <img class="wa-ico" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IS0tIFVwbG9hZGVkIHRvOiBTVkcgUmVwbywgd3d3LnN2Z3JlcG8uY29tLCBHZW5lcmF0b3I6IFNWRyBSZXBvIE1peGVyIFRvb2xzIC0tPgo8c3ZnIHdpZHRoPSI4MDBweCIgaGVpZ2h0PSI4MDBweCIgdmlld0JveD0iMCAwIDMyIDMyIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNiAzMUMyMy43MzIgMzEgMzAgMjQuNzMyIDMwIDE3QzMwIDkuMjY4MDEgMjMuNzMyIDMgMTYgM0M4LjI2ODAxIDMgMiA5LjI2ODAxIDIgMTdDMiAxOS41MTA5IDIuNjYxIDIxLjg2NzQgMy44MTg0NyAyMy45MDVMMiAzMUw5LjMxNDg2IDI5LjMwMzhDMTEuMzAxNCAzMC4zODU0IDEzLjU3ODkgMzEgMTYgMzFaTTE2IDI4Ljg0NjJDMjIuNTQyNSAyOC44NDYyIDI3Ljg0NjIgMjMuNTQyNSAyNy44NDYyIDE3QzI3Ljg0NjIgMTAuNDU3NiAyMi41NDI1IDUuMTUzODUgMTYgNS4xNTM4NUM5LjQ1NzU1IDUuMTUzODUgNC4xNTM4NSAxMC40NTc2IDQuMTUzODUgMTdDNC4xNTM4NSAxOS41MjYxIDQuOTQ0NSAyMS44Njc1IDYuMjkxODQgMjMuNzkwMkw1LjIzMDc3IDI3Ljc2OTJMOS4yNzk5MyAyNi43NTY5QzExLjE4OTQgMjguMDc0NiAxMy41MDQ2IDI4Ljg0NjIgMTYgMjguODQ2MloiIGZpbGw9IiNCRkM4RDAiLz4NCjxwYXRoIGQ9Ik0yOCAxNkMyOCAyMi42Mjc0IDIyLjYyNzQgMjggMTYgMjhDMTMuNDcyMiAyOCAxMS4xMjY5IDI3LjIxODQgOS4xOTI2NiAyNS44ODM3TDUuMDkwOTEgMjYuOTA5MUw2LjE2NTc2IDIyLjg3ODRDNC44MDA5MiAyMC45MzA3IDQgMTguNTU4OSA0IDE2QzQgOS4zNzI1OCA5LjM3MjU4IDQgMTYgNEMyMi42Mjc0IDQgMjggOS4zNzI1OCAyOCAxNloiIGZpbGw9InVybCgjcGFpbnQwX2xpbmVhcl84N183MjY0KSIvPg0KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNiAzMEMyMy43MzIgMzAgMzAgMjMuNzMyIDMwIDE2QzMwIDguMjY4MDEgMjMuNzMyIDIgMTYgMkM4LjI2ODAxIDIgMiA4LjI2ODAxIDIgMTZDMiAxOC41MTA5IDIuNjYxIDIwLjg2NzQgMy44MTg0NyAyMi45MDVMMiAzMEw5LjMxNDg2IDI4LjMwMzhDMTEuMzAxNCAyOS4zODU0IDEzLjU3ODkgMzAgMTYgMzBaTTE2IDI3Ljg0NjJDMjIuNTQyNSAyNy44NDYyIDI3Ljg0NjIgMjIuNTQyNSAyNy44NDYyIDE2QzI3Ljg0NjIgOS40NTc1NSAyMi41NDI1IDQuMTUzODUgMTYgNC4xNTM4NUM5LjQ1NzU1IDQuMTUzODUgNC4xNTM4NSA5LjQ1NzU1IDQuMTUzODUgMTZDNC4xNTM4NSAxOC41MjYxIDQuOTQ0NSAyMC44Njc1IDYuMjkxODQgMjIuNzkwMkw1LjIzMDc3IDI2Ljc2OTJMOS4yNzk5MyAyNS43NTY5QzExLjE4OTQgMjcuMDc0NiAxMy41MDQ2IDI3Ljg0NjIgMTYgMjcuODQ2MloiIGZpbGw9IndoaXRlIi8+DQo8cGF0aCBkPSJNMTIuNSA5LjQ5OTg5QzEyLjE2NzIgOC44MzEzMSAxMS42NTY1IDguODkwNSAxMS4xNDA3IDguODkwNUMxMC4yMTg4IDguODkwNSA4Ljc4MTI1IDkuOTk0NzggOC43ODEyNSAxMi4wNUM4Ljc4MTI1IDEzLjczNDMgOS41MjM0NSAxNS41NzggMTIuMDI0NCAxOC4zMzYxQzE0LjQzOCAyMC45OTc5IDE3LjYwOTQgMjIuMzc0OCAyMC4yNDIyIDIyLjMyNzlDMjIuODc1IDIyLjI4MTEgMjMuNDE2NyAyMC4wMTU0IDIzLjQxNjcgMTkuMjUwM0MyMy40MTY3IDE4LjkxMTIgMjMuMjA2MiAxOC43NDIgMjMuMDYxMyAxOC42OTZDMjIuMTY0MSAxOC4yNjU0IDIwLjUwOTMgMTcuNDYzMSAyMC4xMzI4IDE3LjMxMjRDMTkuNzU2MyAxNy4xNjE3IDE5LjU1OTcgMTcuMzY1NiAxOS40Mzc1IDE3LjQ3NjVDMTkuMDk2MSAxNy44MDE4IDE4LjQxOTMgMTguNzYwOCAxOC4xODc1IDE4Ljk3NjVDMTcuOTU1OCAxOS4xOTIyIDE3LjYxMDMgMTkuMDgzIDE3LjQ2NjUgMTkuMDAxNUMxNi45Mzc0IDE4Ljc4OTIgMTUuNTAyOSAxOC4xNTExIDE0LjM1OTUgMTcuMDQyNkMxMi45NDUzIDE1LjY3MTggMTIuODYyMyAxNS4yMDAxIDEyLjU5NTkgMTQuNzgwM0MxMi4zODI4IDE0LjQ0NDQgMTIuNTM5MiAxNC4yMzg0IDEyLjYxNzIgMTQuMTQ4M0MxMi45MjE5IDEzLjc5NjggMTMuMzQyNiAxMy4yNTQgMTMuNTMxMyAxMi45ODQzQzEzLjcxOTkgMTIuNzE0NSAxMy41NzAyIDEyLjMwNSAxMy40ODAzIDEyLjA1QzEzLjA5MzggMTAuOTUzIDEyLjc2NjMgMTAuMDM0NyAxMi41IDkuNDk5ODlaIiBmaWxsPSJ3aGl0ZSIvPg0KPGRlZnM+DQo8bGluZWFyR3JhZGllbnQgaWQ9InBhaW50MF9saW5lYXJfODdfNzI2NCIgeDE9IjI2LjUiIHkxPSI3IiB4Mj0iNCIgeTI9IjI4IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+DQo8c3RvcCBzdG9wLWNvbG9yPSIjNUJEMDY2Ii8+DQo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMyN0I0M0UiLz4NCjwvbGluZWFyR3JhZGllbnQ+DQo8L2RlZnM+DQo8L3N2Zz4=" alt="" width="22" height="22">Book on WhatsApp
+          </a>
+          <a class="btn btn-light" data-call href="#">Call 9008522092</a>
+        </div>
+        <div class="trust-row">
+          <span>Local drivers who know the ghat roads</span>
+          <span>Hatchback to 12 seater Tempo Traveller</span>
+          <span>Book direct, no app needed</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="quick-book">
+      <div>
+        <span class="mini-icon" aria-hidden="true">&#9749;</span>
+        <div><strong>Need a cab in Coorg?</strong><small>Send your route, date and how many people are travelling.</small></div>
+      </div>
+      <a class="btn btn-dark" href="#booking">Request a Booking <span aria-hidden="true">&rarr;</span></a>
+    </section>
+
+    <section class="facts-strip" aria-label="Approximate road distances from Madikeri">
+      <span><strong>Madikeri</strong> our base town</span>
+      <span><strong>Mysuru</strong> approx. 120 km</span>
+      <span><strong>Bengaluru</strong> approx. 260 km</span>
+      <span><strong>Mangaluru</strong> approx. 150 km</span>
+      <span><strong>Kannur</strong> approx. 115 km</span>
+    </section>
+
+    <section class="section" id="services">
+      <div class="section-heading centered">
+        <p class="eyebrow">WHAT WE OFFER</p>
+        <h2>Travel made simple.</h2>
+        <p>From your first pickup to the last drop, Torvia Travels helps you move around coffee country comfortably.</p>
+      </div>
+      <div class="cards services-grid">
+        <article class="card service-card">
+          <div class="card-icon" aria-hidden="true">&#9992;</div>
+          <h3>Airport Transfers</h3>
+          <p>Pickup and drop between Coorg and the Bengaluru, Mysuru, Mangaluru or Kannur airports.</p>
+          <a href="#booking">Request a ride &rarr;</a>
+        </article>
+        <article class="card service-card">
+          <div class="card-icon" aria-hidden="true">&#127807;</div>
+          <h3>Coorg Sightseeing</h3>
+          <p>Waterfalls, sunrise viewpoints, coffee estates, the Cauvery banks and monastery stops.</p>
+          <a href="#places">See the places &rarr;</a>
+        </article>
+        <article class="card service-card">
+          <div class="card-icon" aria-hidden="true">&#128663;</div>
+          <h3>Local Cab Hire</h3>
+          <p>Half day, full day and point to point runs around Madikeri, Kushalnagar and Virajpet.</p>
+          <a href="#booking">Request a ride &rarr;</a>
+        </article>
+        <article class="card service-card">
+          <div class="card-icon" aria-hidden="true">&#129517;</div>
+          <h3>Outstation Trips</h3>
+          <p>Journeys from Coorg to Mysuru, Bengaluru, Wayanad, Ooty and further south.</p>
+          <a href="#booking">Plan a trip &rarr;</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section fleet-section" id="fleet">
+      <div class="section-heading centered">
+        <p class="eyebrow">CHOOSE YOUR VEHICLE</p>
+        <h2>Which cab do you need?</h2>
+        <p>Tap a vehicle to add it to your booking. Not sure? Pick the closest one and we will suggest the right fit for your group and luggage.</p>
+      </div>
+
+      <div class="fleet-grid" role="radiogroup" aria-label="Choose a vehicle">
+        <label class="cab-card">
+          <input type="radio" name="fleetChoice" value="4 Seater Hatchback">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNDYwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjQ2MCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJGb3VyIHNlYXRlciBoYXRjaGJhY2sgY2FiLCBzaWRlIHZpZXciPgogIDxlbGxpcHNlIGN4PSI0MDAiIGN5PSI0MjQiIHJ4PSIzMDAiIHJ5PSIyMCIgZmlsbD0iIzI5NDYzNSIgb3BhY2l0eT0iMC4xMyIvPgoKICA8cGF0aCBkPSJNMTY4IDM3MiBDMTYyIDMzNiAxNjggMzE0IDE5NCAzMDggTDI0NiAzMDAgQzI2NCAyNjIgMjg4IDIzOCAzMjIgMjMwIEMzNjQgMjIwIDQyNCAyMjAgNDYyIDIzMCBDNDkyIDIzOCA1MTggMjY0IDU0MiAyOTYgTDU3MCAzMDIgQzU5NCAzMDggNjA0IDMyMiA2MDQgMzQ4IEw2MDQgMzY2IEM2MDQgMzc4IDU5OCAzODQgNTg0IDM4NCBMMTgyIDM4NCBDMTcyIDM4NCAxNjggMzgwIDE2OCAzNzIgWiIgZmlsbD0iI0Y0RjVGMSIvPgogIDxwYXRoIGQ9Ik0xNjggMzY2IEMyMDAgMzcyIDM0MCAzNzYgNjA0IDM2NiBDNjA0IDM3OCA1OTggMzg0IDU4NCAzODQgTDE4MiAzODQgQzE3MiAzODQgMTY3IDM4MCAxNjggMzY2IFoiIGZpbGw9IiNEQ0UxRDkiLz4KICA8cGF0aCBkPSJNMjY2IDI5OCBDMjgyIDI2NiAzMDIgMjQ2IDMyOCAyNDAgQzM0OCAyMzYgMzc2IDIzNSAzOTYgMjM2IEwzOTYgMjk4IFoiIGZpbGw9IiMyQzRBMzgiLz4KICA8cGF0aCBkPSJNNDEyIDIzNiBDNDM2IDIzOCA0NTYgMjQ0IDQ3MCAyNTIgQzQ5MCAyNjQgNTA4IDI3OCA1MjIgMjk2IEw0MTIgMjk2IFoiIGZpbGw9IiMyQzRBMzgiLz4KICA8cGF0aCBkPSJNMjc4IDI5MiBDMjkyIDI2OCAzMDggMjUyIDMyOCAyNDcgTDMyOCAyOTIgWiIgZmlsbD0iIzRBNkE1NCIgb3BhY2l0eT0iMC41Ii8+CiAgPHBhdGggZD0iTTQwNCAyMzQgTDQwNCAzMDAiIHN0cm9rZT0iI0Y0RjVGMSIgc3Ryb2tlLXdpZHRoPSI5Ii8+CiAgPHBhdGggZD0iTTQwMiAzMDAgTDQwMiAzODQiIHN0cm9rZT0iI0MzQ0JDMSIgc3Ryb2tlLXdpZHRoPSIzIi8+CiAgPHBhdGggZD0iTTI2MiAzMDAgTDI2MiAzMjAiIHN0cm9rZT0iI0MzQ0JDMSIgc3Ryb2tlLXdpZHRoPSIzIi8+CiAgPHBhdGggZD0iTTI1OSAzMDYgTDI0OCAzMDIgQzI0MCAzMDAgMjM4IDMxMCAyNDYgMzEzIFoiIGZpbGw9IiNEQ0UxRDkiLz4KICA8cGF0aCBkPSJNMTcyIDMzMCBMMjA0IDMyNiBDMjE0IDMyNSAyMTYgMzQyIDIwNiAzNDMgTDE3MiAzNDQgWiIgZmlsbD0iI0Y2Q0U4NiIvPgogIDxwYXRoIGQ9Ik01OTggMzI2IEw1NzQgMzI0IEw1NzQgMzQ2IEw1OTggMzQ2IFoiIGZpbGw9IiNCODQwMkYiLz4KICA8cGF0aCBkPSJNMzMwIDM1MCBMNTIwIDM1MCIgc3Ryb2tlPSIjQzNDQkMxIiBzdHJva2Utd2lkdGg9IjMiLz4KCiAgPGNpcmNsZSBjeD0iMjYyIiBjeT0iMzcyIiByPSI0NiIgZmlsbD0iIzFGMkMyNSIvPgogIDxjaXJjbGUgY3g9IjI2MiIgY3k9IjM3MiIgcj0iMjciIGZpbGw9IiNFOUVCRTQiLz4KICA8Y2lyY2xlIGN4PSIyNjIiIGN5PSIzNzIiIHI9IjEwIiBmaWxsPSIjQjE3RDQzIi8+CgogIDxjaXJjbGUgY3g9IjUyNiIgY3k9IjM3MiIgcj0iNDYiIGZpbGw9IiMxRjJDMjUiLz4KICA8Y2lyY2xlIGN4PSI1MjYiIGN5PSIzNzIiIHI9IjI3IiBmaWxsPSIjRTlFQkU0Ii8+CiAgPGNpcmNsZSBjeD0iNTI2IiBjeT0iMzcyIiByPSIxMCIgZmlsbD0iI0IxN0Q0MyIvPgoKPC9zdmc+Cg==" alt="Four seater hatchback cab, side view" width="800" height="460" loading="lazy">
+          <div class="cab-body">
+            <h3>4 Seater Hatchback</h3>
+            <p class="cab-meta">4 passengers &middot; 2 bags &middot; AC</p>
+            <p>Swift or Celerio type car. Best for couples and small families on airport runs and short local trips.</p>
+          </div>
+          <span class="cab-pick"><span class="tick" aria-hidden="true">&#10003;</span>Select this cab</span>
+        </label>
+
+        <label class="cab-card">
+          <input type="radio" name="fleetChoice" value="5 Seater Sedan">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNDYwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjQ2MCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJGaXZlIHNlYXRlciBzZWRhbiBjYWIsIHNpZGUgdmlldyI+CiAgPGVsbGlwc2UgY3g9IjQwMCIgY3k9IjQyNCIgcng9IjMwMCIgcnk9IjIwIiBmaWxsPSIjMjk0NjM1IiBvcGFjaXR5PSIwLjEzIi8+CgogIDxwYXRoIGQ9Ik0xMDQgMzcyIEM5OCAzMzYgMTA0IDMxNCAxMzAgMzA4IEwxODggMzAwIEMyMDYgMjY0IDIzMiAyNDAgMjY4IDIzMiBDMzE2IDIyMiAzODggMjIyIDQzMCAyMzIgQzQ2MiAyNDAgNDkyIDI2NiA1MTYgMjk4IEw2NjQgMzEyIEM2OTIgMzE4IDcwMCAzMzggNjk4IDM2NiBDNjk3IDM3OCA2OTAgMzg0IDY3NiAzODQgTDExOCAzODQgQzEwOCAzODQgMTA0IDM4MCAxMDQgMzcyIFoiIGZpbGw9IiNGNEY1RjEiLz4KICA8cGF0aCBkPSJNMTA0IDM2NiBDMTQwIDM3MiAzMjAgMzc2IDY5OCAzNjYgQzY5OSAzNzggNjkwIDM4NCA2NzYgMzg0IEwxMTggMzg0IEMxMDggMzg0IDEwMyAzODAgMTA0IDM2NiBaIiBmaWxsPSIjRENFMUQ5Ii8+CiAgPHBhdGggZD0iTTIwOCAyOTggQzIyNCAyNjYgMjQ2IDI0NiAyNzQgMjQwIEMyOTYgMjM2IDMyOCAyMzYgMzUwIDIzNyBMMzUwIDI5OCBaIiBmaWxsPSIjMkM0QTM4Ii8+CiAgPHBhdGggZD0iTTM2NiAyMzggQzM5MiAyNDAgNDE0IDI0NCA0MzAgMjUyIEM0NTIgMjY0IDQ3NCAyODAgNDkwIDI5OCBMMzY2IDI5OCBaIiBmaWxsPSIjMkM0QTM4Ii8+CiAgPHBhdGggZD0iTTIyMCAyOTIgQzIzNCAyNjggMjUwIDI1MiAyNzIgMjQ3IEwyNzIgMjkyIFoiIGZpbGw9IiM0QTZBNTQiIG9wYWNpdHk9IjAuNSIvPgogIDxwYXRoIGQ9Ik0zNTggMjM2IEwzNTggMzAwIiBzdHJva2U9IiNGNEY1RjEiIHN0cm9rZS13aWR0aD0iOSIvPgogIDxwYXRoIGQ9Ik0zNTYgMzAwIEwzNTYgMzg0IiBzdHJva2U9IiNDM0NCQzEiIHN0cm9rZS13aWR0aD0iMyIvPgogIDxwYXRoIGQ9Ik0yMDQgMzAwIEwyMDQgMzIwIiBzdHJva2U9IiNDM0NCQzEiIHN0cm9rZS13aWR0aD0iMyIvPgogIDxwYXRoIGQ9Ik0yMDEgMzA2IEwxOTAgMzAyIEMxODIgMzAwIDE4MCAzMTAgMTg4IDMxMyBaIiBmaWxsPSIjRENFMUQ5Ii8+CiAgPHBhdGggZD0iTTEwOCAzMzAgTDE0MCAzMjYgQzE1MCAzMjUgMTUyIDM0MiAxNDIgMzQzIEwxMDggMzQ0IFoiIGZpbGw9IiNGNkNFODYiLz4KICA8cGF0aCBkPSJNNjkyIDMyOCBMNjY4IDMyNiBMNjY4IDM0NiBMNjkyIDM0NiBaIiBmaWxsPSIjQjg0MDJGIi8+CiAgPHBhdGggZD0iTTI4MCAzNTAgTDUyMCAzNTAiIHN0cm9rZT0iI0MzQ0JDMSIgc3Ryb2tlLXdpZHRoPSIzIi8+CiAgPHBhdGggZD0iTTUyMCAzMDYgTDY0OCAzMTQiIHN0cm9rZT0iI0MzQ0JDMSIgc3Ryb2tlLXdpZHRoPSIzIi8+CgogIDxjaXJjbGUgY3g9IjIwOCIgY3k9IjM3MiIgcj0iNDYiIGZpbGw9IiMxRjJDMjUiLz4KICA8Y2lyY2xlIGN4PSIyMDgiIGN5PSIzNzIiIHI9IjI3IiBmaWxsPSIjRTlFQkU0Ii8+CiAgPGNpcmNsZSBjeD0iMjA4IiBjeT0iMzcyIiByPSIxMCIgZmlsbD0iI0IxN0Q0MyIvPgoKICA8Y2lyY2xlIGN4PSI1ODAiIGN5PSIzNzIiIHI9IjQ2IiBmaWxsPSIjMUYyQzI1Ii8+CiAgPGNpcmNsZSBjeD0iNTgwIiBjeT0iMzcyIiByPSIyNyIgZmlsbD0iI0U5RUJFNCIvPgogIDxjaXJjbGUgY3g9IjU4MCIgY3k9IjM3MiIgcj0iMTAiIGZpbGw9IiNCMTdENDMiLz4KCjwvc3ZnPgo=" alt="Five seater sedan cab, side view" width="800" height="460" loading="lazy">
+          <div class="cab-body">
+            <h3>5 Seater Sedan</h3>
+            <p class="cab-meta">5 passengers &middot; 3 bags &middot; AC</p>
+            <p>Dzire or Etios type car with boot space. Comfortable for highway transfers to Mysuru and Bengaluru.</p>
+          </div>
+          <span class="cab-pick"><span class="tick" aria-hidden="true">&#10003;</span>Select this cab</span>
+        </label>
+
+        <label class="cab-card">
+          <input type="radio" name="fleetChoice" value="Innova / Innova Crysta">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNDYwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjQ2MCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJTZXZlbiBzZWF0ZXIgSW5ub3ZhIHN0eWxlIE1QViwgc2lkZSB2aWV3Ij4KICA8ZWxsaXBzZSBjeD0iNDAwIiBjeT0iNDI0IiByeD0iMzAwIiByeT0iMjAiIGZpbGw9IiMyOTQ2MzUiIG9wYWNpdHk9IjAuMTMiLz4KCiAgPHBhdGggZD0iTTk2IDM2NiBDOTAgMzI2IDk2IDMwMCAxMjIgMjk0IEwxNTYgMjg4IEMxNzYgMjQ0IDIwMCAyMTQgMjM2IDIwNiBDMzAwIDE5NCA0NjggMTk0IDU0MCAyMDggQzU2NiAyMTMgNTgwIDIzMiA1ODYgMjYyIEw2NjQgMjgyIEM2OTIgMjkwIDcwMiAzMTIgNzAwIDM1NiBDNjk5IDM3NCA2OTIgMzgwIDY3NiAzODAgTDExMiAzODAgQzEwMCAzODAgOTYgMzc2IDk2IDM2NiBaIiBmaWxsPSIjRjRGNUYxIi8+CiAgPHBhdGggZD0iTTk2IDM2MCBDMTUwIDM2OCAzNDAgMzc0IDcwMCAzNTYgQzcwMSAzNzIgNjkyIDM4MCA2NzYgMzgwIEwxMTIgMzgwIEMxMDAgMzgwIDk1IDM3NCA5NiAzNjAgWiIgZmlsbD0iI0RDRTFEOSIvPgogIDxwYXRoIGQ9Ik0xNzYgMjg0IEMxOTIgMjQ0IDIxNCAyMjIgMjQ0IDIxNiBDMjY0IDIxMiAyOTIgMjExIDMxNCAyMTIgTDMxNCAyODQgWiIgZmlsbD0iIzJDNEEzOCIvPgogIDxwYXRoIGQ9Ik0zMzAgMjEyIEw0NDQgMjE0IEw0NDQgMjg0IEwzMzAgMjg0IFoiIGZpbGw9IiMyQzRBMzgiLz4KICA8cGF0aCBkPSJNNDYwIDIxNSBMNTM2IDIyMCBDNTU2IDIyNCA1NjYgMjQwIDU3MiAyNjIgTDQ2MCAyNjIgWiIgZmlsbD0iIzJDNEEzOCIvPgogIDxwYXRoIGQ9Ik0xODggMjc4IEMyMDIgMjQ2IDIxOCAyMjggMjQyIDIyMiBMMjQyIDI3OCBaIiBmaWxsPSIjNEE2QTU0IiBvcGFjaXR5PSIwLjUiLz4KICA8cGF0aCBkPSJNMzIyIDIxMCBMMzIyIDI4OCIgc3Ryb2tlPSIjRjRGNUYxIiBzdHJva2Utd2lkdGg9IjkiLz4KICA8cGF0aCBkPSJNNDUyIDIxMiBMNDUyIDI4OCIgc3Ryb2tlPSIjRjRGNUYxIiBzdHJva2Utd2lkdGg9IjkiLz4KICA8cGF0aCBkPSJNMzIwIDI4OCBMMzIwIDM4MCIgc3Ryb2tlPSIjQzNDQkMxIiBzdHJva2Utd2lkdGg9IjMiLz4KICA8cGF0aCBkPSJNNDUwIDI4OCBMNDUwIDM4MCIgc3Ryb2tlPSIjQzNDQkMxIiBzdHJva2Utd2lkdGg9IjMiLz4KICA8cGF0aCBkPSJNMTcyIDI4OCBMMTcyIDMxMCIgc3Ryb2tlPSIjQzNDQkMxIiBzdHJva2Utd2lkdGg9IjMiLz4KICA8cGF0aCBkPSJNMTY5IDI5NCBMMTU2IDI5MCBDMTQ4IDI4OCAxNDYgMjk4IDE1NSAzMDEgWiIgZmlsbD0iI0RDRTFEOSIvPgogIDxwYXRoIGQ9Ik0yNDIgMjAwIEw0NzAgMjAwIiBzdHJva2U9IiNEQ0UxRDkiIHN0cm9rZS13aWR0aD0iOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPHBhdGggZD0iTTEwMCAzMTggTDEzNCAzMTQgQzE0NiAzMTMgMTQ4IDMzMiAxMzYgMzMzIEwxMDAgMzM0IFoiIGZpbGw9IiNGNkNFODYiLz4KICA8cGF0aCBkPSJNNjk0IDMxOCBMNjY4IDMxNiBMNjY4IDMzOCBMNjk0IDMzOCBaIiBmaWxsPSIjQjg0MDJGIi8+CiAgPHBhdGggZD0iTTI2MCAzNDQgTDU2MCAzNDQiIHN0cm9rZT0iI0MzQ0JDMSIgc3Ryb2tlLXdpZHRoPSIzIi8+CgogIDxjaXJjbGUgY3g9IjIwMCIgY3k9IjM2NiIgcj0iNDgiIGZpbGw9IiMxRjJDMjUiLz4KICA8Y2lyY2xlIGN4PSIyMDAiIGN5PSIzNjYiIHI9IjI4IiBmaWxsPSIjRTlFQkU0Ii8+CiAgPGNpcmNsZSBjeD0iMjAwIiBjeT0iMzY2IiByPSIxMSIgZmlsbD0iI0IxN0Q0MyIvPgoKICA8Y2lyY2xlIGN4PSI1ODYiIGN5PSIzNjYiIHI9IjQ4IiBmaWxsPSIjMUYyQzI1Ii8+CiAgPGNpcmNsZSBjeD0iNTg2IiBjeT0iMzY2IiByPSIyOCIgZmlsbD0iI0U5RUJFNCIvPgogIDxjaXJjbGUgY3g9IjU4NiIgY3k9IjM2NiIgcj0iMTEiIGZpbGw9IiNCMTdENDMiLz4KCjwvc3ZnPgo=" alt="Innova style seven seater MPV, side view" width="800" height="460" loading="lazy">
+          <div class="cab-body">
+            <h3>Innova / Crysta</h3>
+            <p class="cab-meta">6 to 7 passengers &middot; 4 bags &middot; AC</p>
+            <p>Roomy and steady on ghat roads. The usual choice for families doing a full day of Coorg sightseeing.</p>
+          </div>
+          <span class="cab-pick"><span class="tick" aria-hidden="true">&#10003;</span>Select this cab</span>
+        </label>
+
+        <label class="cab-card">
+          <input type="radio" name="fleetChoice" value="Tempo Traveller (TT)">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNDYwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjQ2MCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJUd2VsdmUgc2VhdGVyIFRlbXBvIFRyYXZlbGxlciwgc2lkZSB2aWV3Ij4KICA8ZWxsaXBzZSBjeD0iNDAwIiBjeT0iNDI0IiByeD0iMzAwIiByeT0iMjAiIGZpbGw9IiMyOTQ2MzUiIG9wYWNpdHk9IjAuMTMiLz4KCiAgPHBhdGggZD0iTTcyIDM1NiBDNjYgMzEyIDcyIDI4NiA5NiAyNzggTDEyNCAyNzIgQzEzMiAyMTQgMTUyIDE3NiAxODYgMTY4IEMyNjggMTUwIDU5MiAxNTAgNjY0IDE2OCBDNjk2IDE3NiA3MDggMjA2IDcxMCAyNjIgTDcxMCAzNDQgQzcxMCAzNjYgNzAyIDM3MiA2ODYgMzcyIEw4OCAzNzIgQzc2IDM3MiA3MiAzNjggNzIgMzU2IFoiIGZpbGw9IiNGNEY1RjEiLz4KICA8cGF0aCBkPSJNNzIgMzUwIEMxNDAgMzYwIDM4MCAzNjYgNzEwIDM0NCBMNzEwIDM1MCBDNzEwIDM2NiA3MDIgMzcyIDY4NiAzNzIgTDg4IDM3MiBDNzYgMzcyIDcxIDM2NiA3MiAzNTAgWiIgZmlsbD0iI0RDRTFEOSIvPgogIDxwYXRoIGQ9Ik0xMzYgMjY4IEMxNDYgMjE0IDE2NCAxODYgMTkyIDE4MCBDMjA4IDE3NiAyMzIgMTc1IDI1MiAxNzYgTDI1MiAyNjggWiIgZmlsbD0iIzJDNEEzOCIvPgogIDxwYXRoIGQ9Ik0yODAgMTc4IEwzNzYgMTc4IEwzNzYgMjU4IEwyODAgMjU4IFoiIGZpbGw9IiMyQzRBMzgiLz4KICA8cGF0aCBkPSJNMzk2IDE3OCBMNDkyIDE3OCBMNDkyIDI1OCBMMzk2IDI1OCBaIiBmaWxsPSIjMkM0QTM4Ii8+CiAgPHBhdGggZD0iTTUxMiAxNzggTDYwOCAxNzggTDYwOCAyNTggTDUxMiAyNTggWiIgZmlsbD0iIzJDNEEzOCIvPgogIDxwYXRoIGQ9Ik02MjggMTc4IEw2NjggMTgwIEM2OTIgMTg2IDcwMCAyMTQgNzAyIDI1OCBMNjI4IDI1OCBaIiBmaWxsPSIjMkM0QTM4Ii8+CiAgPHBhdGggZD0iTTE0OCAyNjIgQzE1OCAyMTYgMTcyIDE5MiAxOTYgMTg2IEwxOTYgMjYyIFoiIGZpbGw9IiM0QTZBNTQiIG9wYWNpdHk9IjAuNSIvPgogIDxwYXRoIGQ9Ik0yNjQgMTcyIEwyNjQgMjc2IiBzdHJva2U9IiNGNEY1RjEiIHN0cm9rZS13aWR0aD0iMTAiLz4KICA8cGF0aCBkPSJNMjYyIDI3NiBMMjYyIDM3MiIgc3Ryb2tlPSIjQzNDQkMxIiBzdHJva2Utd2lkdGg9IjMiLz4KICA8cGF0aCBkPSJNMTMyIDI3NiBMMTMyIDMwMCIgc3Ryb2tlPSIjQzNDQkMxIiBzdHJva2Utd2lkdGg9IjMiLz4KICA8cGF0aCBkPSJNMTI5IDI4MiBMMTE2IDI3OCBDMTA4IDI3NiAxMDYgMjg2IDExNSAyODkgWiIgZmlsbD0iI0RDRTFEOSIvPgogIDxwYXRoIGQ9Ik03NiAzMDggTDExMiAzMDQgQzEyNCAzMDMgMTI2IDMyNCAxMTQgMzI1IEw3NiAzMjYgWiIgZmlsbD0iI0Y2Q0U4NiIvPgogIDxwYXRoIGQ9Ik03MDQgMzA2IEw2NzYgMzA0IEw2NzYgMzI4IEw3MDQgMzI4IFoiIGZpbGw9IiNCODQwMkYiLz4KICA8cGF0aCBkPSJNMzAwIDMwMCBMNjYwIDMwMCIgc3Ryb2tlPSIjQzNDQkMxIiBzdHJva2Utd2lkdGg9IjMiLz4KICA8cGF0aCBkPSJNMTkwIDE1OCBMNjYwIDE1OCIgc3Ryb2tlPSIjRENFMUQ5IiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgoKICA8Y2lyY2xlIGN4PSIxOTYiIGN5PSIzNTYiIHI9IjUwIiBmaWxsPSIjMUYyQzI1Ii8+CiAgPGNpcmNsZSBjeD0iMTk2IiBjeT0iMzU2IiByPSIyOSIgZmlsbD0iI0U5RUJFNCIvPgogIDxjaXJjbGUgY3g9IjE5NiIgY3k9IjM1NiIgcj0iMTEiIGZpbGw9IiNCMTdENDMiLz4KCiAgPGNpcmNsZSBjeD0iNjAwIiBjeT0iMzU2IiByPSI1MCIgZmlsbD0iIzFGMkMyNSIvPgogIDxjaXJjbGUgY3g9IjYwMCIgY3k9IjM1NiIgcj0iMjkiIGZpbGw9IiNFOUVCRTQiLz4KICA8Y2lyY2xlIGN4PSI2MDAiIGN5PSIzNTYiIHI9IjExIiBmaWxsPSIjQjE3RDQzIi8+Cgo8L3N2Zz4K" alt="Twelve seater Tempo Traveller, side view" width="800" height="460" loading="lazy">
+          <div class="cab-body">
+            <h3>Tempo Traveller (TT)</h3>
+            <p class="cab-meta">12 to 14 passengers &middot; group luggage</p>
+            <p>For friends groups, joint family trips and wedding parties travelling together in one vehicle.</p>
+          </div>
+          <span class="cab-pick"><span class="tick" aria-hidden="true">&#10003;</span>Select this cab</span>
+        </label>
+      </div>
+
+      <p class="fleet-note" id="fleetNote">No vehicle selected yet. Your choice will appear in the booking form below.</p>
+    </section>
+
+    <section class="tour-section" id="estate">
+      <div class="tour-image" role="img" aria-label="Coffee plants ripening under silver oak shade trees on a Coorg estate"></div>
+      <div class="tour-content">
+        <p class="eyebrow">COFFEE COUNTRY</p>
+        <h2>Coorg, at your own pace.</h2>
+        <p>Kodagu is spread out. Waterfalls sit at the end of estate roads, viewpoints are best at first light, and the monastery is quietest in the morning. Tell us what you want to see and we will build a driving order that actually works in a day.</p>
+        <div class="destination-list">
+          <span>Estate roads</span><span>Waterfalls</span><span>Sunrise points</span>
+          <span>Cauvery banks</span><span>Monastery</span><span>Bamboo groves</span>
+          <span>Homestay pickups</span><span>Custom stops</span>
+        </div>
+        <a class="text-link" data-whatsapp href="#">Ask about a Coorg tour &rarr;</a>
+      </div>
+    </section>
+
+    <section class="section places-section" id="places">
+      <div class="section-heading centered">
+        <p class="eyebrow">TOP PLACES IN COORG</p>
+        <h2>Where people ask us to go.</h2>
+        <p>Tap the places you want on your trip. We will add them to your booking message so the route can be planned around your stay.</p>
+      </div>
+
+      <div class="places-grid">
+        <button type="button" class="place-card" data-place="Abbey Falls" aria-pressed="false">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNTYwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjU2MCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJBYmJleSBGYWxscywgYSB3YXRlcmZhbGwgZHJvcHBpbmcgdGhyb3VnaCBDb29yZyByYWluZm9yZXN0Ij4KICA8ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9InNreSIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI0RDRTdENiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI0I5Q0ZCQyIvPjwvbGluZWFyR3JhZGllbnQ+PGZpbHRlciBpZD0iYmx1ciIgeD0iLTMwJSIgeT0iLTQwMCUiIHdpZHRoPSIxNjAlIiBoZWlnaHQ9IjkwMCUiPjxmZUdhdXNzaWFuQmx1ciBzdGREZXZpYXRpb249IjE0Ii8+PC9maWx0ZXI+PGxpbmVhckdyYWRpZW50IGlkPSJ3YXRlciIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI0ZGRkZGRiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI0RDRUFFNiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPgogIDxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNTYwIiBmaWxsPSJ1cmwoI3NreSkiLz4KICA8cGF0aCBkPSJNMCAyNTAgQzIzLjMgMjQxLjcgOTAuMCAyMDIuMyAxNDAuMCAyMDAuMCBDMTkwLjAgMTk3LjcgMjQwLjAgMjM3LjcgMzAwLjAgMjM2LjAgQzM2MC4wIDIzNC4zIDQ0MC4wIDE5MS43IDUwMC4wIDE5MC4wIEM1NjAuMCAxODguMyA2MTAuMCAyMjUuMCA2NjAuMCAyMjYuMCBDNzEwLjAgMjI3LjAgNzc2LjcgMjAxLjAgODAwLjAgMTk2LjAgTDgwMCA1NjAgTDAgNTYwIFoiIGZpbGw9IiM4RkFFOTUiIG9wYWNpdHk9IjEiLz4KICA8ZWxsaXBzZSBjeD0iNDAwIiBjeT0iMjU4IiByeD0iNDYwIiByeT0iMTYiIGZpbGw9IiNGRkZGRkYiIG9wYWNpdHk9IjAuNSIgZmlsdGVyPSJ1cmwoI2JsdXIpIi8+CiAgPHBhdGggZD0iTTAgMzMwIEMzMC4wIDMyMy4zIDExNi43IDI5MS43IDE4MC4wIDI5MC4wIEMyNDMuMyAyODguMyAzMTAuMCAzMjIuMyAzODAuMCAzMjAuMCBDNDUwLjAgMzE3LjcgNTMwLjAgMjc4LjMgNjAwLjAgMjc2LjAgQzY3MC4wIDI3My43IDc2Ni43IDMwMS4wIDgwMC4wIDMwNi4wIEw4MDAgNTYwIEwwIDU2MCBaIiBmaWxsPSIjNUY4MTY4IiBvcGFjaXR5PSIxIi8+CiAgPHBhdGggZD0iTTAgMzAwIEMxMjAgMzIwIDI1MCAzNDAgMzAwIDQyMCBDMzMwIDQ3MCAzMjAgNTIwIDM0MCA1NjAgTDAgNTYwIFoiIGZpbGw9IiMzMzUxM0IiLz4KICA8cGF0aCBkPSJNODAwIDI5NiBDNjgwIDMxOCA1NjAgMzM2IDUwOCA0MTQgQzQ3NiA0NjYgNDg2IDUyMCA0NzAgNTYwIEw4MDAgNTYwIFoiIGZpbGw9IiMyQzQ2MzQiLz4KICA8cGF0aCBkPSJNMzAwIDMzMCBDMjYwIDM1NiAyMzYgNDAwIDIzMiA0NjAgTDMwMCA0NjAgWiIgZmlsbD0iIzNFNUY0NSIgb3BhY2l0eT0iMC43Ii8+CiAgPHBhdGggZD0iTTM0OCAzMDAgQzMzNiAzNjAgMzMwIDQxMCAzMzYgNDcwIEw0NzQgNDcwIEM0ODAgNDEwIDQ3NCAzNTYgNDYyIDMwMCBaIiBmaWxsPSJ1cmwoI3dhdGVyKSIvPgogIDxwYXRoIGQ9Ik0zNzIgMzAyIEMzNjQgMzU2IDM2MCA0MTIgMzY0IDQ2NiIgc3Ryb2tlPSIjRjRGQUY3IiBzdHJva2Utd2lkdGg9IjkiIG9wYWNpdHk9IjAuOSIvPgogIDxwYXRoIGQ9Ik00MDggMzAwIEM0MDQgMzU2IDQwMiA0MTIgNDA2IDQ2NiIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2Utd2lkdGg9IjEyIiBvcGFjaXR5PSIwLjg1Ii8+CiAgPHBhdGggZD0iTTQ0MCAzMDIgQzQzOCAzNTYgNDM4IDQxMiA0NDIgNDY2IiBzdHJva2U9IiNGMEY3RjQiIHN0cm9rZS13aWR0aD0iOCIgb3BhY2l0eT0iMC44NSIvPgogIDxlbGxpcHNlIGN4PSI0MDUiIGN5PSI0OTAiIHJ4PSIxMjAiIHJ5PSIyNiIgZmlsbD0iI0NGRTJERSIvPgogIDxlbGxpcHNlIGN4PSI0MDUiIGN5PSI0ODYiIHJ4PSI4NiIgcnk9IjE2IiBmaWxsPSIjRkZGRkZGIiBvcGFjaXR5PSIwLjg1IiBmaWx0ZXI9InVybCgjYmx1cikiLz4KICA8cGF0aCBkPSJNMzAwIDUwMCBDMzYwIDQ4NiA0NjAgNDg2IDUyMCA1MDIgQzU2MCA1MTIgNjAwIDUzMCA2NDAgNTYwIEwxODAgNTYwIEMyMjAgNTMwIDI2MiA1MTIgMzAwIDUwMCBaIiBmaWxsPSIjNEE2QjUyIi8+CiAgPGVsbGlwc2UgY3g9IjQwNSIgY3k9IjQ3MCIgcng9IjE1MCIgcnk9IjIyIiBmaWxsPSIjRkZGRkZGIiBvcGFjaXR5PSIwLjYiIGZpbHRlcj0idXJsKCNibHVyKSIvPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEyMCAzMzApIHNjYWxlKDEuMCkiPjxwYXRoIGQ9Ik0wIDAgTDAgLTUyIiBzdHJva2U9IiMyNjQwMkMiIHN0cm9rZS13aWR0aD0iNCIvPjxlbGxpcHNlIGN4PSIwIiBjeT0iLTU4IiByeD0iMTEiIHJ5PSI4IiBmaWxsPSIjMjY0MDJDIi8+PGVsbGlwc2UgY3g9Ii0xMCIgY3k9Ii00NiIgcng9IjkiIHJ5PSI2IiBmaWxsPSIjMjY0MDJDIi8+PGVsbGlwc2UgY3g9IjEwIiBjeT0iLTQyIiByeD0iOCIgcnk9IjYiIGZpbGw9IiMyNjQwMkMiLz48L2c+CiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNzAwIDMyMCkgc2NhbGUoMC45KSI+PHBhdGggZD0iTTAgMCBMMCAtNTIiIHN0cm9rZT0iIzI2NDAyQyIgc3Ryb2tlLXdpZHRoPSI0Ii8+PGVsbGlwc2UgY3g9IjAiIGN5PSItNTgiIHJ4PSIxMSIgcnk9IjgiIGZpbGw9IiMyNjQwMkMiLz48ZWxsaXBzZSBjeD0iLTEwIiBjeT0iLTQ2IiByeD0iOSIgcnk9IjYiIGZpbGw9IiMyNjQwMkMiLz48ZWxsaXBzZSBjeD0iMTAiIGN5PSItNDIiIHJ4PSI4IiByeT0iNiIgZmlsbD0iIzI2NDAyQyIvPjwvZz4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMTQgNDcwKSBzY2FsZSgxLjEpIj48cGF0aCBkPSJNMCAwIEMtNCAtMzAgMiAtNTAgMCAtNzAiIHN0cm9rZT0iIzI3NEEzMSIgc3Ryb2tlLXdpZHRoPSI1IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTAgLTcwIEMxOCAtNzggNDAgLTcwIDUyIC01MiBDMzQgLTYwIDE2IC02MiAwIC02MCBaIiBmaWxsPSIjMjc0QTMxIi8+PHBhdGggZD0iTTAgLTcwIEMtMTggLTc4IC00MCAtNzAgLTUyIC01MiBDLTM0IC02MCAtMTYgLTYyIDAgLTYwIFoiIGZpbGw9IiMyNzRBMzEiLz48cGF0aCBkPSJNMCAtNzAgQzEwIC04NiAyNiAtOTIgNDAgLTg4IEMyNiAtODQgMTIgLTc4IDAgLTY2IFoiIGZpbGw9IiMyNzRBMzEiLz48cGF0aCBkPSJNMCAtNzAgQy0xMCAtODYgLTI2IC05MiAtNDAgLTg4IEMtMjYgLTg0IC0xMiAtNzggMCAtNjYgWiIgZmlsbD0iIzI3NEEzMSIvPjwvZz4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg1OTYgNDgwKSBzY2FsZSgxLjApIj48cGF0aCBkPSJNMCAwIEMtNCAtMzAgMiAtNTAgMCAtNzAiIHN0cm9rZT0iIzI3NEEzMSIgc3Ryb2tlLXdpZHRoPSI1IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTAgLTcwIEMxOCAtNzggNDAgLTcwIDUyIC01MiBDMzQgLTYwIDE2IC02MiAwIC02MCBaIiBmaWxsPSIjMjc0QTMxIi8+PHBhdGggZD0iTTAgLTcwIEMtMTggLTc4IC00MCAtNzAgLTUyIC01MiBDLTM0IC02MCAtMTYgLTYyIDAgLTYwIFoiIGZpbGw9IiMyNzRBMzEiLz48cGF0aCBkPSJNMCAtNzAgQzEwIC04NiAyNiAtOTIgNDAgLTg4IEMyNiAtODQgMTIgLTc4IDAgLTY2IFoiIGZpbGw9IiMyNzRBMzEiLz48cGF0aCBkPSJNMCAtNzAgQy0xMCAtODYgLTI2IC05MiAtNDAgLTg4IEMtMjYgLTg0IC0xMiAtNzggMCAtNjYgWiIgZmlsbD0iIzI3NEEzMSIvPjwvZz4KICA8ZyBvcGFjaXR5PSIxLjAiPjxlbGxpcHNlIGN4PSItMjAiIGN5PSI1NjIiIHJ4PSI0MiIgcnk9IjMwIiBmaWxsPSIjMUMyRjIxIi8+PGVsbGlwc2UgY3g9IjM0IiBjeT0iNTcyIiByeD0iNTYiIHJ5PSI0MCIgZmlsbD0iIzFDMkYyMSIvPjxlbGxpcHNlIGN4PSI4OCIgY3k9IjU2MiIgcng9IjcwIiByeT0iNTAiIGZpbGw9IiMxQzJGMjEiLz48ZWxsaXBzZSBjeD0iMTQyIiBjeT0iNTcyIiByeD0iNDIiIHJ5PSIzMCIgZmlsbD0iIzFDMkYyMSIvPjxlbGxpcHNlIGN4PSIxOTYiIGN5PSI1NjIiIHJ4PSI1NiIgcnk9IjQwIiBmaWxsPSIjMUMyRjIxIi8+PGVsbGlwc2UgY3g9IjI1MCIgY3k9IjU3MiIgcng9IjcwIiByeT0iNTAiIGZpbGw9IiMxQzJGMjEiLz48ZWxsaXBzZSBjeD0iMzA0IiBjeT0iNTYyIiByeD0iNDIiIHJ5PSIzMCIgZmlsbD0iIzFDMkYyMSIvPjxlbGxpcHNlIGN4PSIzNTgiIGN5PSI1NzIiIHJ4PSI1NiIgcnk9IjQwIiBmaWxsPSIjMUMyRjIxIi8+PGVsbGlwc2UgY3g9IjQxMiIgY3k9IjU2MiIgcng9IjcwIiByeT0iNTAiIGZpbGw9IiMxQzJGMjEiLz48ZWxsaXBzZSBjeD0iNDY2IiBjeT0iNTcyIiByeD0iNDIiIHJ5PSIzMCIgZmlsbD0iIzFDMkYyMSIvPjxlbGxpcHNlIGN4PSI1MjAiIGN5PSI1NjIiIHJ4PSI1NiIgcnk9IjQwIiBmaWxsPSIjMUMyRjIxIi8+PGVsbGlwc2UgY3g9IjU3NCIgY3k9IjU3MiIgcng9IjcwIiByeT0iNTAiIGZpbGw9IiMxQzJGMjEiLz48ZWxsaXBzZSBjeD0iNjI4IiBjeT0iNTYyIiByeD0iNDIiIHJ5PSIzMCIgZmlsbD0iIzFDMkYyMSIvPjxlbGxpcHNlIGN4PSI2ODIiIGN5PSI1NzIiIHJ4PSI1NiIgcnk9IjQwIiBmaWxsPSIjMUMyRjIxIi8+PGVsbGlwc2UgY3g9IjczNiIgY3k9IjU2MiIgcng9IjcwIiByeT0iNTAiIGZpbGw9IiMxQzJGMjEiLz48ZWxsaXBzZSBjeD0iNzkwIiBjeT0iNTcyIiByeD0iNDIiIHJ5PSIzMCIgZmlsbD0iIzFDMkYyMSIvPjwvZz4KPC9zdmc+Cg==" alt="Abbey Falls dropping through Coorg rainforest" width="800" height="560" loading="lazy">
+          <span class="place-tag">Approx. 8 km from Madikeri</span>
+          <span class="place-body">
+            <strong>Abbey Falls</strong>
+            <small>A short walk down to the viewing bridge. Fullest soon after the monsoon.</small>
+          </span>
+          <span class="place-add"><span class="tick" aria-hidden="true">&#10003;</span><span class="add-label">Add to trip</span></span>
+        </button>
+
+        <button type="button" class="place-card" data-place="Mandalpatti" aria-pressed="false">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNTYwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjU2MCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJNYW5kYWxwYXR0aSBwZWFrcyByaXNpbmcgYWJvdmUgYSBzZWEgb2YgY2xvdWRzIGF0IHN1bnJpc2UiPgogIDxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0ic2t5IiB4MT0iMCIgeTE9IjAiIHgyPSIwIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjRjdEOUE1Ii8+PHN0b3Agb2Zmc2V0PSIwLjQ1IiBzdG9wLWNvbG9yPSIjRjNFM0M2Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjRTJFOEQ1Ii8+PC9saW5lYXJHcmFkaWVudD48ZmlsdGVyIGlkPSJibHVyIiB4PSItMzAlIiB5PSItNDAwJSIgd2lkdGg9IjE2MCUiIGhlaWdodD0iOTAwJSI+PGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMTQiLz48L2ZpbHRlcj48L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1NjAiIGZpbGw9InVybCgjc2t5KSIvPgogIDxjaXJjbGUgY3g9IjYwMCIgY3k9IjE1MCIgcj0iNDYiIGZpbGw9IiNGQkUyQUUiLz4KICA8Y2lyY2xlIGN4PSI2MDAiIGN5PSIxNTAiIHI9IjExMCIgZmlsbD0iI0ZCRDY4RiIgb3BhY2l0eT0iMC4zNSIgZmlsdGVyPSJ1cmwoI2JsdXIpIi8+CiAgPHBhdGggZD0iTTAgMjUwIEMyMC4wIDI0MS4wIDc2LjcgMTk3LjcgMTIwLjAgMTk2LjAgQzE2My4zIDE5NC4zIDIxMC4wIDI0My4wIDI2MC4wIDI0MC4wIEMzMTAuMCAyMzcuMCAzNjYuNyAxNzkuMyA0MjAuMCAxNzguMCBDNDczLjMgMTc2LjcgNTMwLjAgMjMwLjAgNTgwLjAgMjMyLjAgQzYzMC4wIDIzNC4wIDY4My4zIDE5Mi43IDcyMC4wIDE5MC4wIEM3NTYuNyAxODcuMyA3ODYuNyAyMTEuNyA4MDAuMCAyMTYuMCBMODAwIDU2MCBMMCA1NjAgWiIgZmlsbD0iI0E5QkVBRSIgb3BhY2l0eT0iMSIvPgogIDxlbGxpcHNlIGN4PSIzODAiIGN5PSIyNjIiIHJ4PSI1MDAiIHJ5PSIyNiIgZmlsbD0iI0ZGRkZGRiIgb3BhY2l0eT0iMC45IiBmaWx0ZXI9InVybCgjYmx1cikiLz4KICA8cGF0aCBkPSJNMCAzMjAgQzI2LjcgMzExLjMgMTAzLjMgMjY5LjAgMTYwLjAgMjY4LjAgQzIxNi43IDI2Ny4wIDI4MC4wIDMxNS43IDM0MC4wIDMxNC4wIEM0MDAuMCAzMTIuMyA0NjAuMCAyNjAuMyA1MjAuMCAyNTguMCBDNTgwLjAgMjU1LjcgNjUzLjMgMjk3LjAgNzAwLjAgMzAwLjAgQzc0Ni43IDMwMy4wIDc4My4zIDI4MC4wIDgwMC4wIDI3Ni4wIEw4MDAgNTYwIEwwIDU2MCBaIiBmaWxsPSIjN0E5ODgwIiBvcGFjaXR5PSIxIi8+CiAgPGVsbGlwc2UgY3g9IjU2MCIgY3k9IjMzMCIgcng9IjQyMCIgcnk9IjI4IiBmaWxsPSIjRkZGRkZGIiBvcGFjaXR5PSIwLjkyIiBmaWx0ZXI9InVybCgjYmx1cikiLz4KICA8ZWxsaXBzZSBjeD0iMTUwIiBjeT0iMzQ2IiByeD0iMzQwIiByeT0iMjQiIGZpbGw9IiNGRkZGRkYiIG9wYWNpdHk9IjAuODUiIGZpbHRlcj0idXJsKCNibHVyKSIvPgogIDxwYXRoIGQ9Ik0wIDQwMCBDMzAuMCAzOTIuNyAxMTMuMyAzNTYuNyAxODAuMCAzNTYuMCBDMjQ2LjcgMzU1LjMgMzI2LjcgMzk4LjAgNDAwLjAgMzk2LjAgQzQ3My4zIDM5NC4wIDU1My4zIDM0Ni4wIDYyMC4wIDM0NC4wIEM2ODYuNyAzNDIuMCA3NzAuMCAzNzcuMyA4MDAuMCAzODQuMCBMODAwIDU2MCBMMCA1NjAgWiIgZmlsbD0iIzRGNzE1OSIgb3BhY2l0eT0iMSIvPgogIDxlbGxpcHNlIGN4PSI0MDAiIGN5PSI0MTIiIHJ4PSI1NDAiIHJ5PSIzMCIgZmlsbD0iI0ZGRkZGRiIgb3BhY2l0eT0iMC44IiBmaWx0ZXI9InVybCgjYmx1cikiLz4KICA8ZWxsaXBzZSBjeD0iNjIwIiBjeT0iMzkyIiByeD0iMjYwIiByeT0iMTgiIGZpbGw9IiNGRkZGRkYiIG9wYWNpdHk9IjAuNyIgZmlsdGVyPSJ1cmwoI2JsdXIpIi8+CiAgPHBhdGggZD0iTTAgNDcwIEMzMy4zIDQ2NS4zIDEyNi43IDQ0MS4wIDIwMC4wIDQ0Mi4wIEMyNzMuMyA0NDMuMCAzNjMuMyA0NzcuMyA0NDAuMCA0NzYuMCBDNTE2LjcgNDc0LjcgNjAwLjAgNDM2LjMgNjYwLjAgNDM0LjAgQzcyMC4wIDQzMS43IDc3Ni43IDQ1Ny4zIDgwMC4wIDQ2Mi4wIEw4MDAgNTYwIEwwIDU2MCBaIiBmaWxsPSIjMzE1MTNCIiBvcGFjaXR5PSIxIi8+CiAgPHBhdGggZD0iTTE3MCA1NjAgQzI1MCA1MjggMzAwIDUwMiAzODAgNDkwIEM0NTAgNDg2IDU0MCA0ODQgNjEwIDQ3OCIgc3Ryb2tlPSIjOEE1QTM4IiBzdHJva2Utd2lkdGg9IjE1IiBmaWxsPSJub25lIiBvcGFjaXR5PSIwLjgiLz4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0MzIgNDkyKSBzY2FsZSgwLjM0KSI+PHBhdGggZD0iTS03NiAwIEMtODAgLTI2IC03MiAtNDAgLTQ4IC00NCBMLTM4IC00NiBDLTMwIC03NiAtMTQgLTkwIDEyIC05MiBMNTggLTkyIEM4MCAtOTAgOTIgLTcyIDk4IC00NiBMMTEwIC00MiBDMTI2IC0zNCAxMzAgLTIwIDEyOCAwIFoiIGZpbGw9IiNGMUYzRUUiLz48cGF0aCBkPSJNLTMwIC01MCBDLTI0IC03NCAtMTIgLTgyIDEwIC04NCBMMzAgLTg0IEwzMCAtNTAgWiIgZmlsbD0iIzJDNEEzOCIvPjxwYXRoIGQ9Ik00NiAtODQgTDU4IC04NCBDNzYgLTgyIDg2IC02OCA5MiAtNTAgTDQ2IC01MCBaIiBmaWxsPSIjMkM0QTM4Ii8+PHBhdGggZD0iTS0yMCAtOTYgTDg2IC05NiIgc3Ryb2tlPSIjRENFMUQ5IiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxjaXJjbGUgY3g9Ii00MCIgY3k9IjQiIHI9IjI0IiBmaWxsPSIjMUYyQzI1Ii8+PGNpcmNsZSBjeD0iLTQwIiBjeT0iNCIgcj0iMTAiIGZpbGw9IiNFOUVCRTQiLz48Y2lyY2xlIGN4PSI5MCIgY3k9IjQiIHI9IjI0IiBmaWxsPSIjMUYyQzI1Ii8+PGNpcmNsZSBjeD0iOTAiIGN5PSI0IiByPSIxMCIgZmlsbD0iI0U5RUJFNCIvPjwvZz4KICA8cGF0aCBkPSJNMCA1NDAgQzQwLjAgNTM2LjcgMTUzLjMgNTE5LjAgMjQwLjAgNTIwLjAgQzMyNi43IDUyMS4wIDQyNi43IDU0NS43IDUyMC4wIDU0Ni4wIEM2MTMuMyA1NDYuMyA3NTMuMyA1MjYuMCA4MDAuMCA1MjIuMCBMODAwIDU2MCBMMCA1NjAgWiIgZmlsbD0iIzIxM0EyOSIgb3BhY2l0eT0iMSIvPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDYwIDU0Nikgc2NhbGUoMC43KSI+PHBhdGggZD0iTTAgMCBMMCAtNTIiIHN0cm9rZT0iIzFCMkYyMyIgc3Ryb2tlLXdpZHRoPSI0Ii8+PGVsbGlwc2UgY3g9IjAiIGN5PSItNTgiIHJ4PSIxMSIgcnk9IjgiIGZpbGw9IiMxQjJGMjMiLz48ZWxsaXBzZSBjeD0iLTEwIiBjeT0iLTQ2IiByeD0iOSIgcnk9IjYiIGZpbGw9IiMxQjJGMjMiLz48ZWxsaXBzZSBjeD0iMTAiIGN5PSItNDIiIHJ4PSI4IiByeT0iNiIgZmlsbD0iIzFCMkYyMyIvPjwvZz4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg3NDAgNTQwKSBzY2FsZSgwLjcpIj48cGF0aCBkPSJNMCAwIEwwIC01MiIgc3Ryb2tlPSIjMUIyRjIzIiBzdHJva2Utd2lkdGg9IjQiLz48ZWxsaXBzZSBjeD0iMCIgY3k9Ii01OCIgcng9IjExIiByeT0iOCIgZmlsbD0iIzFCMkYyMyIvPjxlbGxpcHNlIGN4PSItMTAiIGN5PSItNDYiIHJ4PSI5IiByeT0iNiIgZmlsbD0iIzFCMkYyMyIvPjxlbGxpcHNlIGN4PSIxMCIgY3k9Ii00MiIgcng9IjgiIHJ5PSI2IiBmaWxsPSIjMUIyRjIzIi8+PC9nPgo8L3N2Zz4K" alt="Mandalpatti peaks above a sea of clouds at sunrise" width="800" height="560" loading="lazy">
+          <span class="place-tag">Approx. 25 km from Madikeri</span>
+          <span class="place-body">
+            <strong>Mandalpatti</strong>
+            <small>Sunrise viewpoint. The last rough stretch is jeep only, so we drop you at the base.</small>
+          </span>
+          <span class="place-add"><span class="tick" aria-hidden="true">&#10003;</span><span class="add-label">Add to trip</span></span>
+        </button>
+
+        <button type="button" class="place-card" data-place="Raja's Seat" aria-pressed="false">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNTYwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjU2MCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJSYWphJ3MgU2VhdCBnYXJkZW4gcGF2aWxpb24gb3Zlcmxvb2tpbmcgdGhlIGhpbGxzIGF0IHN1bnNldCI+CiAgPGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJza3kiIHgxPSIwIiB5MT0iMCIgeDI9IjAiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNGNkNFOTYiLz48c3RvcCBvZmZzZXQ9IjAuNSIgc3RvcC1jb2xvcj0iI0YzREVDMCIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI0U3RTlENiIvPjwvbGluZWFyR3JhZGllbnQ+PGZpbHRlciBpZD0iYmx1ciIgeD0iLTMwJSIgeT0iLTQwMCUiIHdpZHRoPSIxNjAlIiBoZWlnaHQ9IjkwMCUiPjxmZUdhdXNzaWFuQmx1ciBzdGREZXZpYXRpb249IjE0Ii8+PC9maWx0ZXI+PC9kZWZzPgogIDxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNTYwIiBmaWxsPSJ1cmwoI3NreSkiLz4KICA8Y2lyY2xlIGN4PSIyNTAiIGN5PSIyMDAiIHI9IjU0IiBmaWxsPSIjRjdCOTZGIiBvcGFjaXR5PSIwLjg1Ii8+CiAgPGNpcmNsZSBjeD0iMjUwIiBjeT0iMjAwIiByPSIxMzAiIGZpbGw9IiNGNkMxNzciIG9wYWNpdHk9IjAuMyIgZmlsdGVyPSJ1cmwoI2JsdXIpIi8+CiAgPHBhdGggZD0iTTAgMzAwIEMyNi43IDI5My4wIDEwMy4zIDI1OC43IDE2MC4wIDI1OC4wIEMyMTYuNyAyNTcuMyAyODAuMCAyOTcuMyAzNDAuMCAyOTYuMCBDNDAwLjAgMjk0LjcgNDYwLjAgMjUwLjcgNTIwLjAgMjUwLjAgQzU4MC4wIDI0OS4zIDY1My4zIDI4OS4wIDcwMC4wIDI5Mi4wIEM3NDYuNyAyOTUuMCA3ODMuMyAyNzIuMCA4MDAuMCAyNjguMCBMODAwIDU2MCBMMCA1NjAgWiIgZmlsbD0iI0E4QjlBNiIgb3BhY2l0eT0iMSIvPgogIDxlbGxpcHNlIGN4PSI0MDAiIGN5PSIzMTAiIHJ4PSI0NjAiIHJ5PSIxNiIgZmlsbD0iI0ZGRkZGRiIgb3BhY2l0eT0iMC42IiBmaWx0ZXI9InVybCgjYmx1cikiLz4KICA8cGF0aCBkPSJNMCAzNjYgQzMzLjMgMzU5LjMgMTMwLjAgMzI2LjAgMjAwLjAgMzI2LjAgQzI3MC4wIDMyNi4wIDM0Ni43IDM2Ny4wIDQyMC4wIDM2Ni4wIEM0OTMuMyAzNjUuMCA1NzYuNyAzMjIuMCA2NDAuMCAzMjAuMCBDNzAzLjMgMzE4LjAgNzczLjMgMzQ4LjMgODAwLjAgMzU0LjAgTDgwMCA1NjAgTDAgNTYwIFoiIGZpbGw9IiM2RjhENzQiIG9wYWNpdHk9IjEiLz4KICA8cGF0aCBkPSJNMCA0MjAgQzM2LjcgNDE2LjAgMTQwLjAgMzk0LjcgMjIwLjAgMzk2LjAgQzMwMC4wIDM5Ny4zIDM4My4zIDQyNy4zIDQ4MC4wIDQyOC4wIEM1NzYuNyA0MjguNyA3NDYuNyA0MDQuNyA4MDAuMCA0MDAuMCBMODAwIDU2MCBMMCA1NjAgWiIgZmlsbD0iIzRDNkM1NCIgb3BhY2l0eT0iMSIvPgogIDxwYXRoIGQ9Ik0wIDQ1MiBMODAwIDQzNCBMODAwIDU2MCBMMCA1NjAgWiIgZmlsbD0iIzNDNUE0NCIvPgogIDxwYXRoIGQ9Ik0wIDQ1MiBMODAwIDQzNCBMODAwIDQ2MiBMMCA0ODAgWiIgZmlsbD0iI0M2QjY5MyIvPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDQwMCA0NTIpIj48cmVjdCB4PSItOTYiIHk9Ii05NiIgd2lkdGg9IjE5MiIgaGVpZ2h0PSI5NiIgZmlsbD0iI0Y1RUZFMCIvPjxwYXRoIGQ9Ik0tMTE4IC05NiBMMTE4IC05NiBMOTYgLTEyOCBMLTk2IC0xMjggWiIgZmlsbD0iIzhDNEEzQSIvPjxwYXRoIGQ9Ik0tOTYgLTEyOCBMOTYgLTEyOCBMNjAgLTE1NiBMLTYwIC0xNTYgWiIgZmlsbD0iI0E0NUE0NCIvPjxwYXRoIGQ9Ik0wIC0xNTYgTDAgLTE4MCIgc3Ryb2tlPSIjQjE3RDQzIiBzdHJva2Utd2lkdGg9IjYiLz48Y2lyY2xlIGN4PSIwIiBjeT0iLTE4NiIgcj0iOCIgZmlsbD0iI0IxN0Q0MyIvPjxwYXRoIGQ9Ik0tNzIgLTE4IEwtNzIgLTc4IEMtNzIgLTk2IC00MCAtOTYgLTQwIC03OCBMLTQwIC0xOCBaIiBmaWxsPSIjMkY0QTM4Ii8+PHBhdGggZD0iTS0xNiAtMTggTC0xNiAtNzggQy0xNiAtOTYgMTYgLTk2IDE2IC03OCBMMTYgLTE4IFoiIGZpbGw9IiMyRjRBMzgiLz48cGF0aCBkPSJNNDAgLTE4IEw0MCAtNzggQzQwIC05NiA3MiAtOTYgNzIgLTc4IEw3MiAtMTggWiIgZmlsbD0iIzJGNEEzOCIvPjxyZWN0IHg9Ii0xMDAiIHk9Ii00IiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEwIiBmaWxsPSIjRDhDQkFDIi8+PC9nPgogIDxnPjxlbGxpcHNlIGN4PSI0MCIgY3k9IjUxMCIgcng9IjM4IiByeT0iMTQiIGZpbGw9IiMzRjYwNDgiLz48Y2lyY2xlIGN4PSIyNiIgY3k9IjUwNSIgcj0iNiIgZmlsbD0iI0M4NDQzQSIvPjxjaXJjbGUgY3g9IjQ0IiBjeT0iNTEwIiByPSI3IiBmaWxsPSIjQzg0NDNBIi8+PGNpcmNsZSBjeD0iNjAiIGN5PSI1MDMiIHI9IjUiIGZpbGw9IiNDODQ0M0EiLz48ZWxsaXBzZSBjeD0iMTI0IiBjeT0iNTI0IiByeD0iMzgiIHJ5PSIxNCIgZmlsbD0iIzNGNjA0OCIvPjxjaXJjbGUgY3g9IjExMCIgY3k9IjUxOSIgcj0iNiIgZmlsbD0iI0UyQTAzRiIvPjxjaXJjbGUgY3g9IjEyOCIgY3k9IjUyNCIgcj0iNyIgZmlsbD0iI0UyQTAzRiIvPjxjaXJjbGUgY3g9IjE0NCIgY3k9IjUxNyIgcj0iNSIgZmlsbD0iI0UyQTAzRiIvPjxlbGxpcHNlIGN4PSIyMDgiIGN5PSI1MTAiIHJ4PSIzOCIgcnk9IjE0IiBmaWxsPSIjM0Y2MDQ4Ii8+PGNpcmNsZSBjeD0iMTk0IiBjeT0iNTA1IiByPSI2IiBmaWxsPSIjRDk2MzVBIi8+PGNpcmNsZSBjeD0iMjEyIiBjeT0iNTEwIiByPSI3IiBmaWxsPSIjRDk2MzVBIi8+PGNpcmNsZSBjeD0iMjI4IiBjeT0iNTAzIiByPSI1IiBmaWxsPSIjRDk2MzVBIi8+PGVsbGlwc2UgY3g9IjI5MiIgY3k9IjUyNCIgcng9IjM4IiByeT0iMTQiIGZpbGw9IiMzRjYwNDgiLz48Y2lyY2xlIGN4PSIyNzgiIGN5PSI1MTkiIHI9IjYiIGZpbGw9IiNFRkMwNUMiLz48Y2lyY2xlIGN4PSIyOTYiIGN5PSI1MjQiIHI9IjciIGZpbGw9IiNFRkMwNUMiLz48Y2lyY2xlIGN4PSIzMTIiIGN5PSI1MTciIHI9IjUiIGZpbGw9IiNFRkMwNUMiLz48ZWxsaXBzZSBjeD0iMzc2IiBjeT0iNTEwIiByeD0iMzgiIHJ5PSIxNCIgZmlsbD0iIzNGNjA0OCIvPjxjaXJjbGUgY3g9IjM2MiIgY3k9IjUwNSIgcj0iNiIgZmlsbD0iI0M4NDQzQSIvPjxjaXJjbGUgY3g9IjM4MCIgY3k9IjUxMCIgcj0iNyIgZmlsbD0iI0M4NDQzQSIvPjxjaXJjbGUgY3g9IjM5NiIgY3k9IjUwMyIgcj0iNSIgZmlsbD0iI0M4NDQzQSIvPjxlbGxpcHNlIGN4PSI0NjAiIGN5PSI1MjQiIHJ4PSIzOCIgcnk9IjE0IiBmaWxsPSIjM0Y2MDQ4Ii8+PGNpcmNsZSBjeD0iNDQ2IiBjeT0iNTE5IiByPSI2IiBmaWxsPSIjRTJBMDNGIi8+PGNpcmNsZSBjeD0iNDY0IiBjeT0iNTI0IiByPSI3IiBmaWxsPSIjRTJBMDNGIi8+PGNpcmNsZSBjeD0iNDgwIiBjeT0iNTE3IiByPSI1IiBmaWxsPSIjRTJBMDNGIi8+PGVsbGlwc2UgY3g9IjU0NCIgY3k9IjUxMCIgcng9IjM4IiByeT0iMTQiIGZpbGw9IiMzRjYwNDgiLz48Y2lyY2xlIGN4PSI1MzAiIGN5PSI1MDUiIHI9IjYiIGZpbGw9IiNEOTYzNUEiLz48Y2lyY2xlIGN4PSI1NDgiIGN5PSI1MTAiIHI9IjciIGZpbGw9IiNEOTYzNUEiLz48Y2lyY2xlIGN4PSI1NjQiIGN5PSI1MDMiIHI9IjUiIGZpbGw9IiNEOTYzNUEiLz48ZWxsaXBzZSBjeD0iNjI4IiBjeT0iNTI0IiByeD0iMzgiIHJ5PSIxNCIgZmlsbD0iIzNGNjA0OCIvPjxjaXJjbGUgY3g9IjYxNCIgY3k9IjUxOSIgcj0iNiIgZmlsbD0iI0VGQzA1QyIvPjxjaXJjbGUgY3g9IjYzMiIgY3k9IjUyNCIgcj0iNyIgZmlsbD0iI0VGQzA1QyIvPjxjaXJjbGUgY3g9IjY0OCIgY3k9IjUxNyIgcj0iNSIgZmlsbD0iI0VGQzA1QyIvPjxlbGxpcHNlIGN4PSI3MTIiIGN5PSI1MTAiIHJ4PSIzOCIgcnk9IjE0IiBmaWxsPSIjM0Y2MDQ4Ii8+PGNpcmNsZSBjeD0iNjk4IiBjeT0iNTA1IiByPSI2IiBmaWxsPSIjQzg0NDNBIi8+PGNpcmNsZSBjeD0iNzE2IiBjeT0iNTEwIiByPSI3IiBmaWxsPSIjQzg0NDNBIi8+PGNpcmNsZSBjeD0iNzMyIiBjeT0iNTAzIiByPSI1IiBmaWxsPSIjQzg0NDNBIi8+PGVsbGlwc2UgY3g9Ijc5NiIgY3k9IjUyNCIgcng9IjM4IiByeT0iMTQiIGZpbGw9IiMzRjYwNDgiLz48Y2lyY2xlIGN4PSI3ODIiIGN5PSI1MTkiIHI9IjYiIGZpbGw9IiNFMkEwM0YiLz48Y2lyY2xlIGN4PSI4MDAiIGN5PSI1MjQiIHI9IjciIGZpbGw9IiNFMkEwM0YiLz48Y2lyY2xlIGN4PSI4MTYiIGN5PSI1MTciIHI9IjUiIGZpbGw9IiNFMkEwM0YiLz48L2c+CiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoOTAgNDYwKSBzY2FsZSgwLjgpIj48cGF0aCBkPSJNMCAwIEwwIC01MiIgc3Ryb2tlPSIjMkM0ODM0IiBzdHJva2Utd2lkdGg9IjQiLz48ZWxsaXBzZSBjeD0iMCIgY3k9Ii01OCIgcng9IjExIiByeT0iOCIgZmlsbD0iIzJDNDgzNCIvPjxlbGxpcHNlIGN4PSItMTAiIGN5PSItNDYiIHJ4PSI5IiByeT0iNiIgZmlsbD0iIzJDNDgzNCIvPjxlbGxpcHNlIGN4PSIxMCIgY3k9Ii00MiIgcng9IjgiIHJ5PSI2IiBmaWxsPSIjMkM0ODM0Ii8+PC9nPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDcxNiA0NTIpIHNjYWxlKDAuOCkiPjxwYXRoIGQ9Ik0wIDAgTDAgLTUyIiBzdHJva2U9IiMyQzQ4MzQiIHN0cm9rZS13aWR0aD0iNCIvPjxlbGxpcHNlIGN4PSIwIiBjeT0iLTU4IiByeD0iMTEiIHJ5PSI4IiBmaWxsPSIjMkM0ODM0Ii8+PGVsbGlwc2UgY3g9Ii0xMCIgY3k9Ii00NiIgcng9IjkiIHJ5PSI2IiBmaWxsPSIjMkM0ODM0Ii8+PGVsbGlwc2UgY3g9IjEwIiBjeT0iLTQyIiByeD0iOCIgcnk9IjYiIGZpbGw9IiMyQzQ4MzQiLz48L2c+Cjwvc3ZnPgo=" alt="Raja's Seat garden pavilion overlooking the hills at sunset" width="800" height="560" loading="lazy">
+          <span class="place-tag">In Madikeri town</span>
+          <span class="place-body">
+            <strong>Raja's Seat</strong>
+            <small>Sunset garden looking west across the valley. Easy stop on the way back.</small>
+          </span>
+          <span class="place-add"><span class="tick" aria-hidden="true">&#10003;</span><span class="add-label">Add to trip</span></span>
+        </button>
+
+        <button type="button" class="place-card" data-place="Dubare Elephant Camp" aria-pressed="false">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNTYwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjU2MCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJEdWJhcmUgZWxlcGhhbnQgY2FtcCBvbiB0aGUgYmFua3Mgb2YgdGhlIENhdXZlcnkgcml2ZXIiPgogIDxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0ic2t5IiB4MT0iMCIgeTE9IjAiIHgyPSIwIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjRENFOEQ4Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjQzNEOEM2Ii8+PC9saW5lYXJHcmFkaWVudD48ZmlsdGVyIGlkPSJibHVyIiB4PSItMzAlIiB5PSItNDAwJSIgd2lkdGg9IjE2MCUiIGhlaWdodD0iOTAwJSI+PGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMTQiLz48L2ZpbHRlcj48L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1NjAiIGZpbGw9InVybCgjc2t5KSIvPgogIDxwYXRoIGQ9Ik0wIDIyMCBDMzMuMyAyMTIuNyAxMzAuMCAxNzcuMCAyMDAuMCAxNzYuMCBDMjcwLjAgMTc1LjAgMzQ2LjcgMjE1LjAgNDIwLjAgMjE0LjAgQzQ5My4zIDIxMy4wIDU3Ni43IDE3Mi4wIDY0MC4wIDE3MC4wIEM3MDMuMyAxNjguMCA3NzMuMyAxOTYuNyA4MDAuMCAyMDIuMCBMODAwIDU2MCBMMCA1NjAgWiIgZmlsbD0iIzkzQUU5NyIgb3BhY2l0eT0iMSIvPgogIDxlbGxpcHNlIGN4PSI0MDAiIGN5PSIyMzIiIHJ4PSI0NzAiIHJ5PSIxNiIgZmlsbD0iI0ZGRkZGRiIgb3BhY2l0eT0iMC41NSIgZmlsdGVyPSJ1cmwoI2JsdXIpIi8+CiAgPHBhdGggZD0iTTAgMzAwIEMzMy4zIDI5My43IDEyNi43IDI2Mi4wIDIwMC4wIDI2Mi4wIEMyNzMuMyAyNjIuMCAzNjMuMyAzMDAuNyA0NDAuMCAzMDAuMCBDNTE2LjcgMjk5LjMgNjAwLjAgMjYwLjAgNjYwLjAgMjU4LjAgQzcyMC4wIDI1Ni4wIDc3Ni43IDI4My4wIDgwMC4wIDI4OC4wIEw4MDAgNTYwIEwwIDU2MCBaIiBmaWxsPSIjNUQ3RjY0IiBvcGFjaXR5PSIxIi8+CiAgPHJlY3QgeT0iMzI2IiB3aWR0aD0iODAwIiBoZWlnaHQ9IjIwIiBmaWxsPSIjMkU0QTM2Ii8+CiAgPGcgb3BhY2l0eT0iMS4wIj48ZWxsaXBzZSBjeD0iLTIwIiBjeT0iMzM0IiByeD0iNDIiIHJ5PSIzMCIgZmlsbD0iIzI1NDAyQyIvPjxlbGxpcHNlIGN4PSIzNCIgY3k9IjM0NCIgcng9IjU2IiByeT0iNDAiIGZpbGw9IiMyNTQwMkMiLz48ZWxsaXBzZSBjeD0iODgiIGN5PSIzMzQiIHJ4PSI3MCIgcnk9IjUwIiBmaWxsPSIjMjU0MDJDIi8+PGVsbGlwc2UgY3g9IjE0MiIgY3k9IjM0NCIgcng9IjQyIiByeT0iMzAiIGZpbGw9IiMyNTQwMkMiLz48ZWxsaXBzZSBjeD0iMTk2IiBjeT0iMzM0IiByeD0iNTYiIHJ5PSI0MCIgZmlsbD0iIzI1NDAyQyIvPjxlbGxpcHNlIGN4PSIyNTAiIGN5PSIzNDQiIHJ4PSI3MCIgcnk9IjUwIiBmaWxsPSIjMjU0MDJDIi8+PGVsbGlwc2UgY3g9IjMwNCIgY3k9IjMzNCIgcng9IjQyIiByeT0iMzAiIGZpbGw9IiMyNTQwMkMiLz48ZWxsaXBzZSBjeD0iMzU4IiBjeT0iMzQ0IiByeD0iNTYiIHJ5PSI0MCIgZmlsbD0iIzI1NDAyQyIvPjxlbGxpcHNlIGN4PSI0MTIiIGN5PSIzMzQiIHJ4PSI3MCIgcnk9IjUwIiBmaWxsPSIjMjU0MDJDIi8+PGVsbGlwc2UgY3g9IjQ2NiIgY3k9IjM0NCIgcng9IjQyIiByeT0iMzAiIGZpbGw9IiMyNTQwMkMiLz48ZWxsaXBzZSBjeD0iNTIwIiBjeT0iMzM0IiByeD0iNTYiIHJ5PSI0MCIgZmlsbD0iIzI1NDAyQyIvPjxlbGxpcHNlIGN4PSI1NzQiIGN5PSIzNDQiIHJ4PSI3MCIgcnk9IjUwIiBmaWxsPSIjMjU0MDJDIi8+PGVsbGlwc2UgY3g9IjYyOCIgY3k9IjMzNCIgcng9IjQyIiByeT0iMzAiIGZpbGw9IiMyNTQwMkMiLz48ZWxsaXBzZSBjeD0iNjgyIiBjeT0iMzQ0IiByeD0iNTYiIHJ5PSI0MCIgZmlsbD0iIzI1NDAyQyIvPjxlbGxpcHNlIGN4PSI3MzYiIGN5PSIzMzQiIHJ4PSI3MCIgcnk9IjUwIiBmaWxsPSIjMjU0MDJDIi8+PGVsbGlwc2UgY3g9Ijc5MCIgY3k9IjM0NCIgcng9IjQyIiByeT0iMzAiIGZpbGw9IiMyNTQwMkMiLz48L2c+CiAgPHBhdGggZD0iTTAgNDAwIEw4MDAgMzgwIEw4MDAgNTYwIEwwIDU2MCBaIiBmaWxsPSIjOUZDM0M0Ii8+CiAgPHBhdGggZD0iTTAgNDAwIEw4MDAgMzgwIEw4MDAgNDA0IEwwIDQyNCBaIiBmaWxsPSIjQzlERkRBIiBvcGFjaXR5PSIwLjgiLz4KICA8cGF0aCBkPSJNNjAgNDYwIEwzMDAgNDU2IiBzdHJva2U9IiNFNEYwRUMiIHN0cm9rZS13aWR0aD0iNiIgb3BhY2l0eT0iMC43Ii8+CiAgPHBhdGggZD0iTTQyMCA1MDAgTDcwMCA0OTIiIHN0cm9rZT0iI0U0RjBFQyIgc3Ryb2tlLXdpZHRoPSI2IiBvcGFjaXR5PSIwLjciLz4KICA8cGF0aCBkPSJNMTIwIDUyMCBMMzYwIDUxNCIgc3Ryb2tlPSIjRTRGMEVDIiBzdHJva2Utd2lkdGg9IjUiIG9wYWNpdHk9IjAuNTUiLz4KICA8cGF0aCBkPSJNMCAzOTIgQzE2MCAzNzIgMzIwIDM4MCA0NzAgMzkyIEMzNjAgNDAyIDE2MCA0MDQgMCA0MDAgWiIgZmlsbD0iI0Q4QzlBNiIvPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDQ2OCA0NzApIHNjYWxlKDEuMDIpIj48ZWxsaXBzZSBjeD0iMTAiIGN5PSItNTYiIHJ4PSI4MCIgcnk9IjQ0IiBmaWxsPSIjNkU3MTczIi8+PHBhdGggZD0iTS01OCAtMTA0IEMtOTIgLTEwNCAtMTA4IC04MCAtMTA0IC01MCBDLTEwMCAtMjAgLTc4IC04IC01NiAtMTQgQy0zOCAtMjAgLTMyIC00NCAtMzYgLTcwIEMtNDAgLTkyIC00NiAtMTA0IC01OCAtMTA0IFoiIGZpbGw9IiM3ODdCN0QiLz48ZWxsaXBzZSBjeD0iLTcyIiBjeT0iLTYyIiByeD0iMzAiIHJ5PSIzOCIgZmlsbD0iIzYzNjc2QSIvPjxwYXRoIGQ9Ik0tNTIgLTIyIEMtNjIgNCAtNjAgMjggLTQ2IDQ0IEMtMzYgNTYgLTUwIDY2IC02MCA1NCBDLTc4IDMyIC04MiAyIC03NCAtMjYgWiIgZmlsbD0iIzdEODA4MiIvPjxwYXRoIGQ9Ik0tMzIgLTIyIEwtOCAtNiBDMCAtMSAtNiAxMCAtMTQgNSBMLTM2IC0xMCBaIiBmaWxsPSIjRjFFRkU2Ii8+PGNpcmNsZSBjeD0iLTQwIiBjeT0iLTcwIiByPSI1LjUiIGZpbGw9IiMzMzM4M0EiLz48cmVjdCB4PSItMjQiIHk9Ii0xNiIgd2lkdGg9IjI2IiBoZWlnaHQ9IjQyIiByeD0iMTEiIGZpbGw9IiM2MzY3NkEiLz48cmVjdCB4PSIxMiIgeT0iLTEyIiB3aWR0aD0iMjYiIGhlaWdodD0iMzgiIHJ4PSIxMSIgZmlsbD0iIzZFNzE3MyIvPjxyZWN0IHg9IjUyIiB5PSItMTYiIHdpZHRoPSIyNiIgaGVpZ2h0PSI0MiIgcng9IjExIiBmaWxsPSIjNjM2NzZBIi8+PHJlY3QgeD0iODAiIHk9Ii0xMiIgd2lkdGg9IjIyIiBoZWlnaHQ9IjM4IiByeD0iMTAiIGZpbGw9IiM2RTcxNzMiLz48cGF0aCBkPSJNODggLTcyIEMxMTAgLTc2IDExNCAtNTAgMTAwIC00MiIgc3Ryb2tlPSIjNjM2NzZBIiBzdHJva2Utd2lkdGg9IjciIGZpbGw9Im5vbmUiLz48L2c+CiAgPGVsbGlwc2UgY3g9IjQ3NCIgY3k9IjUwMCIgcng9IjExOCIgcnk9IjEzIiBmaWxsPSIjNkU4RThDIiBvcGFjaXR5PSIwLjUiLz4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg3NiA0MDApIHNjYWxlKDEuMTUpIj48cGF0aCBkPSJNMCAwIEMtNCAtMzAgMiAtNTAgMCAtNzAiIHN0cm9rZT0iIzIyNDAyQyIgc3Ryb2tlLXdpZHRoPSI1IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTAgLTcwIEMxOCAtNzggNDAgLTcwIDUyIC01MiBDMzQgLTYwIDE2IC02MiAwIC02MCBaIiBmaWxsPSIjMjI0MDJDIi8+PHBhdGggZD0iTTAgLTcwIEMtMTggLTc4IC00MCAtNzAgLTUyIC01MiBDLTM0IC02MCAtMTYgLTYyIDAgLTYwIFoiIGZpbGw9IiMyMjQwMkMiLz48cGF0aCBkPSJNMCAtNzAgQzEwIC04NiAyNiAtOTIgNDAgLTg4IEMyNiAtODQgMTIgLTc4IDAgLTY2IFoiIGZpbGw9IiMyMjQwMkMiLz48cGF0aCBkPSJNMCAtNzAgQy0xMCAtODYgLTI2IC05MiAtNDAgLTg4IEMtMjYgLTg0IC0xMiAtNzggMCAtNjYgWiIgZmlsbD0iIzIyNDAyQyIvPjwvZz4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg3MzYgMzkyKSBzY2FsZSgxLjA1KSI+PHBhdGggZD0iTTAgMCBDLTQgLTMwIDIgLTUwIDAgLTcwIiBzdHJva2U9IiMyMjQwMkMiIHN0cm9rZS13aWR0aD0iNSIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0wIC03MCBDMTggLTc4IDQwIC03MCA1MiAtNTIgQzM0IC02MCAxNiAtNjIgMCAtNjAgWiIgZmlsbD0iIzIyNDAyQyIvPjxwYXRoIGQ9Ik0wIC03MCBDLTE4IC03OCAtNDAgLTcwIC01MiAtNTIgQy0zNCAtNjAgLTE2IC02MiAwIC02MCBaIiBmaWxsPSIjMjI0MDJDIi8+PHBhdGggZD0iTTAgLTcwIEMxMCAtODYgMjYgLTkyIDQwIC04OCBDMjYgLTg0IDEyIC03OCAwIC02NiBaIiBmaWxsPSIjMjI0MDJDIi8+PHBhdGggZD0iTTAgLTcwIEMtMTAgLTg2IC0yNiAtOTIgLTQwIC04OCBDLTI2IC04NCAtMTIgLTc4IDAgLTY2IFoiIGZpbGw9IiMyMjQwMkMiLz48L2c+Cjwvc3ZnPgo=" alt="Elephant standing in the Cauvery river at Dubare camp" width="800" height="560" loading="lazy">
+          <span class="place-tag">Approx. 30 km from Madikeri</span>
+          <span class="place-body">
+            <strong>Dubare Elephant Camp</strong>
+            <small>On the Cauvery near Kushalnagar. Morning interaction slots fill up early.</small>
+          </span>
+          <span class="place-add"><span class="tick" aria-hidden="true">&#10003;</span><span class="add-label">Add to trip</span></span>
+        </button>
+
+        <button type="button" class="place-card" data-place="Golden Temple, Bylakuppe" aria-pressed="false">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNTYwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjU2MCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJOYW1kcm9saW5nIG1vbmFzdGVyeSwgdGhlIGdvbGRlbiB0ZW1wbGUgbmVhciBLdXNoYWxuYWdhciI+CiAgPGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJza3kiIHgxPSIwIiB5MT0iMCIgeDI9IjAiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNFRkUzQzgiLz48c3RvcCBvZmZzZXQ9IjAuNSIgc3RvcC1jb2xvcj0iI0U2RTZEMiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI0Q5RTNEMiIvPjwvbGluZWFyR3JhZGllbnQ+PGZpbHRlciBpZD0iYmx1ciIgeD0iLTMwJSIgeT0iLTQwMCUiIHdpZHRoPSIxNjAlIiBoZWlnaHQ9IjkwMCUiPjxmZUdhdXNzaWFuQmx1ciBzdGREZXZpYXRpb249IjE0Ii8+PC9maWx0ZXI+PGxpbmVhckdyYWRpZW50IGlkPSJnb2xkIiB4MT0iMCIgeTE9IjAiIHgyPSIwIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjRThCOTVGIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjQzA4QzM2Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1NjAiIGZpbGw9InVybCgjc2t5KSIvPgogIDxwYXRoIGQ9Ik0wIDI1MCBDMzMuMyAyNDMuNyAxMzAuMCAyMTIuMCAyMDAuMCAyMTIuMCBDMjcwLjAgMjEyLjAgMzQ2LjcgMjUwLjcgNDIwLjAgMjUwLjAgQzQ5My4zIDI0OS4zIDU3Ni43IDIwOS43IDY0MC4wIDIwOC4wIEM3MDMuMyAyMDYuMyA3NzMuMyAyMzQuNyA4MDAuMCAyNDAuMCBMODAwIDU2MCBMMCA1NjAgWiIgZmlsbD0iIzlEQjU5RSIgb3BhY2l0eT0iMSIvPgogIDxlbGxpcHNlIGN4PSI0MDAiIGN5PSIyNjIiIHJ4PSI0NjAiIHJ5PSIxNCIgZmlsbD0iI0ZGRkZGRiIgb3BhY2l0eT0iMC41IiBmaWx0ZXI9InVybCgjYmx1cikiLz4KICA8cGF0aCBkPSJNMCAzMjAgQzQwLjAgMzE0LjcgMTUzLjMgMjg3LjcgMjQwLjAgMjg4LjAgQzMyNi43IDI4OC4zIDQyNi43IDMyMS4zIDUyMC4wIDMyMi4wIEM2MTMuMyAzMjIuNyA3NTMuMyAyOTcuMCA4MDAuMCAyOTIuMCBMODAwIDU2MCBMMCA1NjAgWiIgZmlsbD0iIzZDOEE3MiIgb3BhY2l0eT0iMSIvPgogIDxwYXRoIGQ9Ik0yMCAyNTAgQzIyMCAzMDAgNTgwIDMwMCA3ODAgMjQ0IiBzdHJva2U9IiM3QzhGODAiIHN0cm9rZS13aWR0aD0iMyIgZmlsbD0ibm9uZSIvPgogIDxnPjxwYXRoIGQ9Ik00MCAyNTggTDYyIDI2MiBMNjIgMjg4IEw0MCAyODQgWiIgZmlsbD0iI0M4NDQzQSIgb3BhY2l0eT0iMC45NSIvPjxwYXRoIGQ9Ik04NiAyNjMgTDEwOCAyNjcgTDEwOCAyOTMgTDg2IDI4OSBaIiBmaWxsPSIjRTJBMDNGIiBvcGFjaXR5PSIwLjk1Ii8+PHBhdGggZD0iTTEzMiAyNjggTDE1NCAyNzIgTDE1NCAyOTggTDEzMiAyOTQgWiIgZmlsbD0iI0YyRTZDRSIgb3BhY2l0eT0iMC45NSIvPjxwYXRoIGQ9Ik0xNzggMjczIEwyMDAgMjc3IEwyMDAgMzAzIEwxNzggMjk5IFoiIGZpbGw9IiMzRjdBNUEiIG9wYWNpdHk9IjAuOTUiLz48cGF0aCBkPSJNMjI0IDI3OCBMMjQ2IDI4MiBMMjQ2IDMwOCBMMjI0IDMwNCBaIiBmaWxsPSIjM0M2RTlBIiBvcGFjaXR5PSIwLjk1Ii8+PHBhdGggZD0iTTI3MCAyODMgTDI5MiAyODcgTDI5MiAzMTMgTDI3MCAzMDkgWiIgZmlsbD0iI0M4NDQzQSIgb3BhY2l0eT0iMC45NSIvPjxwYXRoIGQ9Ik0zMTYgMjg4IEwzMzggMjkyIEwzMzggMzE4IEwzMTYgMzE0IFoiIGZpbGw9IiNFMkEwM0YiIG9wYWNpdHk9IjAuOTUiLz48cGF0aCBkPSJNMzYyIDI5MyBMMzg0IDI5NyBMMzg0IDMyMyBMMzYyIDMxOSBaIiBmaWxsPSIjRjJFNkNFIiBvcGFjaXR5PSIwLjk1Ii8+PHBhdGggZD0iTTQwOCAyOTMgTDQzMCAyOTcgTDQzMCAzMjMgTDQwOCAzMTkgWiIgZmlsbD0iIzNGN0E1QSIgb3BhY2l0eT0iMC45NSIvPjxwYXRoIGQ9Ik00NTQgMjg4IEw0NzYgMjkyIEw0NzYgMzE4IEw0NTQgMzE0IFoiIGZpbGw9IiMzQzZFOUEiIG9wYWNpdHk9IjAuOTUiLz48cGF0aCBkPSJNNTAwIDI4MyBMNTIyIDI4NyBMNTIyIDMxMyBMNTAwIDMwOSBaIiBmaWxsPSIjQzg0NDNBIiBvcGFjaXR5PSIwLjk1Ii8+PHBhdGggZD0iTTU0NiAyNzggTDU2OCAyODIgTDU2OCAzMDggTDU0NiAzMDQgWiIgZmlsbD0iI0UyQTAzRiIgb3BhY2l0eT0iMC45NSIvPjxwYXRoIGQ9Ik01OTIgMjczIEw2MTQgMjc3IEw2MTQgMzAzIEw1OTIgMjk5IFoiIGZpbGw9IiNGMkU2Q0UiIG9wYWNpdHk9IjAuOTUiLz48cGF0aCBkPSJNNjM4IDI2OCBMNjYwIDI3MiBMNjYwIDI5OCBMNjM4IDI5NCBaIiBmaWxsPSIjM0Y3QTVBIiBvcGFjaXR5PSIwLjk1Ii8+PHBhdGggZD0iTTY4NCAyNjMgTDcwNiAyNjcgTDcwNiAyOTMgTDY4NCAyODkgWiIgZmlsbD0iIzNDNkU5QSIgb3BhY2l0eT0iMC45NSIvPjxwYXRoIGQ9Ik03MzAgMjU4IEw3NTIgMjYyIEw3NTIgMjg4IEw3MzAgMjg0IFoiIGZpbGw9IiNDODQ0M0EiIG9wYWNpdHk9IjAuOTUiLz48L2c+CiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDAwIDQ3MCkiPjxyZWN0IHg9Ii0xOTAiIHk9Ii0xMCIgd2lkdGg9IjM4MCIgaGVpZ2h0PSIxNCIgZmlsbD0iI0Q5Q0JBOSIvPjxyZWN0IHg9Ii0xNTAiIHk9Ii0xMjAiIHdpZHRoPSIzMDAiIGhlaWdodD0iMTEyIiBmaWxsPSIjRjNFQkQ4Ii8+PHJlY3QgeD0iLTE1MCIgeT0iLTEyMCIgd2lkdGg9IjMwMCIgaGVpZ2h0PSIxMiIgZmlsbD0iI0IwM0EzMiIvPjxwYXRoIGQ9Ik0tMTc2IC0xMjAgTDE3NiAtMTIwIEwxNDYgLTE1OCBMLTE0NiAtMTU4IFoiIGZpbGw9InVybCgjZ29sZCkiLz48cmVjdCB4PSItMTEyIiB5PSItMjA2IiB3aWR0aD0iMjI0IiBoZWlnaHQ9IjUwIiBmaWxsPSIjRjNFQkQ4Ii8+PHBhdGggZD0iTS0xMzQgLTIwNiBMMTM0IC0yMDYgTDEwOCAtMjQwIEwtMTA4IC0yNDAgWiIgZmlsbD0idXJsKCNnb2xkKSIvPjxyZWN0IHg9Ii02NCIgeT0iLTI3OCIgd2lkdGg9IjEyOCIgaGVpZ2h0PSI0MCIgZmlsbD0iI0YzRUJEOCIvPjxwYXRoIGQ9Ik0tODQgLTI3OCBMODQgLTI3OCBMNjAgLTMwNiBMLTYwIC0zMDYgWiIgZmlsbD0idXJsKCNnb2xkKSIvPjxwYXRoIGQ9Ik0wIC0zMDYgTDAgLTMzNCIgc3Ryb2tlPSIjQzA4QzM2IiBzdHJva2Utd2lkdGg9IjYiLz48Y2lyY2xlIGN4PSIwIiBjeT0iLTM0MCIgcj0iMTAiIGZpbGw9IiNFOEI5NUYiLz48cGF0aCBkPSJNLTQwIC05NiBMNDAgLTk2IEw0MCAtOCBMLTQwIC04IFoiIGZpbGw9IiM4QzNCMzIiLz48cGF0aCBkPSJNLTMyIC04OCBMMzIgLTg4IEwzMiAtOCBMLTMyIC04IFoiIGZpbGw9IiNDMDhDMzYiLz48cmVjdCB4PSItMTI0IiB5PSItOTYiIHdpZHRoPSIzNCIgaGVpZ2h0PSI1NiIgZmlsbD0iIzJGNEEzOCIvPjxyZWN0IHg9Ii03MiIgeT0iLTk2IiB3aWR0aD0iMjQiIGhlaWdodD0iNTYiIGZpbGw9IiMyRjRBMzgiLz48cmVjdCB4PSI0OCIgeT0iLTk2IiB3aWR0aD0iMjQiIGhlaWdodD0iNTYiIGZpbGw9IiMyRjRBMzgiLz48cmVjdCB4PSI5MCIgeT0iLTk2IiB3aWR0aD0iMzQiIGhlaWdodD0iNTYiIGZpbGw9IiMyRjRBMzgiLz48cmVjdCB4PSItOTIiIHk9Ii0xOTYiIHdpZHRoPSIzMCIgaGVpZ2h0PSI0MCIgZmlsbD0iIzJGNEEzOCIvPjxyZWN0IHg9Ii0xNiIgeT0iLTE5NiIgd2lkdGg9IjMyIiBoZWlnaHQ9IjQwIiBmaWxsPSIjMkY0QTM4Ii8+PHJlY3QgeD0iNjIiIHk9Ii0xOTYiIHdpZHRoPSIzMCIgaGVpZ2h0PSI0MCIgZmlsbD0iIzJGNEEzOCIvPjwvZz4KICA8cGF0aCBkPSJNMCA0NzQgTDgwMCA0NjAgTDgwMCA1NjAgTDAgNTYwIFoiIGZpbGw9IiMzRjVGNDciLz4KICA8cGF0aCBkPSJNMzQwIDU2MCBMMzYwIDQ3NCBMNDQwIDQ3NCBMNDYwIDU2MCBaIiBmaWxsPSIjQzZCNjkzIi8+CiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoODAgNDc2KSBzY2FsZSgwLjkpIj48cGF0aCBkPSJNMCAwIEwwIC01MiIgc3Ryb2tlPSIjMkE0NjMyIiBzdHJva2Utd2lkdGg9IjQiLz48ZWxsaXBzZSBjeD0iMCIgY3k9Ii01OCIgcng9IjExIiByeT0iOCIgZmlsbD0iIzJBNDYzMiIvPjxlbGxpcHNlIGN4PSItMTAiIGN5PSItNDYiIHJ4PSI5IiByeT0iNiIgZmlsbD0iIzJBNDYzMiIvPjxlbGxpcHNlIGN4PSIxMCIgY3k9Ii00MiIgcng9IjgiIHJ5PSI2IiBmaWxsPSIjMkE0NjMyIi8+PC9nPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDcyMiA0NjgpIHNjYWxlKDAuOSkiPjxwYXRoIGQ9Ik0wIDAgTDAgLTUyIiBzdHJva2U9IiMyQTQ2MzIiIHN0cm9rZS13aWR0aD0iNCIvPjxlbGxpcHNlIGN4PSIwIiBjeT0iLTU4IiByeD0iMTEiIHJ5PSI4IiBmaWxsPSIjMkE0NjMyIi8+PGVsbGlwc2UgY3g9Ii0xMCIgY3k9Ii00NiIgcng9IjkiIHJ5PSI2IiBmaWxsPSIjMkE0NjMyIi8+PGVsbGlwc2UgY3g9IjEwIiBjeT0iLTQyIiByeD0iOCIgcnk9IjYiIGZpbGw9IiMyQTQ2MzIiLz48L2c+Cjwvc3ZnPgo=" alt="Namdroling monastery with golden roofs and prayer flags" width="800" height="560" loading="lazy">
+          <span class="place-tag">Approx. 35 km from Madikeri</span>
+          <span class="place-body">
+            <strong>Golden Temple, Bylakuppe</strong>
+            <small>Namdroling monastery near Kushalnagar. Calm early, modest clothing preferred.</small>
+          </span>
+          <span class="place-add"><span class="tick" aria-hidden="true">&#10003;</span><span class="add-label">Add to trip</span></span>
+        </button>
+
+        <button type="button" class="place-card" data-place="Talacauvery" aria-pressed="false">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNTYwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjU2MCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJUYWxhY2F1dmVyeSB0ZW1wbGUgb24gdGhlIG1pc3R5IEJyYWhtYWdpcmkgc2xvcGVzIj4KICA8ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9InNreSIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI0RGRTdEQSIvPjxzdG9wIG9mZnNldD0iMC42IiBzdG9wLWNvbG9yPSIjQ0JEQkNCIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjQjdDREJCIi8+PC9saW5lYXJHcmFkaWVudD48ZmlsdGVyIGlkPSJibHVyIiB4PSItMzAlIiB5PSItNDAwJSIgd2lkdGg9IjE2MCUiIGhlaWdodD0iOTAwJSI+PGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMTQiLz48L2ZpbHRlcj48L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1NjAiIGZpbGw9InVybCgjc2t5KSIvPgogIDxwYXRoIGQ9Ik0wIDIxMCBDMzAuMCAyMDEuNyAxMTMuMyAxNjAuNyAxODAuMCAxNjAuMCBDMjQ2LjcgMTU5LjMgMzI2LjcgMjA2LjcgNDAwLjAgMjA2LjAgQzQ3My4zIDIwNS4zIDU1My4zIDE1Ny43IDYyMC4wIDE1Ni4wIEM2ODYuNyAxNTQuMyA3NzAuMCAxODkuMyA4MDAuMCAxOTYuMCBMODAwIDU2MCBMMCA1NjAgWiIgZmlsbD0iI0E1QkFBNiIgb3BhY2l0eT0iMSIvPgogIDxlbGxpcHNlIGN4PSI0MDAiIGN5PSIyMjQiIHJ4PSI0NzAiIHJ5PSIxOCIgZmlsbD0iI0ZGRkZGRiIgb3BhY2l0eT0iMC43IiBmaWx0ZXI9InVybCgjYmx1cikiLz4KICA8cGF0aCBkPSJNMCAyOTIgQzM2LjcgMjg0LjMgMTQzLjMgMjQ2LjAgMjIwLjAgMjQ2LjAgQzI5Ni43IDI0Ni4wIDM4MC4wIDI5Mi4zIDQ2MC4wIDI5Mi4wIEM1NDAuMCAyOTEuNyA2NDMuMyAyNDcuMCA3MDAuMCAyNDQuMCBDNzU2LjcgMjQxLjAgNzgzLjMgMjY5LjAgODAwLjAgMjc0LjAgTDgwMCA1NjAgTDAgNTYwIFoiIGZpbGw9IiM3QzlBODIiIG9wYWNpdHk9IjEiLz4KICA8ZWxsaXBzZSBjeD0iMjQwIiBjeT0iMzA2IiByeD0iMzgwIiByeT0iMTYiIGZpbGw9IiNGRkZGRkYiIG9wYWNpdHk9IjAuNjUiIGZpbHRlcj0idXJsKCNibHVyKSIvPgogIDxlbGxpcHNlIGN4PSI2NjAiIGN5PSIyOTYiIHJ4PSIzMDAiIHJ5PSIxNCIgZmlsbD0iI0ZGRkZGRiIgb3BhY2l0eT0iMC42IiBmaWx0ZXI9InVybCgjYmx1cikiLz4KICA8cGF0aCBkPSJNMCAzNzIgQzQwLjAgMzY2LjAgMTUzLjMgMzM0LjcgMjQwLjAgMzM2LjAgQzMyNi43IDMzNy4zIDQyNi43IDM3OS4zIDUyMC4wIDM4MC4wIEM2MTMuMyAzODAuNyA3NTMuMyAzNDYuNyA4MDAuMCAzNDAuMCBMODAwIDU2MCBMMCA1NjAgWiIgZmlsbD0iIzU1N0E1RiIgb3BhY2l0eT0iMSIvPgogIDxwYXRoIGQ9Ik0wIDQ0MCBDMTgwIDQxMCA0MjAgNDE4IDgwMCAzOTYgTDgwMCA1NjAgTDAgNTYwIFoiIGZpbGw9IiMzRTVGNDkiLz4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0MzAgNDM0KSI+PHJlY3QgeD0iLTE1MCIgeT0iLTE2IiB3aWR0aD0iMzAwIiBoZWlnaHQ9IjE2IiBmaWxsPSIjQ0ZDM0E0Ii8+PHJlY3QgeD0iLTEyMCIgeT0iLTg2IiB3aWR0aD0iMjQwIiBoZWlnaHQ9IjcwIiBmaWxsPSIjRUZFN0Q0Ii8+PHBhdGggZD0iTS0xNDAgLTg2IEwxNDAgLTg2IEwxMjAgLTEwOCBMLTEyMCAtMTA4IFoiIGZpbGw9IiM5QTRFM0MiLz48cmVjdCB4PSItNDQiIHk9Ii0xNzAiIHdpZHRoPSI4OCIgaGVpZ2h0PSI2NCIgZmlsbD0iI0VGRTdENCIvPjxwYXRoIGQ9Ik0tNTYgLTE3MCBMNTYgLTE3MCBMNDQgLTE5NiBMLTQ0IC0xOTYgWiIgZmlsbD0iIzlBNEUzQyIvPjxwYXRoIGQ9Ik0tMzAgLTE5NiBDLTMwIC0yMjYgMzAgLTIyNiAzMCAtMTk2IFoiIGZpbGw9IiNCMTdENDMiLz48cGF0aCBkPSJNMCAtMjI2IEwwIC0yNDYiIHN0cm9rZT0iI0IxN0Q0MyIgc3Ryb2tlLXdpZHRoPSI1Ii8+PGNpcmNsZSBjeD0iMCIgY3k9Ii0yNTIiIHI9IjgiIGZpbGw9IiNENkE0NUUiLz48cmVjdCB4PSItMjIiIHk9Ii03MCIgd2lkdGg9IjQ0IiBoZWlnaHQ9IjU0IiBmaWxsPSIjN0MzRTMzIi8+PHJlY3QgeD0iLTk2IiB5PSItNzAiIHdpZHRoPSIyNiIgaGVpZ2h0PSI0MCIgZmlsbD0iIzMzNTAzQyIvPjxyZWN0IHg9IjcwIiB5PSItNzAiIHdpZHRoPSIyNiIgaGVpZ2h0PSI0MCIgZmlsbD0iIzMzNTAzQyIvPjwvZz4KICA8cGF0aCBkPSJNMzAwIDQ1MiBMNTYwIDQ0NiBMNTgwIDU2MCBMMjgwIDU2MCBaIiBmaWxsPSIjRDZDQkFDIi8+CiAgPHBhdGggZD0iTTI5NiA0ODAgTDU2NiA0NzQiIHN0cm9rZT0iI0JFQjI5MiIgc3Ryb2tlLXdpZHRoPSI1Ii8+CiAgPHBhdGggZD0iTTI5MCA1MDggTDU3MiA1MDIiIHN0cm9rZT0iI0JFQjI5MiIgc3Ryb2tlLXdpZHRoPSI1Ii8+CiAgPHBhdGggZD0iTTI4NCA1MzYgTDU3OCA1MzAiIHN0cm9rZT0iI0JFQjI5MiIgc3Ryb2tlLXdpZHRoPSI1Ii8+CiAgPHJlY3QgeD0iMzUyIiB5PSI0ODYiIHdpZHRoPSIxNTAiIGhlaWdodD0iNDgiIHJ4PSI2IiBmaWxsPSIjOUZDM0M0Ii8+CiAgPHJlY3QgeD0iMzUyIiB5PSI0ODYiIHdpZHRoPSIxNTAiIGhlaWdodD0iMTIiIHJ4PSI2IiBmaWxsPSIjQzZERURBIiBvcGFjaXR5PSIwLjgiLz4KICA8ZWxsaXBzZSBjeD0iNDAwIiBjeT0iNDMwIiByeD0iNTIwIiByeT0iMjAiIGZpbGw9IiNGRkZGRkYiIG9wYWNpdHk9IjAuNSIgZmlsdGVyPSJ1cmwoI2JsdXIpIi8+CiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoOTYgNDUyKSBzY2FsZSgwLjkpIj48cGF0aCBkPSJNMCAwIEwwIC01MiIgc3Ryb2tlPSIjMkM0ODM0IiBzdHJva2Utd2lkdGg9IjQiLz48ZWxsaXBzZSBjeD0iMCIgY3k9Ii01OCIgcng9IjExIiByeT0iOCIgZmlsbD0iIzJDNDgzNCIvPjxlbGxpcHNlIGN4PSItMTAiIGN5PSItNDYiIHJ4PSI5IiByeT0iNiIgZmlsbD0iIzJDNDgzNCIvPjxlbGxpcHNlIGN4PSIxMCIgY3k9Ii00MiIgcng9IjgiIHJ5PSI2IiBmaWxsPSIjMkM0ODM0Ii8+PC9nPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDcwMCA0NDApIHNjYWxlKDAuODUpIj48cGF0aCBkPSJNMCAwIEwwIC01MiIgc3Ryb2tlPSIjMkM0ODM0IiBzdHJva2Utd2lkdGg9IjQiLz48ZWxsaXBzZSBjeD0iMCIgY3k9Ii01OCIgcng9IjExIiByeT0iOCIgZmlsbD0iIzJDNDgzNCIvPjxlbGxpcHNlIGN4PSItMTAiIGN5PSItNDYiIHJ4PSI5IiByeT0iNiIgZmlsbD0iIzJDNDgzNCIvPjxlbGxpcHNlIGN4PSIxMCIgY3k9Ii00MiIgcng9IjgiIHJ5PSI2IiBmaWxsPSIjMkM0ODM0Ii8+PC9nPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE4MCA0NjIpIHNjYWxlKDAuNykiPjxwYXRoIGQ9Ik0wIDAgTDAgLTUyIiBzdHJva2U9IiMyQzQ4MzQiIHN0cm9rZS13aWR0aD0iNCIvPjxlbGxpcHNlIGN4PSIwIiBjeT0iLTU4IiByeD0iMTEiIHJ5PSI4IiBmaWxsPSIjMkM0ODM0Ii8+PGVsbGlwc2UgY3g9Ii0xMCIgY3k9Ii00NiIgcng9IjkiIHJ5PSI2IiBmaWxsPSIjMkM0ODM0Ii8+PGVsbGlwc2UgY3g9IjEwIiBjeT0iLTQyIiByeD0iOCIgcnk9IjYiIGZpbGw9IiMyQzQ4MzQiLz48L2c+Cjwvc3ZnPgo=" alt="Talacauvery temple on the misty Brahmagiri slopes" width="800" height="560" loading="lazy">
+          <span class="place-tag">Approx. 45 km from Madikeri</span>
+          <span class="place-body">
+            <strong>Talacauvery</strong>
+            <small>The source of the Cauvery on the Brahmagiri slope. Often wrapped in cloud.</small>
+          </span>
+          <span class="place-add"><span class="tick" aria-hidden="true">&#10003;</span><span class="add-label">Add to trip</span></span>
+        </button>
+      </div>
+
+      <div class="places-extra">
+        <p>Also asked for often: Nisargadhama, Iruppu Falls, Chelavara Falls, Nalknad Palace, Honnamana Kere, coffee estate visits and Nagarhole safari drops. Mention any of these in your booking message.</p>
+      </div>
+    </section>
+
+    <section class="section" id="why-us">
+      <div class="section-heading centered">
+        <p class="eyebrow">WHY TORVIA</p>
+        <h2>A local approach to travel.</h2>
+      </div>
+      <div class="why-grid">
+        <div>
+          <span class="why-label">Booking</span>
+          <h3>No app, no forms to chase</h3>
+          <p>Send your trip details on WhatsApp or fill the short form here. We reply with availability and a price for your route.</p>
+        </div>
+        <div>
+          <span class="why-label">Routes</span>
+          <h3>Planned around Coorg roads</h3>
+          <p>Estate lanes, ghat sections and viewpoint timings decide the order of stops. We plan the day so you are not backtracking.</p>
+        </div>
+        <div>
+          <span class="why-label">Vehicles</span>
+          <h3>Right size for your group</h3>
+          <p>From a 4 seater hatchback to a 12 seater Tempo Traveller, with luggage space matched to the number of people.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="booking-section" id="booking">
+      <div class="booking-copy">
+        <p class="eyebrow">BOOK YOUR RIDE</p>
+        <h2>Tell us your travel plan.</h2>
+        <p>Fill in the basics below. We prepare a WhatsApp message with your details, including the cab and the places you picked, so you can send it straight to Torvia Travels.</p>
+        <div class="booking-note">Booking and enquiries: <strong>9008522092</strong></div>
+      </div>
+
+      <form id="bookingForm" class="booking-form">
+        <div class="form-row">
+          <label>Name<input name="name" required placeholder="Your name" autocomplete="name"></label>
+          <label>WhatsApp number<input name="phone" required type="tel" placeholder="Your number" autocomplete="tel"></label>
+        </div>
+        <div class="form-row">
+          <label>Pickup location<input name="pickup" required placeholder="e.g. Bengaluru Airport"></label>
+          <label>Drop location<input name="drop" required placeholder="e.g. Madikeri, Coorg"></label>
+        </div>
+        <div class="form-row">
+          <label>Travel date<input name="date" required type="date"></label>
+          <label>Passengers<input name="passengers" required type="number" min="1" max="20" value="2"></label>
+        </div>
+        <div class="form-row">
+          <label>Trip type
+            <select name="trip">
+              <option>One Way</option>
+              <option>Round Trip</option>
+              <option>Coorg Sightseeing</option>
+              <option>Airport Transfer</option>
+              <option>Outstation Trip</option>
+            </select>
+          </label>
+          <label>Cab type
+            <select name="vehicle" id="vehicleSelect">
+              <option value="">Not decided yet</option>
+              <option value="4 Seater Hatchback">4 Seater Hatchback</option>
+              <option value="5 Seater Sedan">5 Seater Sedan</option>
+              <option value="Innova / Innova Crysta">Innova / Innova Crysta</option>
+              <option value="Tempo Traveller (TT)">Tempo Traveller (TT)</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="stops-field">
+          <span class="stops-head">Sightseeing stops picked
+            <button type="button" id="clearStops" class="link-btn" hidden>Clear all</button>
+          </span>
+          <div id="stopsList" class="stops-list"><span class="stops-empty">None yet. Tap places in the Coorg Places section above.</span></div>
+          <input type="hidden" name="stops" id="stopsInput">
+        </div>
+
+        <label>Additional requirements<textarea name="notes" rows="3" placeholder="Homestay pickup, child seat, extra luggage, pickup time, etc."></textarea></label>
+        <button class="btn btn-wa full" type="submit">
+          <img class="wa-ico" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IS0tIFVwbG9hZGVkIHRvOiBTVkcgUmVwbywgd3d3LnN2Z3JlcG8uY29tLCBHZW5lcmF0b3I6IFNWRyBSZXBvIE1peGVyIFRvb2xzIC0tPgo8c3ZnIHdpZHRoPSI4MDBweCIgaGVpZ2h0PSI4MDBweCIgdmlld0JveD0iMCAwIDMyIDMyIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNiAzMUMyMy43MzIgMzEgMzAgMjQuNzMyIDMwIDE3QzMwIDkuMjY4MDEgMjMuNzMyIDMgMTYgM0M4LjI2ODAxIDMgMiA5LjI2ODAxIDIgMTdDMiAxOS41MTA5IDIuNjYxIDIxLjg2NzQgMy44MTg0NyAyMy45MDVMMiAzMUw5LjMxNDg2IDI5LjMwMzhDMTEuMzAxNCAzMC4zODU0IDEzLjU3ODkgMzEgMTYgMzFaTTE2IDI4Ljg0NjJDMjIuNTQyNSAyOC44NDYyIDI3Ljg0NjIgMjMuNTQyNSAyNy44NDYyIDE3QzI3Ljg0NjIgMTAuNDU3NiAyMi41NDI1IDUuMTUzODUgMTYgNS4xNTM4NUM5LjQ1NzU1IDUuMTUzODUgNC4xNTM4NSAxMC40NTc2IDQuMTUzODUgMTdDNC4xNTM4NSAxOS41MjYxIDQuOTQ0NSAyMS44Njc1IDYuMjkxODQgMjMuNzkwMkw1LjIzMDc3IDI3Ljc2OTJMOS4yNzk5MyAyNi43NTY5QzExLjE4OTQgMjguMDc0NiAxMy41MDQ2IDI4Ljg0NjIgMTYgMjguODQ2MloiIGZpbGw9IiNCRkM4RDAiLz4NCjxwYXRoIGQ9Ik0yOCAxNkMyOCAyMi42Mjc0IDIyLjYyNzQgMjggMTYgMjhDMTMuNDcyMiAyOCAxMS4xMjY5IDI3LjIxODQgOS4xOTI2NiAyNS44ODM3TDUuMDkwOTEgMjYuOTA5MUw2LjE2NTc2IDIyLjg3ODRDNC44MDA5MiAyMC45MzA3IDQgMTguNTU4OSA0IDE2QzQgOS4zNzI1OCA5LjM3MjU4IDQgMTYgNEMyMi42Mjc0IDQgMjggOS4zNzI1OCAyOCAxNloiIGZpbGw9InVybCgjcGFpbnQwX2xpbmVhcl84N183MjY0KSIvPg0KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNiAzMEMyMy43MzIgMzAgMzAgMjMuNzMyIDMwIDE2QzMwIDguMjY4MDEgMjMuNzMyIDIgMTYgMkM4LjI2ODAxIDIgMiA4LjI2ODAxIDIgMTZDMiAxOC41MTA5IDIuNjYxIDIwLjg2NzQgMy44MTg0NyAyMi45MDVMMiAzMEw5LjMxNDg2IDI4LjMwMzhDMTEuMzAxNCAyOS4zODU0IDEzLjU3ODkgMzAgMTYgMzBaTTE2IDI3Ljg0NjJDMjIuNTQyNSAyNy44NDYyIDI3Ljg0NjIgMjIuNTQyNSAyNy44NDYyIDE2QzI3Ljg0NjIgOS40NTc1NSAyMi41NDI1IDQuMTUzODUgMTYgNC4xNTM4NUM5LjQ1NzU1IDQuMTUzODUgNC4xNTM4NSA5LjQ1NzU1IDQuMTUzODUgMTZDNC4xNTM4NSAxOC41MjYxIDQuOTQ0NSAyMC44Njc1IDYuMjkxODQgMjIuNzkwMkw1LjIzMDc3IDI2Ljc2OTJMOS4yNzk5MyAyNS43NTY5QzExLjE4OTQgMjcuMDc0NiAxMy41MDQ2IDI3Ljg0NjIgMTYgMjcuODQ2MloiIGZpbGw9IndoaXRlIi8+DQo8cGF0aCBkPSJNMTIuNSA5LjQ5OTg5QzEyLjE2NzIgOC44MzEzMSAxMS42NTY1IDguODkwNSAxMS4xNDA3IDguODkwNUMxMC4yMTg4IDguODkwNSA4Ljc4MTI1IDkuOTk0NzggOC43ODEyNSAxMi4wNUM4Ljc4MTI1IDEzLjczNDMgOS41MjM0NSAxNS41NzggMTIuMDI0NCAxOC4zMzYxQzE0LjQzOCAyMC45OTc5IDE3LjYwOTQgMjIuMzc0OCAyMC4yNDIyIDIyLjMyNzlDMjIuODc1IDIyLjI4MTEgMjMuNDE2NyAyMC4wMTU0IDIzLjQxNjcgMTkuMjUwM0MyMy40MTY3IDE4LjkxMTIgMjMuMjA2MiAxOC43NDIgMjMuMDYxMyAxOC42OTZDMjIuMTY0MSAxOC4yNjU0IDIwLjUwOTMgMTcuNDYzMSAyMC4xMzI4IDE3LjMxMjRDMTkuNzU2MyAxNy4xNjE3IDE5LjU1OTcgMTcuMzY1NiAxOS40Mzc1IDE3LjQ3NjVDMTkuMDk2MSAxNy44MDE4IDE4LjQxOTMgMTguNzYwOCAxOC4xODc1IDE4Ljk3NjVDMTcuOTU1OCAxOS4xOTIyIDE3LjYxMDMgMTkuMDgzIDE3LjQ2NjUgMTkuMDAxNUMxNi45Mzc0IDE4Ljc4OTIgMTUuNTAyOSAxOC4xNTExIDE0LjM1OTUgMTcuMDQyNkMxMi45NDUzIDE1LjY3MTggMTIuODYyMyAxNS4yMDAxIDEyLjU5NTkgMTQuNzgwM0MxMi4zODI4IDE0LjQ0NDQgMTIuNTM5MiAxNC4yMzg0IDEyLjYxNzIgMTQuMTQ4M0MxMi45MjE5IDEzLjc5NjggMTMuMzQyNiAxMy4yNTQgMTMuNTMxMyAxMi45ODQzQzEzLjcxOTkgMTIuNzE0NSAxMy41NzAyIDEyLjMwNSAxMy40ODAzIDEyLjA1QzEzLjA5MzggMTAuOTUzIDEyLjc2NjMgMTAuMDM0NyAxMi41IDkuNDk5ODlaIiBmaWxsPSJ3aGl0ZSIvPg0KPGRlZnM+DQo8bGluZWFyR3JhZGllbnQgaWQ9InBhaW50MF9saW5lYXJfODdfNzI2NCIgeDE9IjI2LjUiIHkxPSI3IiB4Mj0iNCIgeTI9IjI4IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+DQo8c3RvcCBzdG9wLWNvbG9yPSIjNUJEMDY2Ii8+DQo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMyN0I0M0UiLz4NCjwvbGluZWFyR3JhZGllbnQ+DQo8L2RlZnM+DQo8L3N2Zz4=" alt="" width="22" height="22">Send Booking Request on WhatsApp
+        </button>
+        <p class="form-status" id="formStatus" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div>
+        <p class="eyebrow">GET IN TOUCH</p>
+        <h2>Ready to travel?</h2>
+        <p>Call us or send your requirements on WhatsApp. We will discuss availability, route and pricing with you.</p>
+      </div>
+      <div class="contact-actions">
+        <a class="btn btn-light" data-call href="#">Call 9008522092</a>
+        <a class="btn btn-wa" data-whatsapp href="#">
+          <img class="wa-ico" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IS0tIFVwbG9hZGVkIHRvOiBTVkcgUmVwbywgd3d3LnN2Z3JlcG8uY29tLCBHZW5lcmF0b3I6IFNWRyBSZXBvIE1peGVyIFRvb2xzIC0tPgo8c3ZnIHdpZHRoPSI4MDBweCIgaGVpZ2h0PSI4MDBweCIgdmlld0JveD0iMCAwIDMyIDMyIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNiAzMUMyMy43MzIgMzEgMzAgMjQuNzMyIDMwIDE3QzMwIDkuMjY4MDEgMjMuNzMyIDMgMTYgM0M4LjI2ODAxIDMgMiA5LjI2ODAxIDIgMTdDMiAxOS41MTA5IDIuNjYxIDIxLjg2NzQgMy44MTg0NyAyMy45MDVMMiAzMUw5LjMxNDg2IDI5LjMwMzhDMTEuMzAxNCAzMC4zODU0IDEzLjU3ODkgMzEgMTYgMzFaTTE2IDI4Ljg0NjJDMjIuNTQyNSAyOC44NDYyIDI3Ljg0NjIgMjMuNTQyNSAyNy44NDYyIDE3QzI3Ljg0NjIgMTAuNDU3NiAyMi41NDI1IDUuMTUzODUgMTYgNS4xNTM4NUM5LjQ1NzU1IDUuMTUzODUgNC4xNTM4NSAxMC40NTc2IDQuMTUzODUgMTdDNC4xNTM4NSAxOS41MjYxIDQuOTQ0NSAyMS44Njc1IDYuMjkxODQgMjMuNzkwMkw1LjIzMDc3IDI3Ljc2OTJMOS4yNzk5MyAyNi43NTY5QzExLjE4OTQgMjguMDc0NiAxMy41MDQ2IDI4Ljg0NjIgMTYgMjguODQ2MloiIGZpbGw9IiNCRkM4RDAiLz4NCjxwYXRoIGQ9Ik0yOCAxNkMyOCAyMi42Mjc0IDIyLjYyNzQgMjggMTYgMjhDMTMuNDcyMiAyOCAxMS4xMjY5IDI3LjIxODQgOS4xOTI2NiAyNS44ODM3TDUuMDkwOTEgMjYuOTA5MUw2LjE2NTc2IDIyLjg3ODRDNC44MDA5MiAyMC45MzA3IDQgMTguNTU4OSA0IDE2QzQgOS4zNzI1OCA5LjM3MjU4IDQgMTYgNEMyMi42Mjc0IDQgMjggOS4zNzI1OCAyOCAxNloiIGZpbGw9InVybCgjcGFpbnQwX2xpbmVhcl84N183MjY0KSIvPg0KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNiAzMEMyMy43MzIgMzAgMzAgMjMuNzMyIDMwIDE2QzMwIDguMjY4MDEgMjMuNzMyIDIgMTYgMkM4LjI2ODAxIDIgMiA4LjI2ODAxIDIgMTZDMiAxOC41MTA5IDIuNjYxIDIwLjg2NzQgMy44MTg0NyAyMi45MDVMMiAzMEw5LjMxNDg2IDI4LjMwMzhDMTEuMzAxNCAyOS4zODU0IDEzLjU3ODkgMzAgMTYgMzBaTTE2IDI3Ljg0NjJDMjIuNTQyNSAyNy44NDYyIDI3Ljg0NjIgMjIuNTQyNSAyNy44NDYyIDE2QzI3Ljg0NjIgOS40NTc1NSAyMi41NDI1IDQuMTUzODUgMTYgNC4xNTM4NUM5LjQ1NzU1IDQuMTUzODUgNC4xNTM4NSA5LjQ1NzU1IDQuMTUzODUgMTZDNC4xNTM4NSAxOC41MjYxIDQuOTQ0NSAyMC44Njc1IDYuMjkxODQgMjIuNzkwMkw1LjIzMDc3IDI2Ljc2OTJMOS4yNzk5MyAyNS43NTY5QzExLjE4OTQgMjcuMDc0NiAxMy41MDQ2IDI3Ljg0NjIgMTYgMjcuODQ2MloiIGZpbGw9IndoaXRlIi8+DQo8cGF0aCBkPSJNMTIuNSA5LjQ5OTg5QzEyLjE2NzIgOC44MzEzMSAxMS42NTY1IDguODkwNSAxMS4xNDA3IDguODkwNUMxMC4yMTg4IDguODkwNSA4Ljc4MTI1IDkuOTk0NzggOC43ODEyNSAxMi4wNUM4Ljc4MTI1IDEzLjczNDMgOS41MjM0NSAxNS41NzggMTIuMDI0NCAxOC4zMzYxQzE0LjQzOCAyMC45OTc5IDE3LjYwOTQgMjIuMzc0OCAyMC4yNDIyIDIyLjMyNzlDMjIuODc1IDIyLjI4MTEgMjMuNDE2NyAyMC4wMTU0IDIzLjQxNjcgMTkuMjUwM0MyMy40MTY3IDE4LjkxMTIgMjMuMjA2MiAxOC43NDIgMjMuMDYxMyAxOC42OTZDMjIuMTY0MSAxOC4yNjU0IDIwLjUwOTMgMTcuNDYzMSAyMC4xMzI4IDE3LjMxMjRDMTkuNzU2MyAxNy4xNjE3IDE5LjU1OTcgMTcuMzY1NiAxOS40Mzc1IDE3LjQ3NjVDMTkuMDk2MSAxNy44MDE4IDE4LjQxOTMgMTguNzYwOCAxOC4xODc1IDE4Ljk3NjVDMTcuOTU1OCAxOS4xOTIyIDE3LjYxMDMgMTkuMDgzIDE3LjQ2NjUgMTkuMDAxNUMxNi45Mzc0IDE4Ljc4OTIgMTUuNTAyOSAxOC4xNTExIDE0LjM1OTUgMTcuMDQyNkMxMi45NDUzIDE1LjY3MTggMTIuODYyMyAxNS4yMDAxIDEyLjU5NTkgMTQuNzgwM0MxMi4zODI4IDE0LjQ0NDQgMTIuNTM5MiAxNC4yMzg0IDEyLjYxNzIgMTQuMTQ4M0MxMi45MjE5IDEzLjc5NjggMTMuMzQyNiAxMy4yNTQgMTMuNTMxMyAxMi45ODQzQzEzLjcxOTkgMTIuNzE0NSAxMy41NzAyIDEyLjMwNSAxMy40ODAzIDEyLjA1QzEzLjA5MzggMTAuOTUzIDEyLjc2NjMgMTAuMDM0NyAxMi41IDkuNDk5ODlaIiBmaWxsPSJ3aGl0ZSIvPg0KPGRlZnM+DQo8bGluZWFyR3JhZGllbnQgaWQ9InBhaW50MF9saW5lYXJfODdfNzI2NCIgeDE9IjI2LjUiIHkxPSI3IiB4Mj0iNCIgeTI9IjI4IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+DQo8c3RvcCBzdG9wLWNvbG9yPSIjNUJEMDY2Ii8+DQo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMyN0I0M0UiLz4NCjwvbGluZWFyR3JhZGllbnQ+DQo8L2RlZnM+DQo8L3N2Zz4=" alt="" width="22" height="22">WhatsApp Us
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand">
+      <span class="brand-mark">T</span>
+      <div><strong>Torvia Travels</strong><small>Madikeri &middot; Kodagu &middot; Karnataka</small></div>
+    </div>
+    <p>&copy; <span id="year"></span> Torvia Travels. All rights reserved. Distances shown are approximate.</p>
+  </footer>
+
+  <a class="floating-wa" data-whatsapp href="#" aria-label="Message Torvia Travels on WhatsApp">
+    <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IS0tIFVwbG9hZGVkIHRvOiBTVkcgUmVwbywgd3d3LnN2Z3JlcG8uY29tLCBHZW5lcmF0b3I6IFNWRyBSZXBvIE1peGVyIFRvb2xzIC0tPgo8c3ZnIHdpZHRoPSI4MDBweCIgaGVpZ2h0PSI4MDBweCIgdmlld0JveD0iMCAwIDMyIDMyIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNiAzMUMyMy43MzIgMzEgMzAgMjQuNzMyIDMwIDE3QzMwIDkuMjY4MDEgMjMuNzMyIDMgMTYgM0M4LjI2ODAxIDMgMiA5LjI2ODAxIDIgMTdDMiAxOS41MTA5IDIuNjYxIDIxLjg2NzQgMy44MTg0NyAyMy45MDVMMiAzMUw5LjMxNDg2IDI5LjMwMzhDMTEuMzAxNCAzMC4zODU0IDEzLjU3ODkgMzEgMTYgMzFaTTE2IDI4Ljg0NjJDMjIuNTQyNSAyOC44NDYyIDI3Ljg0NjIgMjMuNTQyNSAyNy44NDYyIDE3QzI3Ljg0NjIgMTAuNDU3NiAyMi41NDI1IDUuMTUzODUgMTYgNS4xNTM4NUM5LjQ1NzU1IDUuMTUzODUgNC4xNTM4NSAxMC40NTc2IDQuMTUzODUgMTdDNC4xNTM4NSAxOS41MjYxIDQuOTQ0NSAyMS44Njc1IDYuMjkxODQgMjMuNzkwMkw1LjIzMDc3IDI3Ljc2OTJMOS4yNzk5MyAyNi43NTY5QzExLjE4OTQgMjguMDc0NiAxMy41MDQ2IDI4Ljg0NjIgMTYgMjguODQ2MloiIGZpbGw9IiNCRkM4RDAiLz4NCjxwYXRoIGQ9Ik0yOCAxNkMyOCAyMi42Mjc0IDIyLjYyNzQgMjggMTYgMjhDMTMuNDcyMiAyOCAxMS4xMjY5IDI3LjIxODQgOS4xOTI2NiAyNS44ODM3TDUuMDkwOTEgMjYuOTA5MUw2LjE2NTc2IDIyLjg3ODRDNC44MDA5MiAyMC45MzA3IDQgMTguNTU4OSA0IDE2QzQgOS4zNzI1OCA5LjM3MjU4IDQgMTYgNEMyMi42Mjc0IDQgMjggOS4zNzI1OCAyOCAxNloiIGZpbGw9InVybCgjcGFpbnQwX2xpbmVhcl84N183MjY0KSIvPg0KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNiAzMEMyMy43MzIgMzAgMzAgMjMuNzMyIDMwIDE2QzMwIDguMjY4MDEgMjMuNzMyIDIgMTYgMkM4LjI2ODAxIDIgMiA4LjI2ODAxIDIgMTZDMiAxOC41MTA5IDIuNjYxIDIwLjg2NzQgMy44MTg0NyAyMi45MDVMMiAzMEw5LjMxNDg2IDI4LjMwMzhDMTEuMzAxNCAyOS4zODU0IDEzLjU3ODkgMzAgMTYgMzBaTTE2IDI3Ljg0NjJDMjIuNTQyNSAyNy44NDYyIDI3Ljg0NjIgMjIuNTQyNSAyNy44NDYyIDE2QzI3Ljg0NjIgOS40NTc1NSAyMi41NDI1IDQuMTUzODUgMTYgNC4xNTM4NUM5LjQ1NzU1IDQuMTUzODUgNC4xNTM4NSA5LjQ1NzU1IDQuMTUzODUgMTZDNC4xNTM4NSAxOC41MjYxIDQuOTQ0NSAyMC44Njc1IDYuMjkxODQgMjIuNzkwMkw1LjIzMDc3IDI2Ljc2OTJMOS4yNzk5MyAyNS43NTY5QzExLjE4OTQgMjcuMDc0NiAxMy41MDQ2IDI3Ljg0NjIgMTYgMjcuODQ2MloiIGZpbGw9IndoaXRlIi8+DQo8cGF0aCBkPSJNMTIuNSA5LjQ5OTg5QzEyLjE2NzIgOC44MzEzMSAxMS42NTY1IDguODkwNSAxMS4xNDA3IDguODkwNUMxMC4yMTg4IDguODkwNSA4Ljc4MTI1IDkuOTk0NzggOC43ODEyNSAxMi4wNUM4Ljc4MTI1IDEzLjczNDMgOS41MjM0NSAxNS41NzggMTIuMDI0NCAxOC4zMzYxQzE0LjQzOCAyMC45OTc5IDE3LjYwOTQgMjIuMzc0OCAyMC4yNDIyIDIyLjMyNzlDMjIuODc1IDIyLjI4MTEgMjMuNDE2NyAyMC4wMTU0IDIzLjQxNjcgMTkuMjUwM0MyMy40MTY3IDE4LjkxMTIgMjMuMjA2MiAxOC43NDIgMjMuMDYxMyAxOC42OTZDMjIuMTY0MSAxOC4yNjU0IDIwLjUwOTMgMTcuNDYzMSAyMC4xMzI4IDE3LjMxMjRDMTkuNzU2MyAxNy4xNjE3IDE5LjU1OTcgMTcuMzY1NiAxOS40Mzc1IDE3LjQ3NjVDMTkuMDk2MSAxNy44MDE4IDE4LjQxOTMgMTguNzYwOCAxOC4xODc1IDE4Ljk3NjVDMTcuOTU1OCAxOS4xOTIyIDE3LjYxMDMgMTkuMDgzIDE3LjQ2NjUgMTkuMDAxNUMxNi45Mzc0IDE4Ljc4OTIgMTUuNTAyOSAxOC4xNTExIDE0LjM1OTUgMTcuMDQyNkMxMi45NDUzIDE1LjY3MTggMTIuODYyMyAxNS4yMDAxIDEyLjU5NTkgMTQuNzgwM0MxMi4zODI4IDE0LjQ0NDQgMTIuNTM5MiAxNC4yMzg0IDEyLjYxNzIgMTQuMTQ4M0MxMi45MjE5IDEzLjc5NjggMTMuMzQyNiAxMy4yNTQgMTMuNTMxMyAxMi45ODQzQzEzLjcxOTkgMTIuNzE0NSAxMy41NzAyIDEyLjMwNSAxMy40ODAzIDEyLjA1QzEzLjA5MzggMTAuOTUzIDEyLjc2NjMgMTAuMDM0NyAxMi41IDkuNDk5ODlaIiBmaWxsPSJ3aGl0ZSIvPg0KPGRlZnM+DQo8bGluZWFyR3JhZGllbnQgaWQ9InBhaW50MF9saW5lYXJfODdfNzI2NCIgeDE9IjI2LjUiIHkxPSI3IiB4Mj0iNCIgeTI9IjI4IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+DQo8c3RvcCBzdG9wLWNvbG9yPSIjNUJEMDY2Ii8+DQo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMyN0I0M0UiLz4NCjwvbGluZWFyR3JhZGllbnQ+DQo8L2RlZnM+DQo8L3N2Zz4=" alt="" width="60" height="60">
+  </a>
+  <script>
+/* ------------------------------------------------------------------
+   Torvia Travels - booking, cab selection and Coorg stop picker
+   Change the two numbers below if the contact number ever changes.
+------------------------------------------------------------------- */
+const WHATSAPP = "919008522092";          // country code + number, no plus sign
+const PHONE = "tel:+919008522092";
+
+const baseMessage = "Hello Torvia Travels, I would like to enquire about a cab/travel booking.";
+
+/* ---------------------------------------------- contact links + year */
+document.querySelectorAll("[data-whatsapp]").forEach(link => {
+  link.href = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(baseMessage)}`;
+  link.target = "_blank";
+  link.rel = "noopener";
+});
+
+document.querySelectorAll("[data-call]").forEach(link => {
+  link.href = PHONE;
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+/* ------------------------------------------------------ mobile menu */
+const menuToggle = document.querySelector(".menu-toggle");
+const nav = document.getElementById("nav");
+
+function setMenu(open) {
+  nav.classList.toggle("open", open);
+  menuToggle.setAttribute("aria-expanded", String(open));
+}
+
+menuToggle.addEventListener("click", () => setMenu(!nav.classList.contains("open")));
+nav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => setMenu(false)));
+
+/* --------------------------------------------------- travel date min */
+const dateInput = document.querySelector('input[name="date"]');
+dateInput.min = new Date().toISOString().split("T")[0];
+
+/* ------------------------------------------- cab (vehicle) selection */
+const cabRadios = document.querySelectorAll('input[name="fleetChoice"]');
+const vehicleSelect = document.getElementById("vehicleSelect");
+const fleetNote = document.getElementById("fleetNote");
+
+function showCabChoice(value) {
+  document.querySelectorAll(".cab-card").forEach(card => {
+    card.classList.toggle("is-selected", card.querySelector("input").checked);
+  });
+  if (value) {
+    fleetNote.textContent = `Selected: ${value}. It is filled into the booking form below.`;
+    fleetNote.classList.add("chosen");
+  } else {
+    fleetNote.textContent = "No vehicle selected yet. Your choice will appear in the booking form below.";
+    fleetNote.classList.remove("chosen");
+  }
+}
+
+cabRadios.forEach(radio => {
+  radio.addEventListener("change", () => {
+    vehicleSelect.value = radio.value;
+    showCabChoice(radio.value);
+  });
+});
+
+// picking the cab inside the form keeps the cards in sync
+vehicleSelect.addEventListener("change", () => {
+  cabRadios.forEach(radio => { radio.checked = radio.value === vehicleSelect.value; });
+  showCabChoice(vehicleSelect.value);
+});
+
+/* -------------------------------------------- Coorg stops selection */
+const placeCards = document.querySelectorAll(".place-card");
+const stopsList = document.getElementById("stopsList");
+const stopsInput = document.getElementById("stopsInput");
+const clearStops = document.getElementById("clearStops");
+const stops = new Set();
+
+function renderStops() {
+  stopsInput.value = [...stops].join(", ");
+  clearStops.hidden = stops.size === 0;
+  stopsList.textContent = "";
+
+  if (stops.size === 0) {
+    const empty = document.createElement("span");
+    empty.className = "stops-empty";
+    empty.textContent = "None yet. Tap places in the Coorg Places section above.";
+    stopsList.appendChild(empty);
+    return;
+  }
+
+  stops.forEach(name => {
+    const chip = document.createElement("span");
+    chip.className = "chip";
+    chip.textContent = name;
+
+    const remove = document.createElement("button");
+    remove.type = "button";
+    remove.setAttribute("aria-label", `Remove ${name}`);
+    remove.textContent = "\u00d7";
+    remove.addEventListener("click", () => toggleStop(name, false));
+
+    chip.appendChild(remove);
+    stopsList.appendChild(chip);
+  });
+}
+
+function toggleStop(name, add) {
+  if (add) stops.add(name); else stops.delete(name);
+
+  placeCards.forEach(card => {
+    if (card.dataset.place === name) {
+      card.setAttribute("aria-pressed", String(add));
+      card.querySelector(".add-label").textContent = add ? "Added to trip" : "Add to trip";
+    }
+  });
+  renderStops();
+}
+
+placeCards.forEach(card => {
+  card.addEventListener("click", () => {
+    const name = card.dataset.place;
+    toggleStop(name, card.getAttribute("aria-pressed") !== "true");
+  });
+});
+
+clearStops.addEventListener("click", () => {
+  [...stops].forEach(name => toggleStop(name, false));
+});
+
+renderStops();
+
+/* ------------------------------------------------ booking form send */
+document.getElementById("bookingForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  const data = new FormData(this);
+
+  const lines = [
+    "Hello Torvia Travels, I would like to book/enquire about a trip.",
+    "",
+    `Name: ${data.get("name")}`,
+    `WhatsApp Number: ${data.get("phone")}`,
+    `Pickup: ${data.get("pickup")}`,
+    `Drop: ${data.get("drop")}`,
+    `Travel Date: ${data.get("date")}`,
+    `Passengers: ${data.get("passengers")}`,
+    `Trip Type: ${data.get("trip")}`,
+    `Cab Type: ${data.get("vehicle") || "Not decided, please suggest"}`,
+    `Sightseeing Stops: ${data.get("stops") || "Not decided yet"}`,
+    `Additional Requirements: ${data.get("notes") || "None"}`,
+    "",
+    "Please share availability and pricing. Thank you."
+  ];
+
+  const url = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(lines.join("\n"))}`;
+  const status = document.getElementById("formStatus");
+  status.textContent = "Opening WhatsApp with your booking details...";
+  window.open(url, "_blank", "noopener,noreferrer");
+});
+
+</script>
+</body>
+</html>
